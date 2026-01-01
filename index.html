@@ -1,24 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="" type="image/x-icon">
-    
-    <link rel="stylesheet" href="style.css">
-    <title>EcoSlide</title>
-</head>
-<body>
-    <div class="head">
-        <div class="top">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EcoSlides</title>
 
-        </div>
-        <div class="nav">
-            <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">About</a>
-            <a href="#" class="nav-link">Services</a>
-            <a href="#" class="nav-link">Contact</a>
-        </div>
-    </div>
+    <!-- CSS for header and footer -->
+    <link rel="stylesheet" href="assets/css/header-footer.css">
+    <!-- CSS for home page -->
+    <link rel="stylesheet" href="assets/css/home.css" />
+
+    <link rel="shortcut icon" href="assets/img/logo_ico.png" type="image/x-icon">
+
+    <!-- JavaScript for home page -->
+    <script defer src="assets/js/home.js"></script>
+</head>
+
+<body>
+    <!-- Header section -->
+    <div id="siteHeader"></div>
+
+    <!-- HERO -->
+    <main>
+        <section class="hero" aria-label="Hero section">
+            <div class="hero-slider">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <div class="hero__bg" style="background-image: url('assets/img/Fotos/Home_1.png');" role="img" aria-label="Recycled tire footwear"></div>
+                    <div class="container hero__content">
+                        <h1 class="hero__title">Sustainable footwear made<br>from recycled tires.</h1>
+                        <p class="hero__subtitle">
+                            We transform used tires into stylish and purposeful footwear.
+                        </p>
+                        <a class="hero__cta" href="#collection">Explore the collection</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <div class="hero__bg" style="background-image: url('assets/img/Fotos/Home_2.png');" role="img" aria-label="Eco-friendly sandals"></div>
+                    <div class="container hero__content">
+                        <h1 class="hero__title">Eco-friendly sandals<br>for a better tomorrow</h1>
+                        <p class="hero__subtitle">
+                            Comfortable, durable, and made with love for the planet.
+                        </p>
+                        <a class="hero__cta" href="/pages/aboutus.html">About Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controles del carrusel -->
+            <div class="hero-controls">
+                <button class="hero-control prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="hero-pagination">
+                    <button class="hero-dot active" aria-label="Go to slide 1"></button>
+                    <button class="hero-dot" aria-label="Go to slide 2"></button>
+                </div>
+                <button class="hero-control next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- information section -->
+        <section class="stats">
+            <div class="container stats__grid">
+                <div class="stat">
+                    <div class="stat__value">500K+</div>
+                    <div class="stat__label">Miles traveled</div>
+                    <div class="stat__line"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat__value">20%</div>
+                    <div class="stat__label">Reduced<br>emissions</div>
+                    <div class="stat__line"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat__value">10 tons</div>
+                    <div class="stat__label">Recycled rubber</div>
+                    <div class="stat__line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo section -->
+        <section id="about" class="section container">
+            <h2>About Us</h2>
+            <p>Contenido aquí…</p>
+        </section>
+
+        <section id="services" class="section container">
+            <h2>Services</h2>
+            <p>Contenido aquí…</p>
+        </section>
+
+        <section id="contact" class="section container">
+            <h2>Contact Us</h2>
+            <p>Contenido aquí…</p>
+        </section>
+    </main>
+    
+    <!-- Footer section -->
+    <div id="siteFooter"></div>
 </body>
 </html>
