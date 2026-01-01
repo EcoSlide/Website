@@ -9,7 +9,7 @@ async function loadHeader() {
     if (!mount) return;
 
     try {
-        const res = await fetch("pages/header.html");
+        const res = await fetch("../pages/header.html");
         mount.innerHTML = await res.text();
 
         // Burger menu
@@ -33,7 +33,7 @@ async function loadFooter() {
     if (!mount) return;
 
     try {
-        const res = await fetch("pages/footer.html");
+        const res = await fetch("../pages/footer.html");
         mount.innerHTML = await res.text();
     } catch (e) {
         console.error("Footer load failed:", e);
