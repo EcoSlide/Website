@@ -28,7 +28,6 @@ html, body{
     position: relative;
     width: 100%;
     height: 78vh;
-    min-height: 600px;
     max-height: 100vh; /* Asegura que no exceda la altura de la ventana */
     overflow: hidden;
     color: #fff;
@@ -259,52 +258,91 @@ html, body{
 }
 
 /* STATS SECTION */
-.stats{
-    background: #fff;
-    padding: 56px 0;
+/* Stats Section - Flip Card Effect */
+#impact-stats {
+    background-color: #f5f5f5;
+    padding: 4rem 0;
 }
 
-.stats__grid{
+.stats__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
-    align-items: start;
-    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    perspective: 1000px;
 }
 
-.stat__value{
-    color: var(--green);
-    font-family: 'Montserrat', sans-serif;
+.stat-card {
+    background: transparent;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.stat-card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.stat-card:hover .stat-card__inner {
+    transform: rotateY(180deg);
+}
+
+.stat-card__front,
+.stat-card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.stat-card__back {
+    background-color: #2f6b4a;
+    color: white;
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+}
+
+.stat__info {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 15%;
+}
+
+/* Existing styles for stat content */
+.stat__value {
     font-size: 2.5rem;
     font-weight: 700;
-    line-height: 1.05;
-    margin-bottom: 10px;
+    color: #2f6b4a;
+    margin-bottom: 0.5rem;
 }
 
-.stat__label{
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 1.25;
-    margin-bottom: 18px;
+.stat__label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
-.stat__line{
-    width: 78px;
+.stat__line {
+    width: 50px;
     height: 3px;
-    background: var(--green);
+    background-color: #2f6b4a;
     margin: 0 auto;
-    border-radius: 99px;
-    opacity: .9;
-}
-
-/* Responsive */
-@media (max-width: 900px){
-    .stats__grid{
-        grid-template-columns: 1fr;
-        gap: 26px;
-    }
-    .stat__value{ font-size: 3rem; }
-    .stat__label{ font-size: 1.2rem; }
 }
 
 /* ===== LAYOUT ===== */
