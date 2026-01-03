@@ -7,42 +7,23 @@ const SLIDE_INTERVAL = 5000; // 5 segundos
 
 
 // ==============================
-// CARGAR HEADER + FOOTER (HF_Home.html)
+// CARGAR HEADER
 // ==============================
-async function loadHeaderFooter() {
-    const headerMount = document.getElementById("siteHeader");
-    const footerMount = document.getElementById("siteFooter");
-
-    if (!headerMount && !footerMount) return;
+async function loadHeader() {
+    const mount = document.getElementById("siteHeader");
+    if (!mount) return;
 
     try {
-        // Ruta correcta según tu estructura
-        const res = await fetch("./pages/HF_Home.html");
-        const htmlText = await res.text();
+        const basePath = window.location.pathname.includes('pages/') ? '../' : '/';
+        const res = await fetch(`pages/header.html`);
+        mount.innerHTML = await res.text();
 
-        // Parsear el HTML
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(htmlText, "text/html");
-
-        const header = doc.querySelector(".headerHome");
-        const footer = doc.querySelector(".footerHome");
-
-        if (headerMount && header) {
-        headerMount.innerHTML = header.innerHTML;
-        }
-
-        if (footerMount && footer) {
-        footerMount.innerHTML = footer.innerHTML;
-        }
-
-        // Inicializaciones que dependen del header/footer
-        initNavbar();
-        setYear();
-
-    } catch (err) {
-        console.error("Error loading HF_Home.html:", err);
+        initNavbar(); // inicializa navbar luego de cargar HTML
+    } catch (e) {
+        console.error("Header load failed:", e);
     }
 }
+
 
 // ==============================
 // NAVBAR + MOBILE + SEARCH
@@ -139,6 +120,24 @@ function initNavbar() {
     });
 }
 
+
+// ==============================
+// CARGAR FOOTER
+// ==============================
+async function loadFooter() {
+    const mount = document.getElementById("siteFooter");
+    if (!mount) return;
+
+    try {
+        const basePath = window.location.pathname.includes('pages/') ? '../' : '/';
+        const res = await fetch(`${basePath}pages/footer.html`);
+        mount.innerHTML = await res.text();
+    } catch (e) {
+        console.error("Footer load failed:", e);
+    }
+}
+
+
 // ==============================
 // AÑO AUTOMÁTICO
 // ==============================
@@ -148,69 +147,10 @@ function setYear() {
 }
 
 // ==============================
-// CARRUSEL HERO
-// ==============================
-function initSlider() {
-    const slides = document.querySelectorAll('.hero-slide');
-    const dots = document.querySelectorAll('.hero-dot');
-    const prevBtn = document.querySelector('.hero-control.prev');
-    const nextBtn = document.querySelector('.hero-control.next');
-
-    if (slides.length === 0) return;
-
-    slides[0].classList.add('active');
-    if (dots.length > 0) dots[0].classList.add('active');
-
-    function goToSlide(index) {
-        if (index >= slides.length) index = 0;
-        if (index < 0) index = slides.length - 1;
-
-        currentSlide = index;
-
-        slides.forEach((slide, i) =>
-            slide.classList.toggle('active', i === index)
-        );
-
-        dots.forEach((dot, i) =>
-            dot.classList.toggle('active', i === index)
-        );
-
-        resetInterval();
-    }
-
-    function nextSlide() {
-        goToSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        goToSlide(currentSlide - 1);
-    }
-
-    function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, SLIDE_INTERVAL);
-    }
-
-    nextBtn?.addEventListener('click', nextSlide);
-    prevBtn?.addEventListener('click', prevSlide);
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => goToSlide(index));
-    });
-
-    resetInterval();
-
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.addEventListener('mouseenter', () => clearInterval(slideInterval));
-        hero.addEventListener('mouseleave', resetInterval);
-    }
-}
-
-// ==============================
 // INIT GENERAL
 // ==============================
-window.addEventListener("DOMContentLoaded", async () => {
-    await loadHeaderFooter(); // ⬅️ header primero
-    initSlider();             // luego hero
+window.addEventListener("DOMContentLoaded", () => {
+    loadHeader();
+    loadFooter();
+    setYear();
 });

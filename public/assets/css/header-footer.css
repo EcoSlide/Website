@@ -29,7 +29,6 @@ a{
 }
 
 .container{
-    max-width: var(--container);
     margin: 0 4%;
     padding: 0 22px;
 }
@@ -349,7 +348,7 @@ a{
     display:grid;
     grid-template-columns: 1.4fr 1fr 1.3fr 1.3fr;
     gap: 3vw;
-    padding-bottom: 42px;
+    padding: 2em;
 }
 
 .footer__brand{
@@ -384,7 +383,7 @@ a{
 
 .footer__text{
     margin: 0 0 14px 0;
-    font-size: 1rem;
+    font-size: .75em;
     line-height: 1.7;
     color: rgba(255,255,255,.65);
     max-width: 40ch;
@@ -401,10 +400,9 @@ a{
 }
 .footer__links a{
     color: rgba(130, 190, 165, .85);
-    font-weight: 600;
 }
 .footer__links a:hover{
-    color: rgba(170, 230, 200, .95);
+    color: rgba(196, 245, 221, 0.95);
 }
 
 .footer__badges{
