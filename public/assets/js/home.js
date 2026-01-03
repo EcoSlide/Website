@@ -3,7 +3,7 @@
 // ==============================
 let currentSlide = 0;
 let slideInterval;
-const SLIDE_INTERVAL = 5000; // 5 segundos
+const SLIDE_INTERVAL = 3000; // 3 segundos
 
 
 // ==============================
@@ -14,11 +14,10 @@ async function loadHeader() {
     if (!mount) return;
 
     try {
-        const basePath = window.location.pathname.includes('pages/') ? '../' : '/';
-        const res = await fetch(`${basePath}pages/header.html`);
+        const res = await fetch("/public/pages/header.html");
         mount.innerHTML = await res.text();
 
-        initNavbar(); // inicializa navbar luego de cargar HTML
+        initNavbar(); // 👈 inicializa navbar luego de cargar HTML
     } catch (e) {
         console.error("Header load failed:", e);
     }
@@ -85,8 +84,8 @@ function initNavbar() {
             const isHome =
                 linkPath.endsWith("/index.html") &&
                 (currentPath.endsWith("/") ||
-                 currentPath.endsWith("/index.html") ||
-                 currentPath === "");
+                currentPath.endsWith("/index.html") ||
+                currentPath === "");
 
             const isMatch = linkPath === currentPath || isHome;
 
@@ -129,8 +128,7 @@ async function loadFooter() {
     if (!mount) return;
 
     try {
-        const basePath = window.location.pathname.includes('pages/') ? '../' : '/';
-        const res = await fetch(`${basePath}pages/footer.html`);
+        const res = await fetch("./pages/footer.html");
         mount.innerHTML = await res.text();
     } catch (e) {
         console.error("Footer load failed:", e);
