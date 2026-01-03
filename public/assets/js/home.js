@@ -17,7 +17,7 @@ async function loadHeaderFooter() {
 
     try {
         // Ruta correcta según tu estructura
-        const res = await fetch("./pages/HF_Home.html");
+        const res = await fetch("pages/HF_Home.html");
         const htmlText = await res.text();
 
         // Parsear el HTML
