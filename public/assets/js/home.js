@@ -208,6 +208,70 @@ function initSlider() {
 }
 
 // ==============================
+// CARRUSEL PROBLEM
+// ==============================
+function initProblemCarousel() {
+    const track = document.querySelector('.problem__media .carousel-track');
+    const slides = document.querySelectorAll('.problem__media .carousel-slide');
+    const dots = document.querySelectorAll('.problem__media .carousel-dot');
+    
+    if (!track || slides.length === 0) return;
+
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        // Update slides
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
+    }
+
+    function startCarousel() {
+        slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function stopCarousel() {
+        clearInterval(slideInterval);
+    }
+
+    // Add click event to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            stopCarousel();
+            startCarousel();
+        });
+    });
+
+    // Start the carousel
+    showSlide(0);
+    startCarousel();
+
+    // Pause on hover
+    track.addEventListener('mouseenter', stopCarousel);
+    track.addEventListener('mouseleave', startCarousel);
+}
+
+// Call this function when the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Your existing initialization code
+    initProblemCarousel(); // Add this line
+});
+
+// ==============================
 // INIT GENERAL
 // ==============================
 window.addEventListener("DOMContentLoaded", async () => {

@@ -382,6 +382,139 @@ html, body{
     font-size: 13px;
 }
 
+/* THE PROBLEM */
+.problem{
+    padding: 64px 0;
+}
+
+.problem__container{
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* Problem Section Carousel */
+.problem__media {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 400px; /* Adjust height as needed */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: #2f6b4a;
+    transform: scale(1.2);
+}
+
+.carousel-dot:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(47, 107, 74, 0.5);
+}
+
+.problem__overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,.45), rgba(0,0,0,.10));
+}
+
+.problem__content{
+    border-radius: 18px;
+    padding: 28px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.problem__eyebrow{
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    opacity: .7;
+}
+
+.problem__content h2{
+    margin: 0 0 12px;
+    line-height: 1.15;
+}
+
+.problem__content p{
+    margin: 0 0 16px;
+    line-height: 1.6;
+}
+
+.problem__list{
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px){
+    .problem__container{
+        grid-template-columns: 1fr;
+    }
+    .problem__media{
+        min-height: 260px;
+    }
+}
+
 /* Steps */
 .steps{ display:grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-top: 18px; }
 .step{
