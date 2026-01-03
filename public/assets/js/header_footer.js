@@ -7,23 +7,42 @@ const SLIDE_INTERVAL = 5000; // 5 segundos
 
 
 // ==============================
-// CARGAR HEADER
+// CARGAR HEADER + FOOTER (HF_Home.html)
 // ==============================
-async function loadHeader() {
-    const mount = document.getElementById("siteHeader");
-    if (!mount) return;
+async function loadHeaderFooter() {
+    const headerMount = document.getElementById("siteHeader");
+    const footerMount = document.getElementById("siteFooter");
+
+    if (!headerMount && !footerMount) return;
 
     try {
-        const basePath = window.location.pathname.includes('pages/') ? '../' : '/';
-        const res = await fetch(`pages/header.html`);
-        mount.innerHTML = await res.text();
+        // Ruta correcta según tu estructura
+        const res = await fetch("../pages/header_footer.html");
+        const htmlText = await res.text();
 
-        initNavbar(); // inicializa navbar luego de cargar HTML
-    } catch (e) {
-        console.error("Header load failed:", e);
+        // Parsear el HTML
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, "text/html");
+
+        const header = doc.querySelector(".headerHome");
+        const footer = doc.querySelector(".footerHome");
+
+        if (headerMount && header) {
+        headerMount.innerHTML = header.innerHTML;
+        }
+
+        if (footerMount && footer) {
+        footerMount.innerHTML = footer.innerHTML;
+        }
+
+        // Inicializaciones que dependen del header/footer
+        initNavbar();
+        setYear();
+
+    } catch (err) {
+        console.error("Error loading HF_Home.html:", err);
     }
 }
-
 
 // ==============================
 // NAVBAR + MOBILE + SEARCH
@@ -120,24 +139,6 @@ function initNavbar() {
     });
 }
 
-
-// ==============================
-// CARGAR FOOTER
-// ==============================
-async function loadFooter() {
-    const mount = document.getElementById("siteFooter");
-    if (!mount) return;
-
-    try {
-        const basePath = window.location.pathname.includes('pages/') ? '../' : '/';
-        const res = await fetch(`${basePath}pages/footer.html`);
-        mount.innerHTML = await res.text();
-    } catch (e) {
-        console.error("Footer load failed:", e);
-    }
-}
-
-
 // ==============================
 // AÑO AUTOMÁTICO
 // ==============================
@@ -149,8 +150,7 @@ function setYear() {
 // ==============================
 // INIT GENERAL
 // ==============================
-window.addEventListener("DOMContentLoaded", () => {
-    loadHeader();
-    loadFooter();
-    setYear();
+window.addEventListener("DOMContentLoaded", async () => {
+    await loadHeaderFooter(); // ⬅️ header primero
+    initSlider();             // luego hero
 });
