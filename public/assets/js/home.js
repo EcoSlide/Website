@@ -9,15 +9,28 @@ const SLIDE_INTERVAL = 3000; // 3 segundos
 // ==============================
 // CARGAR HEADER
 // ==============================
+function getBasePath() {
+    // Get the current script path
+    const scripts = document.getElementsByTagName('script');
+    const currentScript = scripts[scripts.length - 1].src;
+    
+    // If we're in a pages subdirectory, go up one level
+    if (window.location.pathname.includes('/pages/')) {
+        return '../';
+    }
+    return './';
+}
+
 async function loadHeader() {
     const mount = document.getElementById("siteHeader");
     if (!mount) return;
 
     try {
-        const res = await fetch("/public/pages/header.html");
+        const basePath = getBasePath();
+        const res = await fetch(`${basePath}pages/header.html`);
         mount.innerHTML = await res.text();
 
-        initNavbar(); // 👈 inicializa navbar luego de cargar HTML
+        initNavbar(); // 
     } catch (e) {
         console.error("Header load failed:", e);
     }
@@ -128,7 +141,8 @@ async function loadFooter() {
     if (!mount) return;
 
     try {
-        const res = await fetch("./pages/footer.html");
+        const basePath = getBasePath();
+        const res = await fetch(`${basePath}pages/footer.html`);
         mount.innerHTML = await res.text();
     } catch (e) {
         console.error("Footer load failed:", e);
