@@ -1,147 +1,216 @@
-// Variables globales para el carrusel
+// ==============================
+// VARIABLES GLOBALES CARRUSEL
+// ==============================
 let currentSlide = 0;
 let slideInterval;
 const SLIDE_INTERVAL = 5000; // 5 segundos
 
-// Función para cargar el encabezado
+
+// ==============================
+// CARGAR HEADER
+// ==============================
 async function loadHeader() {
     const mount = document.getElementById("siteHeader");
     if (!mount) return;
 
     try {
-        const res = await fetch("./pages/header.html");
+        const basePath = window.location.pathname.includes('pages/') ? '../' : '/';
+        const res = await fetch(`${basePath}pages/header.html`);
         mount.innerHTML = await res.text();
 
-        // Burger menu
-        const burger = document.getElementById("burger");
-        const mobileMenu = document.getElementById("mobileMenu");
-
-        if (burger && mobileMenu) {
-            burger.addEventListener("click", () => {
-                const isOpen = mobileMenu.classList.toggle("is-open");
-                burger.setAttribute("aria-expanded", String(isOpen));
-            });
-        }
+        initNavbar(); // inicializa navbar luego de cargar HTML
     } catch (e) {
         console.error("Header load failed:", e);
     }
 }
 
-//Función para cargar el footer
+
+// ==============================
+// NAVBAR + MOBILE + SEARCH
+// ==============================
+function initNavbar() {
+    const burger = document.getElementById("burger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    const desktopNav = document.querySelector(".nav");
+    const desktopSearch = document.querySelector(".search-container");
+
+    const mobileSearchSlot = document.getElementById("mobileSearchSlot");
+    const mobileLinksSlot = document.getElementById("mobileLinksSlot");
+
+    // --- Burger toggle ---
+    if (burger && mobileMenu) {
+        burger.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.toggle("is-open");
+            burger.setAttribute("aria-expanded", String(isOpen));
+        });
+    }
+
+    // --- Clonar buscador a mobile ---
+    if (desktopSearch && mobileSearchSlot) {
+        mobileSearchSlot.innerHTML = "";
+        const searchClone = desktopSearch.cloneNode(true);
+        searchClone.classList.add("is-mobile");
+        mobileSearchSlot.appendChild(searchClone);
+    }
+
+    // --- Clonar links desktop → mobile ---
+    if (desktopNav && mobileLinksSlot) {
+        mobileLinksSlot.innerHTML = "";
+
+        const desktopLinks = desktopNav.querySelectorAll(".nav__link");
+        desktopLinks.forEach(link => {
+            const a = document.createElement("a");
+            a.className = "mobile-menu__link";
+            a.href = link.getAttribute("href");
+            a.textContent = link.textContent;
+            mobileLinksSlot.appendChild(a);
+        });
+    }
+
+    // --- Active link (robusto) ---
+    const currentPath = new URL(window.location.href).pathname.replace(/\/$/, "");
+    const allLinks = document.querySelectorAll(".nav__link, .mobile-menu__link");
+
+    function setActiveLink() {
+        let matched = false;
+
+        allLinks.forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("#")) return;
+
+            const linkPath = new URL(href, window.location.href)
+                .pathname.replace(/\/$/, "");
+
+            const isHome =
+                linkPath.endsWith("/index.html") &&
+                (currentPath.endsWith("/") ||
+                 currentPath.endsWith("/index.html") ||
+                 currentPath === "");
+
+            const isMatch = linkPath === currentPath || isHome;
+
+            link.classList.toggle("is-active", isMatch);
+            if (isMatch) matched = true;
+        });
+
+        // fallback Home
+        if (!matched) {
+            const homeLink = Array.from(allLinks).find(a => {
+                const p = new URL(a.getAttribute("href"), window.location.href).pathname;
+                return p.endsWith("/index.html");
+            });
+            homeLink?.classList.add("is-active");
+        }
+    }
+
+    setActiveLink();
+
+    // --- Click: activar y cerrar mobile ---
+    allLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            allLinks.forEach(l => l.classList.remove("is-active"));
+            link.classList.add("is-active");
+
+            if (mobileMenu?.classList.contains("is-open")) {
+                mobileMenu.classList.remove("is-open");
+                burger?.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
+}
+
+
+// ==============================
+// CARGAR FOOTER
+// ==============================
 async function loadFooter() {
     const mount = document.getElementById("siteFooter");
     if (!mount) return;
 
     try {
-        const res = await fetch("./pages/footer.html");
+        const basePath = window.location.pathname.includes('pages/') ? '../' : '/';
+        const res = await fetch(`${basePath}pages/footer.html`);
         mount.innerHTML = await res.text();
     } catch (e) {
         console.error("Footer load failed:", e);
     }
 }
 
-// Función para configurar el año actual
+
+// ==============================
+// AÑO AUTOMÁTICO
+// ==============================
 function setYear() {
     const el = document.getElementById("year");
     if (el) el.textContent = String(new Date().getFullYear());
 }
 
-// Funcionalidad del carrusel
+
+// ==============================
+// CARRUSEL HERO
+// ==============================
 function initSlider() {
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-dot');
     const prevBtn = document.querySelector('.hero-control.prev');
     const nextBtn = document.querySelector('.hero-control.next');
-    
+
     if (slides.length === 0) return;
 
-    // Mostrar el primer slide
     slides[0].classList.add('active');
     if (dots.length > 0) dots[0].classList.add('active');
 
-    // Función para cambiar de slide
     function goToSlide(index) {
-        // Si el índice está fuera de rango, ajustar
-        if (index >= slides.length) {
-            index = 0;
-        } else if (index < 0) {
-            index = slides.length - 1;
-        }
-        
-        // Actualizar el slide actual
+        if (index >= slides.length) index = 0;
+        if (index < 0) index = slides.length - 1;
+
         currentSlide = index;
-        
-        // Actualizar las clases de los slides
-        slides.forEach((slide, i) => {
-            if (i === index) {
-                slide.classList.add('active');
-            } else {
-                slide.classList.remove('active');
-            }
-        });
-        
-        // Actualizar los puntos de navegación
-        dots.forEach((dot, i) => {
-            if (i === index) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-        
-        // Reiniciar el temporizador
+
+        slides.forEach((slide, i) =>
+            slide.classList.toggle('active', i === index)
+        );
+
+        dots.forEach((dot, i) =>
+            dot.classList.toggle('active', i === index)
+        );
+
         resetInterval();
     }
-    
-    // Función para ir al siguiente slide
+
     function nextSlide() {
         goToSlide(currentSlide + 1);
     }
-    
-    // Función para ir al slide anterior
+
     function prevSlide() {
         goToSlide(currentSlide - 1);
     }
-    
-    // Función para reiniciar el intervalo de transición
+
     function resetInterval() {
         clearInterval(slideInterval);
         slideInterval = setInterval(nextSlide, SLIDE_INTERVAL);
     }
-    
-    // Event listeners para los botones de navegación
-    if (nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
-    }
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', prevSlide);
-    }
-    
-    // Event listeners para los puntos de navegación
+
+    nextBtn?.addEventListener('click', nextSlide);
+    prevBtn?.addEventListener('click', prevSlide);
+
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-        });
+        dot.addEventListener('click', () => goToSlide(index));
     });
-    
-    // Iniciar el carrusel automático
+
     resetInterval();
-    
-    // Pausar el carrusel cuando el mouse está sobre él
+
     const hero = document.querySelector('.hero');
     if (hero) {
-        hero.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
-        
-        hero.addEventListener('mouseleave', () => {
-            resetInterval();
-        });
+        hero.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        hero.addEventListener('mouseleave', resetInterval);
     }
 }
 
-// Inicializar todo cuando el DOM esté listo
+
+// ==============================
+// INIT GENERAL
+// ==============================
 window.addEventListener("DOMContentLoaded", () => {
     loadHeader();
     loadFooter();
