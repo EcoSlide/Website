@@ -80,7 +80,7 @@ function initNavbar() {
 
         // FIX: asegurar action correcto SIEMPRE
         const form = searchClone.querySelector("form.search-form");
-    if (form) form.setAttribute("action", "../pages/search.html");
+        if (form) form.setAttribute("action", "../pages/search.html");
         mobileSearchSlot.appendChild(searchClone);
     }
 
@@ -163,6 +163,5 @@ function setYear() {
 // ==============================
 window.addEventListener("DOMContentLoaded", async () => {
     await loadHeaderFooter(); // ⬅️ header primero
-    initSlider();             // luego hero
 });
 document.addEventListener("DOMContentLoaded", initNavbar);

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EcoSlides</title>
+    <title>EcoSlides - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- CSS for header and footer -->
     <link rel="stylesheet" href="../assets/css/header-footer.css">
@@ -21,149 +22,264 @@
     <div id="siteHeader"></div>
 
     <main>
-        <!-- HERO ABOUT -->
-        <section class="hero hero--about" aria-label="About EcoSlides">
-        <div class="hero__bg hero__bg--about"></div>
-        <div class="container hero__content hero__content--about">
-            <h1 class="hero__title">About EcoSlides</h1>
-            <p class="hero__subtitle">
-            Driven by sustainability, inspired by culture, and built for everyday comfort.
-            </p>
-        </div>
+        <!-- HERO -->
+        <section class="about-hero" aria-label="About EcoSlides hero">
+            <div class="container about-hero__container">
+                <div class="about-hero__content">
+                    <p class="eyebrow">ABOUT ECOSLIDES</p>
+                    <h1>Built from waste.<br>Designed for everyday movement.</h1>
+                    <p class="lead">
+                    We turn discarded tires into durable, comfortable slides made with purpose,
+                    shaped through hands-on testing, and crafted with a low-impact mindset.
+                    </p>
+
+                    <div class="about-hero__actions">
+                    <a class="btn btn-primary" href="#story">Our Story</a>
+                    <a class="btn btn-secondary" href="./contact.html">Contact the Team</a>
+                </div>
+
+                <div class="about-hero__badges" aria-label="Key highlights">
+                <span class="badge">Recycled tire rubber</span>
+                <span class="badge">Durable & comfortable</span>
+                <span class="badge">Local craftsmanship</span>
+                </div>
+            </div>
+
+            <div class="about-hero__media" role="img" aria-label="EcoSlides product in use">
+                <!-- Reemplaza por una imagen fuerte para About -->
+                <img src="../assets/img/Fotos/pies_chancleta.png" alt="EcoSlides in use" />
+            </div>
+            </div>
         </section>
 
-        <!-- OUR STORY -->
-        <section class="section" id="story">
-        <div class="container two-col">
-            <div>
-            <h2 class="h2">Our Story</h2>
-            <p class="p">
-                EcoSlides was born from a simple idea: give discarded tires a second life while creating
-                comfortable, durable slides for everyday use.
-            </p>
-            <p class="p">
-                During a trip, we saw tires scattered in places they don’t belong. That moment made the
-                problem feel real—and inspired us to transform waste into something useful.
-            </p>
-            <p class="p">
-                Today, we combine recycled materials, hands-on craftsmanship, and design to deliver a product
-                that supports both people and the planet.
-            </p>
-            </div>
+        <!-- STORY -->
+        <section class="section" id="story" aria-label="Our story">
+            <div class="container">
+                <div class="section__head">
+                    <p class="eyebrow">OUR STORY</p>
+                    <h2>From a local problem to a practical solution</h2>
+                    <p class="sub">
+                    EcoSlides began with one question: why do so many tires become waste when the material is built to last?
+                    </p>
+                </div>
 
-            <div class="media">
-            <img src="/assets/img/about-story.jpg" alt="EcoSlides story">
+                <div class="story">
+                    <div class="story__text card">
+                        <p>
+                            In many communities, discarded tires pile up, get burned, or end up in nature creating pollution and long-term damage.
+                            Tire waste is tough, bulky, and slow to break down.
+                        </p>
+                        <p>
+                            We wanted to build something practical and affordable: footwear that gives rubber a second life, while supporting local
+                            craftsmanship and responsible production.
+                        </p>
+                        <p>
+                            Today, EcoSlides prototypes evolve through hands-on testing and continuous improvement focused on comfort, durability,
+                            and low-impact materials.
+                        </p>
+                    </div>
+
+                    <div class="timeline card" style="border-radius: var(--radius); box-shadow: 0 10px 28px rgba(0,0,0,.06); border: 1px solid rgba(0,0,0,.04);" aria-label="EcoSlides milestones">
+                        <h3>Milestones</h3>
+
+                        <div class="timeline__item">
+                            <div class="dot" aria-hidden="true"></div>
+                            <div>
+                            <p class="timeline__title">Idea & research</p>
+                            <p class="timeline__desc">We studied the tire waste problem and explored how rubber can be safely repurposed.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline__item">
+                            <div class="dot" aria-hidden="true"></div>
+                            <div>
+                            <p class="timeline__title">Prototyping</p>
+                            <p class="timeline__desc">We built and tested multiple versions to improve comfort, grip, and durability.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline__item">
+                            <div class="dot" aria-hidden="true"></div>
+                            <div>
+                            <p class="timeline__title">Refinement</p>
+                            <p class="timeline__desc">We iterate on fit, finish, and process to reduce waste and boost quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
         </section>
 
-        <!-- MISSION & VISION -->
-        <section class="section section--light" id="mission-vision">
-        <div class="container">
-            <div class="section__head">
-            <h2 class="h2">Mission & Vision</h2>
-            <p class="p section__sub">
-                We exist to reduce waste and create value through circular design.
-            </p>
-            </div>
+        <!-- MISSION / VISION / VALUES -->
+        <section class="section section--soft" style="background-color: #f5f5f5;" aria-label="Mission vision values">
+            <div class="container">
+                <div class="section__head">
+                    <p class="eyebrow">OUR MISSION</p>
+                    <h2>Purpose that guides every pair</h2>
+                    <p class="sub">Mission, vision, and values that shape EcoSlides.</p>
+                </div>
 
-            <div class="cards-2">
-            <div class="card">
-                <h3 class="h3">Our Mission</h3>
-                <p class="p">
-                To transform environmental challenges into sustainable solutions by converting discarded tires
-                into durable footwear, while supporting local craftsmanship and meaningful work.
-                </p>
-            </div>
+                <div class="mvv-circles" role="list">
+                    <!-- Mission -->
+                    <article class="mvv-circle mvv-circle--mission" role="listitem">
+                        <div class="mvv-circle__ring" aria-hidden="true"></div>
+                        <div class="mvv-circle__inner">
+                            <div class="mvv-circle__icon" aria-hidden="true">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <h3>Mission</h3>
+                            <p>
+                                Transform tire waste into durable, comfortable footwear that supports circular economy and local craftsmanship.
+                            </p>
+                        </div>
+                    </article>
 
-            <div class="card">
-                <h3 class="h3">Our Vision</h3>
-                <p class="p">
-                To lead the transition toward circular, eco-friendly footwear—where innovation, sustainability,
-                and community impact walk together across the world.
-                </p>
-            </div>
-            </div>
+                    <!-- Vision -->
+                    <article class="mvv-circle mvv-circle--vision" role="listitem">
+                        <div class="mvv-circle__ring" aria-hidden="true"></div>
+                        <div class="mvv-circle__inner">
+                            <div class="mvv-circle__icon" aria-hidden="true">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h3>Vision</h3>
+                            <p>
+                                A future where everyday products are designed with less waste, longer life cycles, and real community impact.
+                            </p>
+                        </div>
+                    </article>
 
-            <div class="values">
-            <div class="value">
-                <div class="value__icon">♻️</div>
-                <div class="value__text">
-                <strong>Sustainability</strong>
-                <span>We reduce waste and keep materials in use.</span>
+                    <!-- Values -->
+                    <article class="mvv-circle mvv-circle--values" role="listitem">
+                        <div class="mvv-circle__ring" aria-hidden="true"></div>
+                        <div class="mvv-circle__inner">
+                            <div class="mvv-circle__icon" aria-hidden="true">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h3>Values</h3>
+                            <ul>
+                                <li>Circular design</li>
+                                <li>Local craftsmanship</li>
+                                <li>Comfort & durability</li>
+                                <li>Accessible impact</li>
+                                <li>Continuous improvement</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
             </div>
-
-            <div class="value">
-                <div class="value__icon">🦶</div>
-                <div class="value__text">
-                <strong>Durability</strong>
-                <span>Built to last with tough recycled rubber soles.</span>
-                </div>
-            </div>
-
-            <div class="value">
-                <div class="value__icon">🤝</div>
-                <div class="value__text">
-                <strong>Community</strong>
-                <span>We support local production and responsible growth.</span>
-                </div>
-            </div>
-
-            <div class="value">
-                <div class="value__icon">✨</div>
-                <div class="value__text">
-                <strong>Design</strong>
-                <span>Minimal, functional, and inspired by everyday life.</span>
-                </div>
-            </div>
-            </div>
-        </div>
         </section>
 
         <!-- TEAM -->
-        <section class="section" id="team">
-        <div class="container">
-            <div class="section__head">
-            <h2 class="h2">Our Team</h2>
-            <p class="p section__sub">
-                Founded by two friends who share a passion for sustainability and innovation.
-            </p>
-            </div>
+        <section class="section" aria-label="Team">
+            <div class="container">
+                <div class="section__head">
+                    <p class="eyebrow">THE TEAM</p>
+                    <h2>People behind EcoSlides</h2>
+                    <p class="sub">Small team. Big purpose. Built through collaboration and iteration.</p>
+                </div>
 
-            <div class="team-grid">
-            <article class="team-card">
-                <img src="/assets/img/team-1.jpg" alt="Iago Arango">
-                <h3 class="h3">Iago Arango</h3>
-                <p class="team-card__role">Co-Founder</p>
-                <p class="p">
-                Focused on sustainable product design and turning waste into everyday solutions.
-                </p>
-            </article>
+                <div class="team team--grid">
+                <!-- Card 1 -->
+                    <article class="team-card team-card--profile">
+                        <div class="team-card__avatar">
+                            <img src="../assets/img/Fotos/lorenzo.jpeg" alt="Lorenzo Romagosa" />
+                        </div>
 
-            <article class="team-card">
-                <img src="/assets/img/team-2.jpg" alt="Lorenzo Romagos">
-                <h3 class="h3">Lorenzo Romagos</h3>
-                <p class="team-card__role">Co-Founder</p>
-                <p class="p">
-                Driven by innovation, operations, and community impact through circular design.
-                </p>
-            </article>
-            </div>
+                        <h3 class="team-card__name">Lorenzo Romagosa</h3>
+                        <p class="team-card__role">Co-Founder • Product &amp; Design</p>
 
-            <div class="about-cta">
-            <div>
-                <h3 class="h3 about-cta__title">Want to collaborate or learn more?</h3>
-                <p class="p about-cta__sub">We’d love to hear from you.</p>
+                        <p class="team-card__desc">
+                            Focused on prototyping, comfort testing, and design improvements turning ideas into wearable products.
+                        </p>
+
+                        <div class="team-card__social" aria-label="Social links">
+                            <!-- Pon tus links reales cuando los tengas -->
+                            <a class="social" href="#" aria-label="Facebook">f</a>
+                            <a class="social" href="#" aria-label="Twitter">x</a>
+                            <a class="social" href="#" aria-label="Instagram">◎</a>
+                            <a class="social" href="#" aria-label="LinkedIn">in</a>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="team-card team-card--profile">
+                        <div class="team-card__avatar">
+                            <img src="../assets/img/Fotos/Iago.jpeg" alt="Iago Arango" />
+                        </div>
+
+                        <h3 class="team-card__name">Iago Arango</h3>
+                        <p class="team-card__role">Co-Founder • Operations &amp; Impact</p>
+
+                        <p class="team-card__desc">
+                            Leads sourcing, process optimization, and impact planning keeping the innovation practical and scalable.
+                        </p>
+
+                        <div class="team-card__social" aria-label="Social links">
+                            <a class="social" href="#" aria-label="Facebook">f</a>
+                            <a class="social" href="#" aria-label="Twitter">x</a>
+                            <a class="social" href="#" aria-label="Instagram">◎</a>
+                            <a class="social" href="#" aria-label="LinkedIn">in</a>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="about-cta__actions">
-                <a class="btn" href="mailto:info.ecoslide@gmail.com">Email us</a>
-                <a class="btn btn--outline-dark" href="index.html#prototypes">View prototypes</a>
-            </div>
-            </div>
-        </div>
         </section>
-    </main>
+
+
+        <!-- DIFFERENTIATORS / BRAND -->
+        <section class="section section--soft" style="background-color: #f5f5f5;" aria-label="What makes EcoSlides different">
+            <div class="container">
+            <div class="section__head">
+                <p class="eyebrow">WHY ECOSLIDES</p>
+                <h2>What makes us different</h2>
+                <p class="sub">A simple process, strong materials, and a product designed to last.</p>
+            </div>
+
+            <div class="features">
+                <article class="feature card">
+                <div class="icon" aria-hidden="true">♻️</div>
+                <h3>Waste to value</h3>
+                <p>We repurpose discarded tire rubber into long-lasting soles.</p>
+                </article>
+
+                <article class="feature card">
+                <div class="icon" aria-hidden="true">🦶</div>
+                <h3>Comfort first</h3>
+                <p>We refine fit and cushioning through real testing and iteration.</p>
+                </article>
+
+                <article class="feature card">
+                <div class="icon" aria-hidden="true">🔧</div>
+                <h3>Crafted locally</h3>
+                <p>Built with practical tools and processes, supporting local production.</p>
+                </article>
+
+                <article class="feature card">
+                <div class="icon" aria-hidden="true">🔁</div>
+                <h3>Circular mindset</h3>
+                <p>Designed to extend material life and reduce environmental impact.</p>
+                </article>
+            </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="about-cta" aria-label="Call to action">
+            <div class="container about-cta__container">
+            <h2>Want to see the innovation in action?</h2>
+            <p>
+                Explore how EcoSlides works from materials to process and why recycled tires can become everyday value.
+            </p>
+            <div class="about-cta__actions">
+                <a class="btn btn-primary" href="./solution.html">Explore the Solution</a>
+                <a class="btn btn-secondary" href="./impact.html">See the Impact</a>
+            </div>
+            </div>
+        </section>
+
+        </main>
+
     
     <!-- Footer section -->
     <div id="siteFooter"></div>
