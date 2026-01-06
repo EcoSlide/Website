@@ -20,11 +20,25 @@
     <!-- Header section -->
     <div id="siteHeader"></div>
 
-    <main>
-        SEARCH
+    <main class="search-page">
+        <div class="container">
+            <h1>Search</h1>
+            <p class="hint">Search across EcoSlides pages, sections, and navigation text.</p>
+
+            <form class="search-box" id="searchForm">
+                <input id="q" name="q" type="search" placeholder="Type a keyword..." aria-label="Search query">
+                <button type="submit">Search</button>
+            </form>
+
+            <div id="status"></div>
+            <div class="results" id="results"></div>
+        </div>
     </main>
     
     <!-- Footer section -->
     <div id="siteFooter"></div>
+
+    <!-- js external -->
+    <script src="../assets/js/search.js"></script>
 </body>
 </html>

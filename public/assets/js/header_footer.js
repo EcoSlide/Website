@@ -73,6 +73,17 @@ function initNavbar() {
         mobileSearchSlot.appendChild(searchClone);
     }
 
+    if (desktopSearch && mobileSearchSlot) {
+        mobileSearchSlot.innerHTML = "";
+        const searchClone = desktopSearch.cloneNode(true);
+        searchClone.classList.add("is-mobile");
+
+        // FIX: asegurar action correcto SIEMPRE
+        const form = searchClone.querySelector("form.search-form");
+    if (form) form.setAttribute("action", "../pages/search.html");
+        mobileSearchSlot.appendChild(searchClone);
+    }
+
     // --- Clonar links desktop → mobile ---
     if (desktopNav && mobileLinksSlot) {
         mobileLinksSlot.innerHTML = "";
@@ -154,3 +165,4 @@ window.addEventListener("DOMContentLoaded", async () => {
     await loadHeaderFooter(); // ⬅️ header primero
     initSlider();             // luego hero
 });
+document.addEventListener("DOMContentLoaded", initNavbar);

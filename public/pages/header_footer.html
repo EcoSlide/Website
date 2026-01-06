@@ -27,9 +27,9 @@
             </nav>
 
             <div class="search-container">
-                <form class="search-form" action="../pages/search.html" method="GET" role="search"> 
-                    <input type="search" class="search-input" name="q" placeholder="Search..." aria-label="Search"> 
-                    <button type="submit" class="search-button" aria-label="Search"> 
+                <form class="search-form" action="../pages/search.html" method="GET">
+                    <input class="search-input" type="search" name="q" placeholder="Search..." aria-label="Search site">
+                    <button class="search-button" type="submit" aria-label="Search">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> 
                             <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> 
                             <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> 
@@ -47,8 +47,25 @@
         <!-- Menú móvil -->
 
         <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-            <div class="mobile-menu__search" id="mobileSearchSlot"></div>
-            <div class="mobile-menu__links" id="mobileLinksSlot"></div>
+            <div class="search-container">
+                <form class="search-form" action="../pages/search.html" method="GET">
+                    <input class="search-input" type="search" name="q" placeholder="Search..." aria-label="Search site">
+                    <button class="search-button" type="submit" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> 
+                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> 
+                    </svg> 
+                    </button> 
+                </form>
+            </div>
+
+            <!-- Menus -->
+            <a class="mobile-menu__link" href="../index.html">Home</a>
+            <a class="mobile-menu__link" href="../pages/aboutus.html">About Us</a>
+            <a class="mobile-menu__link" href="../pages/solution.html">Solution</a>
+            <a class="mobile-menu__link" href="../pages/impact.html">Impact</a>
+            <a class="mobile-menu__link" href="../pages/contact.html">Contact Us</a>
+
         </div>
     </header>
 </div>
