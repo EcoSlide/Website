@@ -1,13 +1,16 @@
+/* =========================
+  IMPACT PAGE
+========================= */
+
 /* HERO */
-.imp-hero{ 
+.imp-hero{
   padding: 3rem 0;
-  height: auto;
 }
 
-.imp-hero__container{ 
-  display:grid; 
-  gap: 22px; 
-  align-items:center; 
+.imp-hero__container{
+  display: grid;
+  gap: 22px;
+  align-items: center;
 }
 
 .imp-hero__content h1{
@@ -23,75 +26,144 @@
   opacity: .9;
 }
 
-.imp-hero__actions{ 
-  display:flex; 
-  gap: 12px; 
-  flex-wrap:wrap; 
-  margin-top: 14px; 
+.imp-hero__actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
 }
 
-.imp-hero__badges{ 
-  display:flex; 
-  gap:10px; 
-  flex-wrap:wrap; 
-  margin-top: 16px; 
+.imp-hero__badges{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 .imp-hero__media{
   border-radius: var(--radius);
-  overflow:hidden;
+  overflow: hidden;
   width: 100%;
 }
 
 .imp-hero__media img{
   width: 100%;
+  height: 100%;
+  display: block;
   object-fit: cover;
   object-position: right center;
 }
 
+
 /* PILLARS */
 .pillars{
   margin-top: 18px;
-  display:grid;
+  display: grid;
   gap: 16px;
 }
-.pillar{ padding: 18px; }
+
+.pillar{
+  padding: 18px;
+}
+
 .pillar__icon{
-  width: 52px; height:52px; border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   background: var(--green);
-  color:#fff;
-  display:grid; place-items:center;
+  color: #fff;
+  display: grid;
+  place-items: center;
   box-shadow: 0 12px 22px rgba(47,107,74,.20);
   margin-bottom: 10px;
 }
-.pillar h3{ margin:0 0 6px; color: var(--green); }
-.pillar p{ margin:0 0 10px; line-height:1.65; opacity:.9; }
-.pillar ul{ margin:0; padding-left: 18px; line-height: 1.9; opacity:.9; }
+
+.pillar h3{
+  margin: 0 0 6px;
+  color: var(--green);
+}
+
+.pillar p{
+  margin: 0 0 10px;
+  line-height: 1.65;
+  opacity: .9;
+}
+
+.pillar ul{
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.9;
+  opacity: .9;
+}
+
 
 /* METRICS */
 .metrics{
   margin-top: 18px;
-  display:grid;
+  display: grid;
   gap: 14px;
 }
-.metric{ padding: 16px; }
-.metric__top{
-  display:flex;
-  gap: 12px;
-  align-items:center;
+
+.metric{
+  padding: 22px;
 }
+
+.metric__top{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 0 0 12px;
+}
+
 .metric__icon{
-  width: 46px; height:46px; border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
   border: 3px solid rgba(47,107,74,.95);
   color: rgba(47,107,74,.95);
-  background:#fff;
-  display:grid; place-items:center;
-  flex-shrink:0;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
 }
-.metric__label{ margin:0; font-weight: 800; opacity:.75; }
-.metric__value{ margin:0; font-weight: 900; font-size: 1.6rem; color: var(--green); }
-.metric__desc{ margin: 10px 0 0; opacity:.9; line-height:1.6; }
-.metric__note{ margin: 8px 0 0; opacity:.85; }
+
+.metric__label{
+  margin: 0;
+  font-weight: 800;
+  opacity: .75;
+}
+
+.metric__value{
+  margin: 0;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--green);
+}
+
+.metric__desc{
+  margin: 0 0 10px;
+  opacity: .9;
+  line-height: 1.6;
+}
+
+/* 👇 Esto reemplaza tu p.metric__note con ul dentro */
+.metric__note{
+  margin-top: 10px;
+  opacity: .9;
+  line-height: 1.6;
+}
+
+.metric__note strong{
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.metric__note ul{
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.9;
+  opacity: .95;
+}
 
 .impact-note{
   margin-top: 16px;
@@ -100,31 +172,104 @@
   background: rgba(47,107,74,.08);
   border: 1px solid rgba(47,107,74,.14);
 }
-.impact-note p{ margin:0; line-height:1.6; }
+
+.impact-note p{
+  margin: 0;
+  line-height: 1.6;
+}
+
 
 /* ROADMAP */
 .roadmap{
   margin-top: 18px;
-  display:grid;
+  display: grid;
   gap: 14px;
 }
-.roadmap__item{ padding: 18px; }
+
+.roadmap__item{
+  padding: 18px;
+}
+
 .roadmap__time{
   margin: 0 0 8px;
   font-weight: 900;
   color: var(--green);
   opacity: .95;
 }
-.roadmap__item h3{ margin:0 0 8px; }
-.roadmap__item p{ margin:0; opacity:.9; line-height:1.65; }
+
+.roadmap__item h3{
+  margin: 0 0 8px;
+}
+
+.roadmap__item p{
+  margin: 0;
+  opacity: .9;
+  line-height: 1.65;
+}
+
+
+/* =========================
+  ANIMATIONS (ENTRADA + HOVER)
+========================= */
+
+/* Estado inicial (antes de entrar en viewport) */
+.card,
+.pillar,
+.metric,
+.roadmap__item,
+.impact-note{
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .6s ease, transform .6s ease, box-shadow .25s ease;
+  will-change: transform, opacity;
+}
+
+/* Estado visible */
+.is-visible{
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Hover sutil (solo desktop real) */
+@media (hover: hover) and (pointer: fine){
+  .card:hover,
+  .pillar:hover,
+  .metric:hover,
+  .roadmap__item:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0,0,0,.08);
+  }
+}
+
+/* Respeto a usuarios con "reduce motion" */
+@media (prefers-reduced-motion: reduce){
+  .card,
+  .pillar,
+  .metric,
+  .roadmap__item,
+  .impact-note{
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 
 /* Responsive */
 @media (min-width: 900px){
-  .imp-hero__container{ grid-template-columns: 1.05fr .95fr; }
+  .imp-hero__container{
+    grid-template-columns: 1.05fr .95fr;
+  }
 
-  .pillars{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .pillars{
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
 
-  .metrics{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .metrics{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
 
-  .roadmap{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .roadmap{
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
 }
