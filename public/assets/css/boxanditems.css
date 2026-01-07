@@ -1,0 +1,122 @@
+:root{
+    --green: #2f6b4a;
+    --green-2: #275a3e;
+    --radius: 16px;
+}
+
+/* Helpers */
+.eyebrow{
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .7;
+    margin: 0 0 10px;
+}
+
+.section{
+    padding: 3.2rem 0;
+}
+
+.section--soft{ 
+    background:#f5f5f5; 
+}
+
+.section__head h2{
+    margin: 0 0 10px;
+    line-height: 1.15;
+}
+
+.section__head .sub{
+    margin: 0;
+    max-width: 70ch;
+    opacity: .85;
+    line-height: 1.6;
+}
+
+.card{
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    border: 1px solid rgba(0,0,0,.04);
+    overflow: hidden;
+}
+
+/* Buttons */
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.btn-primary{
+    background: var(--green);
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background: var(--green-2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0,0,0,.12);
+}
+
+.btn-secondary{
+    border: 2px solid rgba(47,107,74,.35);
+    color: #fff;
+    background: transparent;
+}
+
+.btn-secondary:hover{
+    border-color: rgba(47,107,74,.55);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+
+/* Badges */
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(47,107,74,.18);
+    background: rgba(47,107,74,.10);
+    color: var(--green);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* ===== CTA ===== */
+.about-cta{
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #0f3d2e, #145a46);
+    color: #fff;
+}
+
+.about-cta__container{
+    text-align: center;
+}
+
+.about-cta__container h2{
+    margin: 0 0 10px;
+    font-size: clamp(22px, 3.2vw, 34px);
+}
+
+.about-cta__container p{
+    margin: 0 auto 18px;
+    max-width: 70ch;
+    line-height: 1.65;
+    opacity: .92;
+}
+
+.about-cta__actions{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
