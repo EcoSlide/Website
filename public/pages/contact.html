@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EcoSlides</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- CSS for header and footer -->
     <link rel="stylesheet" href="../assets/css/header-footer.css">
@@ -21,10 +22,157 @@
     <div id="siteHeader"></div>
 
     <main>
-        CONTACT
+        <main>
+
+  <!-- HERO -->
+  <section class="con-hero" aria-label="Contact hero">
+    <div class="container con-hero__container">
+      <div class="con-hero__content">
+        <p class="eyebrow">CONTACT</p>
+        <h1>Let’s connect</h1>
+        <p class="lead">
+          Interested in partnerships, feedback, or collaboration? Send us a message and we’ll get back to you.
+        </p>
+
+        <div class="con-hero__actions">
+          <a class="btn btn-primary" href="#contact-form">Send a message</a>
+          <a class="btn btn-secondary" href="../index.html">Back to Home</a>
+        </div>
+
+        <div class="con-hero__badges" aria-label="Quick contact options">
+          <span class="badge"><i class="fa-solid fa-envelope"></i> info.ecoslide@gmail.com</span>
+          <span class="badge"><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
+        </div>
+      </div>
+
+      <div class="con-hero__media card">
+        <!-- imagen sugerida: producto o equipo -->
+        <img src="../assets/img/Fotos/IAGO & LORENZO.png" alt="EcoSlides team" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section section--soft" aria-label="Contact form and info">
+    <div class="container con-grid">
+
+      <!-- FORM -->
+      <div class="con-form card" id="contact-form">
+        <h2>Send us a message</h2>
+        <p class="sub">We usually reply within 24–48 hours.</p>
+
+        <form class="form" id="contactForm">
+          <div class="form__row">
+            <label class="form__field">
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+
+            <label class="form__field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@email.com" required>
+            </label>
+          </div>
+
+          <label class="form__field">
+            <span>Subject</span>
+            <input type="text" name="subject" placeholder="Partnership / Feedback / Collaboration" required>
+          </label>
+
+          <label class="form__field">
+            <span>Message</span>
+            <textarea name="message" rows="6" placeholder="Tell us what you’re looking for..." required></textarea>
+          </label>
+
+          <div class="form__actions">
+            <button class="btn btn-primary" type="submit">
+              <i class="fa-solid fa-paper-plane"></i> Send
+            </button>
+
+            <button class="btn btn-secondary" type="button" id="sendWhatsApp">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </button>
+          </div>
+
+          <p class="form__note">
+            By sending, you agree to share this information only for contacting EcoSlides.
+          </p>
+        </form>
+      </div>
+
+      <!-- INFO / LINKS -->
+      <aside class="con-info">
+        <div class="card con-info__card">
+          <h2>Contact details</h2>
+
+          <ul class="con-list">
+            <li>
+              <span class="con-list__icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+              <div>
+                <p class="con-list__label">Email</p>
+                <a class="con-list__value" href="mailto:info.ecoslide@gmail.com">info.ecoslide@gmail.com</a>
+              </div>
+            </li>
+
+            <li>
+              <span class="con-list__icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
+              <div>
+                <p class="con-list__label">WhatsApp</p>
+                <a class="con-list__value" href="#" id="waLink">Open WhatsApp</a>
+              </div>
+            </li>
+
+            <li>
+              <span class="con-list__icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
+              <div>
+                <p class="con-list__label">Location</p>
+                <p class="con-list__value">Panama</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="con-social">
+            <a class="social" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="social" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a class="social" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+
+          <p class="small">
+            Tip: add your real social links when ready. Judges love seeing a brand presence.
+          </p>
+        </div>
+
+        <!-- Optional: small FAQ -->
+        <div class="card con-faq">
+          <h3>Quick questions</h3>
+
+          <details>
+            <summary>Do you accept partnerships?</summary>
+            <p>Yes — especially for recycling/sourcing, production support, and community initiatives.</p>
+          </details>
+
+          <details>
+            <summary>How can I support EcoSlides?</summary>
+            <p>Share feedback, connect us with local partners, or collaborate on pilot batches.</p>
+          </details>
+
+          <details>
+            <summary>Where are you based?</summary>
+            <p>Panama. We’re building locally with a focus on low-impact production.</p>
+          </details>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
     </main>
     
     <!-- Footer section -->
     <div id="siteFooter"></div>
+
+    <script src="../assets/js/contact.js"></script>
 </body>
 </html>

@@ -384,6 +384,129 @@
     }
 }
 
+/* =========================
+    WHY BAND (banner + icons row)
+========================= */
+.why-band{
+    padding: 3.2rem 0;
+}
+
+/* Banner */
+.why-band__visual{
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.why-band__image{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.why-band__banner{
+    border-radius: 18px;
+    padding: 1.4rem;
+    background:
+        linear-gradient(180deg, rgba(47,107,74,.12), rgba(47,107,74,.12));
+    text-align: center;
+}
+
+.why-band__quote{
+    position: relative;
+    margin: 0;
+    padding: 1.2rem;
+    text-align: center;
+    line-height: 1;
+    color: rgba(0,0,0,.78);
+}
+
+/* Head */
+.why-band__head{
+    margin-top: 22px;
+}
+
+.why-band__head h2{
+    margin: 0 0 10px;
+    line-height: 1.15;
+}
+
+.why-band__head .sub{
+    margin: 0;
+    opacity: .85;
+    line-height: 1.6;
+    max-width: 70ch;
+}
+
+/* Icon row */
+.why-band__row{
+    margin-top: 18px;
+    border-radius: 16px;
+    background: #f3faf6; /* suave verdoso */
+    border: 1px solid rgba(47,107,74,.12);
+    padding: 14px 14px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.why-band__item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 10px;
+}
+
+.why-band__icon{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 3px solid rgba(47,107,74,.95);
+    color: rgba(47,107,74,.95);
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.why-band__icon i{
+    font-size: 18px;
+}
+
+.why-band__text{
+    font-weight: 700;
+    color: rgba(0,0,0,.75);
+}
+
+/* Separators (desktop) */
+.why-band__sep{
+    display: none;
+    width: 1px;
+    background: rgba(0,0,0,.10);
+}
+
+/* Tablet/Desktop layout */
+@media (min-width: 900px){
+    .why-band__row{
+        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+        align-items: center;
+        gap: 0;
+        padding: 16px 18px;
+    }
+
+    .why-band__sep{
+        display: block;
+        height: 44px;
+        justify-self: center;
+    }
+
+    .why-band__item{
+        justify-content: center;
+        padding: 10px 8px;
+    }
+}
+
 /* ===== FEATURES ===== */
 .features{
     margin-top: 18px;
