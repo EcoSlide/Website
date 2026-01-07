@@ -56,11 +56,16 @@
 }
 
 /* FORM */
-.con-form{ padding: 18px; }
+.con-form{ padding: 18px; padding: 5%;}
 .con-form h2{ margin:0 0 6px; }
 .con-form .sub{ margin:0 0 14px; opacity:.85; }
 
-.form{ display:flex; flex-direction:column; gap: 12px; }
+.form{ 
+  display:flex; 
+  flex-direction:column; 
+  gap: 12px; 
+  margin: 2% 0;
+}
 
 .form__row{
   display:grid;
@@ -74,6 +79,7 @@
   gap: 6px;
   font-weight: 700;
   color: rgba(0,0,0,.75);
+  margin: 1% 0;
 }
 
 .form__field input,
@@ -111,7 +117,7 @@
 /* INFO */
 .con-info{ display:flex; flex-direction:column; gap: 14px; }
 .con-info__card{ padding: 18px; }
-.con-info__card h2{ margin:0 0 12px; }
+.con-info__card h2{ margin:0 0 5%; }
 
 .con-list{
   list-style:none;
@@ -126,6 +132,7 @@
   display:flex;
   gap: 10px;
   align-items:flex-start;
+  margin: 1% 0;
 }
 
 .con-list__icon{
@@ -139,15 +146,16 @@
   flex-shrink:0;
 }
 
-.con-list__label{ margin:0; font-weight:900; opacity:.7; }
+.con-list__label{ margin:0; font-weight:800; opacity:.7; }
 .con-list__value{ margin:0; opacity:.9; line-height:1.4; }
 
-.con-list a.con-list__value{ color: var(--green); text-decoration:none; font-weight:800; }
+.con-list a.con-list__value{ color: var(--green); text-decoration:none; font-weight:600; }
 
 .con-social{
   display:flex;
-  gap: 12px;
-  margin-top: 12px;
+  gap: 5%;
+  margin: 12px auto;
+  justify-content: center;
 }
 
 .con-social .social{
@@ -173,7 +181,7 @@
 }
 
 /* FAQ */
-.con-faq{ padding: 18px; }
+.con-faq{ padding: 20px; }
 .con-faq h3{ margin:0 0 10px; }
 .con-faq details{
   border-top: 1px solid rgba(0,0,0,.08);
