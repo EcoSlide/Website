@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EcoSlides</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- CSS for header and footer -->
     <link rel="stylesheet" href="assets/css/header-footer.css">
@@ -80,47 +81,77 @@
                 <div class="section__head">
                     <h2>The Problem</h2>
                     <p class="p section__sub">
-                        The world generates over 1 billion scrap tires annually, with less than 30% being recycled.
+                        The world generates over 1 billion scrap tires annually, with less than 10% being recycled.
                     </p>
                 </div>
                 
                 <div class="stats__grid">
+                    <!-- 1. Total tires -->
                     <div class="stat-card">
                         <div class="stat-card__inner">
                             <div class="stat-card__front">
-                                <div class="stat__value">280M+</div>
-                                <div class="stat__label">Tires discarded every year</div>
+                                <div class="stat__value">1B+</div>
+                                <div class="stat__label">Tires discarded<br>every year</div>
                                 <div class="stat__line"></div>
                             </div>
                             <div class="stat-card__back">
-                                <div class="stat__info">Millions of tires end up in landfills, oceans, or are burned, releasing toxic pollutants.</div>
+                                <div class="stat__info">
+                                    Billions of tires are discarded globally each year, creating a massive environmental burden.
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 2. Recycled -->
+                    <div class="stat-card">
+                        <div class="stat-card__inner">
+                            <div class="stat-card__front">
+                                <div class="stat__value">100M</div>
+                                <div class="stat__label">Tires recycled<br>each year</div>
+                                <div class="stat__line"></div>
+                            </div>
+                            <div class="stat-card__back">
+                                <div class="stat__info">
+                                    Only a small fraction of discarded tires are recycled into new products.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Microplastics -->
                     <div class="stat-card">
                         <div class="stat-card__inner">
                             <div class="stat-card__front">
                                 <div class="stat__value">78%</div>
-                                <div class="stat__label">Ocean microplastics<br>linked to tires</div>
+                                <div class="stat__label">Ocean microplastics<br>from tires</div>
                                 <div class="stat__line"></div>
                             </div>
                             <div class="stat-card__back">
-                                <div class="stat__info">Tire wear is the largest contributor to primary microplastics in the ocean.</div>
+                                <div class="stat__info">
+                                    Tire wear is the largest source of primary microplastics entering the oceans.
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 4. Landfills & illegal dumps -->
                     <div class="stat-card">
                         <div class="stat-card__inner">
                             <div class="stat-card__front">
-                                <div class="stat__value">600M</div>
-                                <div class="stat__label">People without<br>proper footwear</div>
+                                <div class="stat__value">882M</div>
+                                <div class="stat__label">Landfills &<br>illegal dumps</div>
                                 <div class="stat__line"></div>
                             </div>
                             <div class="stat-card__back">
-                                <div class="stat__info">Lack of access to footwear creates serious health and social challenges worldwide.</div>
+                                <div class="stat__info">
+                                    Most tires end up in landfills or illegal dumps, releasing toxic substances over time.
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                </div>
+
                 </div>
             </div>
         </section>
@@ -139,7 +170,7 @@
                                 <img src="assets/img/Fotos/Lorenzo_playa.png" alt="Tire pollution in the ocean">
                             </div>
                             <div class="carousel-slide">
-                                <img src="assets/img/Fotos/pies_chancleta.png" alt="Burning tires causing pollution">
+                                <img src="assets/img/Fotos/llanta__rio.jpeg" style="background-position: center;" alt="Burning tires causing pollution">
                             </div>
                         </div>
                         <div class="carousel-nav">
@@ -189,25 +220,25 @@
 
                 <div class="solution-preview__grid">
                     <article class="solution-card">
-                        <div class="solution-card__icon" aria-hidden="true">♻️</div>
+                        <div class="solution-card__icon" aria-hidden="true"><i class="fa-solid fa-recycle"></i></div>
                         <h3>Repurposes Tires</h3>
                         <p>Gives discarded rubber a second life through circular design.</p>
                     </article>
 
                     <article class="solution-card">
-                        <div class="solution-card__icon" aria-hidden="true">🦶</div>
+                        <div class="solution-card__icon" aria-hidden="true"><i class="fa-solid fa-shoe-prints"></i></div>
                         <h3>Built for Durability</h3>
                         <p>Long-lasting soles designed for daily wear and recovery.</p>
                     </article>
 
                     <article class="solution-card">
-                        <div class="solution-card__icon" aria-hidden="true">🤝</div>
+                        <div class="solution-card__icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
                         <h3>Made with Purpose</h3>
                         <p>Supports local craftsmanship and community-driven production.</p>
                     </article>
 
                     <article class="solution-card">
-                        <div class="solution-card__icon" aria-hidden="true">💸</div>
+                        <div class="solution-card__icon" aria-hidden="true"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                         <h3>Low-Cost Materials</h3>
                         <p>Key inputs are collection, transport, and cleaning—raw material is discarded tires.</p>
                     </article>
@@ -329,7 +360,7 @@
 
                 <div class="impact-preview__grid">
                     <article class="impact-card">
-                        <div class="impact-card__icon">♻️</div>
+                        <div class="impact-card__icon"><i class="fa-solid fa-recycle"></i></div>
                         <h3>Environmental</h3>
                         <p>
                         Reduces tire waste and helps prevent pollution caused by dumping and burning
@@ -338,7 +369,7 @@
                     </article>
 
                     <article class="impact-card">
-                        <div class="impact-card__icon">🤝</div>
+                        <div class="impact-card__icon"><i class="fa-solid fa-handshake"></i></div>
                         <h3>Social</h3>
                         <p>
                         Supports affordable footwear and creates opportunities through local and
@@ -347,7 +378,7 @@
                     </article>
 
                     <article class="impact-card">
-                        <div class="impact-card__icon">🔁</div>
+                        <div class="impact-card__icon"><i class="fa-solid fa-circle-dollar-to-slot"></i></div>
                         <h3>Circular Economy</h3>
                         <p>
                         Transforms waste into durable products—extending material life through reuse

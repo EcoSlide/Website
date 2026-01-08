@@ -180,32 +180,189 @@
 
 
 /* ROADMAP */
+/* ===== ROADMAP ===== */
 .roadmap{
   margin-top: 18px;
   display: grid;
+  gap: 18px;
+}
+
+/* Desktop: 3 cards en fila */
+@media (min-width: 980px){
+  .roadmap{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    align-items: stretch;
+  }
+}
+
+.roadmap-card{
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 120px 1fr; /* imagen izq + texto */
   gap: 14px;
+  align-items: center;
+  min-height: 190px;
 }
 
-.roadmap__item{
-  padding: 18px;
+/* Imagen vertical */
+.roadmap-card__media{
+  border-radius: calc(var(--radius) - 6px);
+  overflow: hidden;
+  background: #f2f3f2;
+  aspect-ratio: 3 / 4;  /* vertical */
 }
 
-.roadmap__time{
+.roadmap-card__media img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.roadmap-card__time{
+  margin: 0 0 6px;
+  color: var(--green);
+  font-weight: 900;
+}
+
+.roadmap-card__title{
   margin: 0 0 8px;
   font-weight: 900;
-  color: var(--green);
-  opacity: .95;
 }
 
-.roadmap__item h3{
-  margin: 0 0 8px;
-}
-
-.roadmap__item p{
+.roadmap-card__text{
   margin: 0;
   opacity: .9;
   line-height: 1.65;
 }
+
+/* ===== CARD 3 special ===== */
+.roadmap-card--special{
+  grid-template-columns: 1fr; /* ya no lleva imagen izquierda arriba */
+  align-items: start;
+}
+
+.roadmap-card__top{
+  margin-bottom: 10px;
+}
+
+.roadmap-card__split{
+  display: grid;
+  grid-template-columns: .8fr 1fr; /* info izq + box artesanos der */
+  gap: 14px;
+  align-items: start;
+}
+
+.roadmap-list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  opacity: .9;
+  line-height: 1.7;
+}
+
+/* Artisans box */
+/* ===== ARTISAN PROFILES ===== */
+.artisan-profiles{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.artisan{
+  text-align: center;
+  padding: 14px 12px 16px;
+  border-radius: calc(var(--radius) - 6px);
+  border: 1px solid rgba(0,0,0,.06);
+  background: #fff;
+}
+
+.artisan__photo{
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f2f3f2;
+  border: 4px solid rgba(47,107,74,.08);
+}
+
+.artisan__photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.artisan__name{
+  margin: 6px 0 2px;
+  font-weight: 900;
+}
+
+.artisan__role{
+  margin: 0 0 8px;
+  font-size: .9rem;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.artisan__bio{
+  margin: 0 0 10px;
+  font-size: .9rem;
+  opacity: .85;
+  line-height: 1.55;
+}
+
+/* Social icons */
+.artisan__socials{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.artisan__socials a{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: #000;
+  background: rgba(47,107,74,.08);
+  border: 1px solid rgba(47,107,74,.14);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.artisan__socials a:hover{
+  transform: translateY(-2px);
+  background: rgba(47,107,74,.16);
+}
+
+.artisan__socials i{
+  font-size: .9rem;
+  color: var(--green);
+}
+
+/* Responsive */
+@media (max-width: 979px){
+  .artisan-profiles{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 979px){
+  .roadmap-card{
+    grid-template-columns: 110px 1fr;
+  }
+
+  .roadmap-card__split{
+    grid-template-columns: 1fr; /* artisans abajo en móvil */
+  }
+}
+
 
 
 /* =========================
@@ -270,6 +427,7 @@
   }
 
   .roadmap{
-    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    margin-bottom: 3% ;
   }
 }

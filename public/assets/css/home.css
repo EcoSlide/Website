@@ -283,7 +283,7 @@ p{ margin: 0; }
 
 .stat-card{
     background: transparent;
-    height: 180px;
+    height: 280px;
     perspective: 1000px;
 }
 
@@ -921,7 +921,7 @@ p{ margin: 0; }
 /* Desktop */
 @media (min-width: 900px){
     .stats__grid{
-        grid-template-columns: repeat(3, minmax(0,1fr));
+        grid-template-columns: repeat(4, minmax(0,1fr));
     }
 
     .problem__container{
