@@ -1,58 +1,59 @@
-// (function () {
-//   const form = document.getElementById("contactForm");
-//   const waBtn = document.getElementById("sendWhatsApp");
-//   const waLink = document.getElementById("waLink");
+// // ../assets/js/contact.js
+(function () {
+  const form = document.getElementById("contactForm");
+  const waBtn = document.getElementById("sendWhatsApp");
+  const waLink = document.getElementById("waLink");
 
-//   // Cambia aquí tu número real en formato internacional (Panamá +507XXXXXXXX)
-//   const WHATSAPP_NUMBER = "5076XXXXXXXX";
+  // Tu número (sin +, sin espacios)
+  const WHATSAPP_NUMBER = "50763491342";
 
-//   function getFormData() {
-//     if (!form) return null;
-//     const data = new FormData(form);
-//     return {
-//       name: (data.get("name") || "").toString().trim(),
-//       email: (data.get("email") || "").toString().trim(),
-//       subject: (data.get("subject") || "").toString().trim(),
-//       message: (data.get("message") || "").toString().trim(),
-//     };
-//   }
+  function getFormValues() {
+    const fd = new FormData(form);
+    return {
+      name: (fd.get("name") || "").toString().trim(),
+      email: (fd.get("email") || "").toString().trim(),
+      subject: (fd.get("subject") || "").toString().trim(),
+      message: (fd.get("message") || "").toString().trim(),
+    };
+  }
 
-//   function buildMessage(d) {
-//     return `EcoSlides Contact\n\nName: ${d.name}\nEmail: ${d.email}\nSubject: ${d.subject}\n\nMessage:\n${d.message}`;
-//   }
+  function buildWhatsAppText(v) {
+    return [
+      "EcoSlides — New message",
+      "",
+      `Name: ${v.name}`,
+      `Email: ${v.email}`,
+      `Subject: ${v.subject}`,
+      "",
+      "Message:",
+      v.message,
+    ].join("\n");
+  }
 
-//   function openWhatsApp(d) {
-//     const text = encodeURIComponent(buildMessage(d));
-//     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
-//     window.open(url, "_blank", "noopener,noreferrer");
-//   }
+  function openWhatsApp(text) {
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
 
-//   // Click WhatsApp button
-//   waBtn?.addEventListener("click", () => {
-//     const d = getFormData();
-//     if (!d || !d.name || !d.email || !d.subject || !d.message) {
-//       alert("Please complete the form before sending via WhatsApp.");
-//       return;
-//     }
-//     openWhatsApp(d);
-//   });
+  // Ajusta el link del aside (Open WhatsApp)
+  if (waLink) {
+    waLink.setAttribute("href", `https://wa.me/${WHATSAPP_NUMBER}`);
+  }
 
-//   // Link “Open WhatsApp”
-//   waLink?.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const url = `https://wa.me/${WHATSAPP_NUMBER}`;
-//     window.open(url, "_blank", "noopener,noreferrer");
-//   });
+  // Botón WhatsApp: valida y abre WhatsApp con el texto del form
+  if (waBtn) {
+    waBtn.addEventListener("click", () => {
+      if (!form) return;
 
-//   // Submit form -> open mailto
-//   form?.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     const d = getFormData();
-//     if (!d) return;
+      // valida campos required antes de abrir WhatsApp
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
-//     const subject = encodeURIComponent(`[EcoSlides] ${d.subject}`);
-//     const body = encodeURIComponent(buildMessage(d));
-//     const mailto = `mailto:info.ecoslide@gmail.com?subject=${subject}&body=${body}`;
-//     window.location.href = mailto;
-//   });
-// })();
+      const values = getFormValues();
+      const text = buildWhatsAppText(values);
+      openWhatsApp(text);
+    });
+  }
+})();
