@@ -16,6 +16,8 @@
 
     <!-- JavaScript -->
     <script defer src="../assets/js/header_footer.js"></script>
+    <script defer src="../assets/js/about.js"></script>
+    <script defer src="../assets/js/pages.js"></script>
 </head>
 
 <body>
@@ -48,7 +50,7 @@
 
                 <div class="about-hero__media" role="img" aria-label="EcoSlides product in use">
                     <!-- Reemplaza por una imagen fuerte para About -->
-                    <video src="../assets/img/Videos/Mostrando desechos de basura y neumatico.MOV" autoplay loop muted alt="EcoSlides in use" ></video>
+                    <video class="lazy-video" autoplay loop muted playsinline preload="none" data-src="../assets/img/Videos/Mostrando desechos de basura y neumatico.MOV"></video>
                 </div>
             </div>
         </section>
@@ -204,7 +206,7 @@
 
                         <div class="team-card__social" aria-label="Social links">
                             <!-- Pon tus links reales cuando los tengas -->
-                            <a class="social" href="mailto:Lorenzoromagosaf@gmail.com" aria-label="Email"><i class="fa-regular fa-message"></i></a>
+                            <a class="social" href="mailto:Lorenzoromagosaf@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                             <a class="social" href="https://www.instagram.com/lorenzoromagosaf/?utm_source=ig_web_button_share_sheet" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         </div>
                     </article>
@@ -223,7 +225,7 @@
                         </p>
 
                         <div class="team-card__social" aria-label="Social links">
-                            <a class="social" href="mailto:iago.arango@sps.edu" aria-label="Email"><i class="fa-regular fa-message"></i></a>
+                            <a class="social" href="mailto:iago.arango@sps.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                             <a class="social" href="https://www.instagram.com/iago.arango/?utm_source=ig_web_button_share_sheet" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         </div>
                     </article>
@@ -294,7 +296,6 @@
         </section>
 
         </main>
-
     
     <!-- Footer section -->
     <div id="siteFooter"></div>

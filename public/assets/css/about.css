@@ -1,3 +1,9 @@
+/* =========================================================
+   ABOUT PAGE (about.css)
+   - Organized by sections
+   - Responsive rules grouped at the end
+========================================================= */
+
 /* ===== HERO ===== */
 .about-hero{
     padding: 3rem 0;
@@ -42,12 +48,41 @@
     border-radius: var(--radius);
     overflow: hidden;
     width: 100%;
+    border: 1px solid rgba(0,0,0,.05);
+    box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    background: #f4f6f4;
 }
 
+/* video (hero) */
 .about-hero__media video{
     width: 100%;
+    height: 100%;
+    min-height: 240px;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     object-position: right center;
+    display: block;
+}
+
+/* ===== REVEAL (lazy-down) ===== */
+.reveal{
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .55s ease, transform .55s ease;
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+    .reveal{
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
 }
 
 /* ===== STORY ===== */
@@ -57,19 +92,7 @@
     gap: 18px;
 }
 
-/* ===== STORY HERO IMAGE ===== */
-.story-hero{
-    position: relative;
-    margin: 26px 0 10px;
-    height: 260px;                 /* ajusta 220-320 según gusto */
-    border-radius: 22px;
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,.05);
-    box-shadow: 0 14px 34px rgba(0,0,0,.06);
-    background: #f4f6f4;
-}
-
-/* ===== STORY IMAGE ===== */
+/* Story image */
 .story__image{
     padding: 0;
     overflow: hidden;
@@ -89,37 +112,10 @@
     transform: scale(1.02);
 }
 
-.story-hero__overlay{
-    position: absolute;
-    inset: 0;
-
-    /* overlay suave para que se sienta EcoSlides */
-    background:
-    linear-gradient(90deg,
-    rgba(255,255,255,.75) 0%,
-    rgba(255,255,255,.35) 45%,
-    rgba(47,107,74,.10) 100%);
+.story_text_grid{
+    display: grid;
+    gap: 12px;
 }
-
-.story-hero__caption{
-    position: absolute;
-    left: 18px;
-    bottom: 16px;
-    padding: 10px 12px;
-    border-radius: 14px;
-    background: rgba(255,255,255,.70);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(0,0,0,.06);
-    font-weight: 700;
-    font-size: 0.95rem;
-}
-
-/* Responsive: en móvil baja un poco la altura */
-@media (max-width: 720px){
-    .story-hero{ height: 210px; border-radius: 18px; }
-    .story-hero__caption{ font-size: .9rem; }
-    }
-
 
 .story__text{
     padding: 18px;
@@ -127,22 +123,15 @@
     align-content: center;
 }
 
-.story_text_grid{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 12px;
-}
 .story__text p{
     margin: 0 0 12px;
     line-height: 1.75;
     opacity: .9;
 }
-
 .story__text p:last-child{ margin-bottom: 0; }
 
-.timeline{
-    padding: 18px;
-}
+/* Timeline */
+.timeline{ padding: 18px; }
 
 .timeline h3{
     margin: 0 0 12px;
@@ -159,12 +148,8 @@
 
 .timeline__item_grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px;
-}
-.timeline__item_grid:first-of-type{
-    border-top: 0;
-    padding-top: 0;
 }
 
 .dot{
@@ -187,14 +172,14 @@
     line-height: 1.6;
 }
 
-/* ===== MVV ===== */
-.mvv-circles {
+/* ===== MVV (Mission / Vision / Values) ===== */
+.mvv-circles{
     display: grid;
     gap: 2rem;
     margin-top: 3rem;
 }
 
-.mvv-circle {
+.mvv-circle{
     background: #fff;
     border-radius: 12px;
     padding: 2rem;
@@ -203,12 +188,12 @@
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-.mvv-circle:hover {
+.mvv-circle:hover{
     transform: translateY(-5px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-.mvv-circle__icon {
+.mvv-circle__icon{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -221,36 +206,35 @@
     background-color: var(--green);
 }
 
-
-.mvv-circle h3 {
+.mvv-circle h3{
     text-align: center;
     color: #2d3436;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
-.mvv-circle p {
+.mvv-circle p{
     color: #636e72;
     line-height: 1.6;
     text-align: center;
     margin: 0;
 }
 
-.mvv-circle ul {
+.mvv-circle ul{
     list-style: none;
     padding: 0;
     margin: 1rem 0 0;
     text-align: left;
 }
 
-.mvv-circle li {
+.mvv-circle li{
     margin-bottom: 0.5rem;
     color: #636e72;
     position: relative;
     padding-left: 1.5rem;
 }
 
-.mvv-circle li:before {
+.mvv-circle li:before{
     content: "♻️";
     color: #2f6b4a;
     font-weight: bold;
@@ -258,27 +242,16 @@
     left: 0;
 }
 
-/* Hide the ring element if not needed */
-.mvv-circle__ring {
-    display: none;
-}
-
-/* Responsive layout */
-@media (min-width: 768px) {
-    .mvv-circles {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+/* ring not needed */
+.mvv-circle__ring{ display: none; }
 
 /* ===== TEAM (profile style) ===== */
 .team--grid{
-    margin-top: 26px;
     display: grid;
-    gap: 34px;
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
     max-width: 820px;
-    margin: 2% auto;
+    margin: 26px auto 0;
     gap: 20px;
 }
 
@@ -292,13 +265,12 @@
     height: 250px;
     margin: 0 auto 14px;
     border-radius: 999px;
-    background: #eef2f7;           
-    padding: 10px;                 
+    background: #eef2f7;
+    padding: 10px;
+    transition: transform .2s ease;
 }
 
-.team-card__avatar:hover{
-    transform: scale(1.05);
-}
+.team-card__avatar:hover{ transform: scale(1.05); }
 
 .team-card__avatar img{
     width: 100%;
@@ -330,10 +302,9 @@
     font-size: 13px;
     line-height: 1.7;
     opacity: .82;
-    font-style: italic; /* como el ejemplo */
+    font-style: italic;
 }
 
-/* Social */
 .team-card__social{
     display: flex;
     justify-content: center;
@@ -360,26 +331,11 @@
     background: #e5e7eb;
 }
 
-/* Responsive */
-@media (max-width: 820px){
-    .team--grid{
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    .team-card__avatar{
-        width: 140px;
-        height: 140px;
-    }
-}
-
-/* =========================
-    WHY BAND (banner + icons row)
-========================= */
+/* ===== WHY BAND ===== */
 .why-band{
     padding: 3.2rem 0;
 }
 
-/* Banner */
 .why-band__visual{
     border-radius: 18px;
     overflow: hidden;
@@ -396,8 +352,7 @@
 .why-band__banner{
     border-radius: 18px;
     padding: 1.4rem;
-    background:
-        linear-gradient(180deg, rgba(47,107,74,.12), rgba(47,107,74,.12));
+    background: linear-gradient(180deg, rgba(47,107,74,.12), rgba(47,107,74,.12));
     text-align: center;
 }
 
@@ -406,11 +361,10 @@
     margin: 0;
     padding: 1.2rem;
     text-align: center;
-    line-height: 1;
+    line-height: 1.4;
     color: rgba(0,0,0,.78);
 }
 
-/* Head */
 .why-band__head{
     margin-top: 22px;
 }
@@ -427,11 +381,10 @@
     max-width: 70ch;
 }
 
-/* Icon row */
 .why-band__row{
     margin-top: 18px;
     border-radius: 16px;
-    background: #f3faf6; /* suave verdoso */
+    background: #f3faf6;
     border: 1px solid rgba(47,107,74,.12);
     padding: 14px 14px;
     display: grid;
@@ -458,24 +411,54 @@
     flex-shrink: 0;
 }
 
-.why-band__icon i{
-    font-size: 18px;
-}
+.why-band__icon i{ font-size: 18px; }
 
 .why-band__text{
     font-weight: 700;
     color: rgba(0,0,0,.75);
 }
 
-/* Separators (desktop) */
 .why-band__sep{
     display: none;
     width: 1px;
     background: rgba(0,0,0,.10);
 }
 
-/* Tablet/Desktop layout */
+/* ===== Responsive (MOBILE / TABLET / DESKTOP) ===== */
+/* Small phones */
+@media (max-width: 480px){
+    .about-hero{ padding: 2.2rem 0; }
+    .about-hero__media video{ min-height: 210px; }
+}
+
+/* Tablet */
+@media (min-width: 768px){
+    .mvv-circles{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Team stack */
+@media (max-width: 820px){
+    .team--grid{ grid-template-columns: 1fr; gap: 24px; }
+    .team-card__avatar{ width: 140px; height: 140px; }
+}
+
+/* Desktop layouts */
 @media (min-width: 900px){
+    .about-hero__container{ grid-template-columns: 1.5fr .8fr; }
+
+    .story{
+        grid-template-columns: .35fr 1fr;
+        align-items: start;
+    }
+
+    .story_text_grid{
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .timeline__item_grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .why-band__row{
         grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
         align-items: center;
@@ -492,65 +475,5 @@
     .why-band__item{
         justify-content: center;
         padding: 10px 8px;
-    }
-}
-
-/* ===== FEATURES ===== */
-.features{
-    margin-top: 18px;
-    display: grid;
-    gap: 14px;
-}
-
-.feature{
-    padding: 18px;
-}
-
-.feature .icon{
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    background: var(--green);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    margin-bottom: 12px;
-    box-shadow: 0 10px 22px rgba(47,107,74,.22);
-}
-
-.feature h3{
-    margin: 0 0 6px;
-    color: var(--green);
-}
-
-.feature p{
-    margin: 0;
-    line-height: 1.65;
-    opacity: .9;
-}
-
-/* ===== Responsive (mobile / tablet / desktop) ===== */
-@media (min-width: 900px){
-    .about-hero__container{
-        grid-template-columns: 1.5fr .8fr;
-    }
-
-    .story{
-        grid-template-columns: .3fr 1fr;
-        align-items: start;
-    }
-
-    .mvv{
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .team{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .features{
-        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
