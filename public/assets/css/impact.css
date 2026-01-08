@@ -252,7 +252,7 @@
   display: grid;
   grid-template-columns: .8fr 1fr; /* info izq + box artesanos der */
   gap: 14px;
-  align-items: start;
+  align-items: center;
 }
 
 .roadmap-list{

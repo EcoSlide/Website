@@ -648,12 +648,6 @@
       line-height: 1.6;
     }
 
-    .pmini__meta{
-      margin: 0;
-      opacity: .75;
-      font-size: .95rem;
-    }
-
     /* subtle overlay for readability */
     .pstep__media::after,
     .pmini__media::after{

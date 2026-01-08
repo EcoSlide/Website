@@ -704,10 +704,14 @@ p{ margin: 0; }
 }
 
 .prototypes-preview__link{
-    display: inline-block;
+    display: grid;
+    place-items: center;
+    text-align: center;
     font-weight: 600;
     text-decoration: none;
     color: var(--green);
+    margin: 30% auto;
+    font-size: 18px;
 }
 
 .prototypes-preview__grid{
@@ -941,11 +945,6 @@ p{ margin: 0; }
         grid-template-columns: 1fr 1.2fr;
         gap: 28px;
         align-items: center;
-    }
-
-    .prototypes-preview__container{
-        grid-template-columns: 1.2fr 1fr;
-        gap: 28px;
     }
 
     .prototypes-preview__grid{
