@@ -754,6 +754,58 @@ p{ margin: 0; }
     font-size: 14px;
 }
 
+/* =========================
+    PANAMA EDITION – PROTOTYPE
+    ========================= */
+.prototype-card__media{
+    position: relative;
+    overflow: hidden;
+}
+
+/* Badge principal */
+.panama-badge{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 2px solid #1f3c88; /* azul Panamá */
+    color: #1f3c88;
+    font-weight: 900;
+    font-size: .85rem;
+    box-shadow: 0 8px 22px rgba(0,0,0,.18);
+    z-index: 2;
+    }
+
+/* Refuerzo visual en la tarjeta */
+.prototype-card--panama{
+    border: 2px solid rgba(31,60,136,.35);
+    box-shadow: 0 16px 36px rgba(0,0,0,.12);
+}
+
+/* Texto de origen */
+.panama-origin{
+    margin-top: 4px;
+    font-size: .9rem;
+    font-weight: 800;
+    color: #1f3c88;
+    }
+
+/* Línea bandera Panamá (inequívoca) */
+.prototype-card--panama::after{
+    content:"";
+    display:block;
+    height:5px;
+    width:100%;
+    background: linear-gradient(
+        0.25turn,
+        #ff0000,
+        #ffffff,
+        #0000ff 
+    );
+}
+
 /* =========================================================
     IMPACT
 ========================================================= */
