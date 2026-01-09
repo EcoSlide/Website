@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EcoSlides</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net">
 
     <!-- CSS for header and footer -->
     <link rel="stylesheet" href="../assets/css/header-footer.css"/>
@@ -411,88 +412,150 @@
             </p>
           </div>
 
-          <!-- GROUP 1: Everyday Slides -->
-          <div class="proto-group">
-            <h3 class="proto-group__title">Everyday Slides</h3>
-            <p class="proto-group__sub">
-              Minimal, comfortable, and tough. Tire strips become flexible straps that hold shape and grip — made for daily miles.
-            </p>
+          <!-- Timeline: Prototype → Evolution → Heritage -->
+          <div class="proto-timeline" aria-label="Prototype timeline">
+            <div class="proto-timeline__line" aria-hidden="true"></div>
 
-            <div class="proto-grid">
-              <article class="proto card">
-                <img src="../assets/img/Fotos/Models/cross strap.jpg" alt="EcoSlides Classic Slide prototype" loading="lazy">
-                <div class="proto__body">
-                  <h4>Classic Cross-Strap</h4>
-                  <p>
-                    Clean look, secure fit. Upcycled tire strips form a smooth strap that ages beautifully and stays resilient.
-                  </p>
-                  <ul class="proto__tags">
-                    <li><i class="fa-solid fa-recycle"></i> Tire-strip straps</li>
-                    <li>🛠️ Handmade finish</li>
-                    <li><i class="fa-solid fa-earth-americas"></i> Less waste</li>
-                  </ul>
-                </div>
-              </article>
+            <a class="proto-timeline__item is-active" href="#origin">
+              <div class="proto-timeline__dot">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="proto-timeline__text">
+                <div class="proto-timeline__title">Prototype</div>
+                <div class="proto-timeline__sub">Our first build</div>
+              </div>
+            </a>
 
-              <article class="proto card">
-                <img src="../assets/img/Fotos/Models/Slipper One.jpg" alt="EcoSlides Urban Slide prototype" loading="lazy">
-                <div class="proto__body">
-                  <h4>Urban Strap</h4>
-                  <p>
-                    Built for city days. Rubber straps + durable sole give you traction, comfort, and a lighter footprint.
-                  </p>
-                  <ul class="proto__tags">
-                    <li><i class="fa-solid fa-recycle"></i> Reclaimed rubber</li>
-                    <li><i class="fa-solid fa-shoe-prints"></i> All-day grip</li>
-                    <li><i class="fa-solid fa-leaf"></i> Lower impact</li>
-                  </ul>
-                </div>
-              </article>
-            </div>
+            <a class="proto-timeline__item" href="#evolution">
+              <div class="proto-timeline__dot">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+              </div>
+              <div class="proto-timeline__text">
+                <div class="proto-timeline__title">Evolution</div>
+                <div class="proto-timeline__sub">Refined models</div>
+              </div>
+            </a>
+
+            <a class="proto-timeline__item proto-timeline__item--panama" href="#heritage">
+              <div class="proto-timeline__dot">
+                <span class="panama-flag" aria-hidden="true"></span>
+              </div>
+              <div class="proto-timeline__text">
+                <div class="proto-timeline__title">Heritage</div>
+                <div class="proto-timeline__sub">Panama Edition</div>
+              </div>
+            </a>
           </div>
 
-          <!-- GROUP 2: Adventure / Outdoor -->
-          <div class="proto-group">
-            <h3 class="proto-group__title">Adventure & Outdoor</h3>
+          <!-- GROUP 0: Prototype (Origin) -->
+          <div class="proto-group proto-group--origin" id="origin">
+            <h3 class="proto-group__title">Prototype (Origin)</h3>
             <p class="proto-group__sub">
-              Tougher builds and stronger support. When the road gets rough, tire rubber shows why it was made to endure.
+              This is where EcoSlides began — our very first model focused on stability, structure, and proving tire strips could become wearable footwear.
             </p>
 
             <div class="proto-grid">
-              <article class="proto card">
-                <img src="../assets/img/Fotos/Models/Slipper One strap.jpg" alt="EcoSlides Outdoor Sandal prototype" loading="lazy">
-                <div class="proto__body">
-                  <h4>Trail Sandal</h4>
-                  <p>
-                    Rugged comfort. Tire rubber offers natural abrasion resistance — perfect for exploring without slipping.
-                  </p>
-                  <ul class="proto__tags">
-                    <li><i class="fa-solid fa-recycle"></i> Upcycled tire sole</li>
-                    <li><i class="fa-solid fa-trowel-bricks"></i> Abrasion resistant</li>
-                    <li><i class="fa-solid fa-earth-americas"></i> Less waste</li>
-                  </ul>
+              <article class="proto card proto--origin">
+                <div class="proto-media single">
+                  <span class="proto-badge proto-badge--origin">
+                    <i class="fa-solid fa-star"></i> First EcoSlides Prototype
+                  </span>
+                  <img src="../assets/img/Fotos/Models/EcoslideModel.jpg" alt="EcoSlides Support Fit — first prototype" loading="lazy">
                 </div>
-              </article>
 
-              <article class="proto card">
-                <img src="../assets/img/Fotos/Models/EcoslideModel.jpg" alt="EcoSlides Support Sandal prototype" loading="lazy">
                 <div class="proto__body">
-                  <h4>Support Fit</h4>
+                  <h4>Support Fit (Origin Prototype)</h4>
                   <p>
-                    More structure, same mission. Designed to feel stable while giving new life to discarded materials.
+                    Our starting point. Built to feel stable and durable — then refined into later models with better comfort and fit.
                   </p>
                   <ul class="proto__tags">
                     <li><i class="fa-solid fa-recycle"></i> Recycled straps</li>
                     <li><i class="fa-solid fa-shoe-prints"></i> Stable feel</li>
-                    <li><i class="fa-solid fa-leaf"></i> Conscious design</li>
+                    <li><i class="fa-solid fa-leaf"></i> Prototype foundation</li>
                   </ul>
                 </div>
               </article>
             </div>
           </div>
 
+          <!-- GROUP 1: Evolution -->
+          <div class="proto-group proto-group--evolution" id="evolution">
+            <h3 class="proto-group__title">Evolution</h3>
+            <p class="proto-group__sub">
+              After our first prototype, we refined the designs into everyday-ready models — improving hold, comfort, and versatility while keeping the same mission: upcycled tire strips with real durability.
+            </p>
+
+            <!-- Evolution: Everyday -->
+            <div class="proto-subgroup">
+              <h4 class="proto-subgroup__title">Everyday Slides</h4>
+              <p class="proto-subgroup__sub">
+                Flexible tire-strip straps, clean look, and comfort for daily wear.
+              </p>
+
+              <div class="proto-grid">
+                <article class="proto card">
+                  <img src="../assets/img/Fotos/Models/cross strap.jpg" alt="EcoSlides Classic Cross-Strap prototype" loading="lazy">
+                  <div class="proto__body">
+                    <h4>Classic Cross-Strap</h4>
+                    <p>
+                      Our secure everyday build. The crossed tire-strip straps distribute pressure evenly,
+                      improving hold and comfort for daily wear.
+                    </p>
+                    <ul class="proto__tags">
+                      <li><i class="fa-solid fa-recycle"></i> Tire-strip straps</li>
+                      <li>🛠️ Handmade finish</li>
+                      <li><i class="fa-solid fa-earth-americas"></i> Less waste</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="proto card">
+                  <img src="../assets/img/Fotos/Models/Slipper One.jpg" alt="EcoSlides Urban Strap prototype" loading="lazy">
+                  <div class="proto__body">
+                    <h4>Urban Strap</h4>
+                    <p>
+                      Easy on, easy off. Two tire-rubber straps deliver a clean look and dependable grip,
+                      made for quick everyday movement.
+                    </p>
+                    <ul class="proto__tags">
+                      <li><i class="fa-solid fa-recycle"></i> Reclaimed rubber</li>
+                      <li><i class="fa-solid fa-shoe-prints"></i> All-day grip</li>
+                      <li><i class="fa-solid fa-leaf"></i> Lower impact</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Evolution: Outdoor -->
+            <div class="proto-subgroup">
+              <h4 class="proto-subgroup__title">Outdoor Build</h4>
+              <p class="proto-subgroup__sub">
+                A more rugged direction — simplified strap + traction-focused sole.
+              </p>
+
+              <div class="proto-grid">
+                <article class="proto card">
+                  <img src="../assets/img/Fotos/Models/Slipper One strap.jpg" alt="EcoSlides Trail Sandal prototype" loading="lazy">
+                  <div class="proto__body">
+                    <h4>Trail Sandal</h4>
+                    <p>
+                      Minimal and rugged. A simpler strap with tire-rubber traction — made for outdoor days
+                      and rougher surfaces.
+                    </p>
+                    <ul class="proto__tags">
+                      <li><i class="fa-solid fa-recycle"></i> Upcycled tire sole</li>
+                      <li><i class="fa-solid fa-trowel-bricks"></i> Abrasion resistant</li>
+                      <li><i class="fa-solid fa-earth-americas"></i> Less waste</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
           <!-- GROUP 3: Panama Heritage -->
-          <div class="proto-group proto-group--highlight">
+          <div class="proto-group proto-group--highlight" id="heritage">
             <h3 class="proto-group__title">Panama Heritage</h3>
             <p class="proto-group__sub">
               A tribute to tradition — reimagined with tire strips. This is where local identity meets circular design.
@@ -529,6 +592,27 @@
                   </ul>
                 </div>
               </article>
+              <article class="proto card proto--heritage">
+              <div class="heritage-head">
+                <div class="heritage-title">
+                  <span class="fi fi-pa" style="background-size: contain; background-position: 50%; background-repeat: no-repeat;"></span>
+                  <!-- <span class="panama-flag panama-flag--lg" aria-hidden="true"></span> -->
+                  <h4>Inspired by the Panamanian cutarra</h4>
+                </div>
+                <p class="heritage-sub">
+                  A cultural classic — reimagined with tire strips to honor tradition while reducing waste.
+                </p>
+              </div>
+
+              <ul class="heritage-points">
+                <li><strong>Tradition:</strong> A timeless Panamanian silhouette.</li>
+                <li><strong>Craft:</strong> Hand-finished tire-strip weaving.</li>
+                <li><strong>Impact:</strong> Waste-to-wear design with purpose.</li>
+              </ul>
+
+              <div class="heritage-bar" aria-hidden="true"></div>
+            </article>
+
 
             </div>
           </div>
