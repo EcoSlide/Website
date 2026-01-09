@@ -37,6 +37,7 @@ async function loadHeaderFooter() {
 
         // Inicializaciones que dependen del header/footer
         initNavbar();
+        initBackToTop();
         setYear();
 
     } catch (err) {
@@ -146,6 +147,31 @@ function setYear() {
     const el = document.getElementById("year");
     if (el) el.textContent = String(new Date().getFullYear());
 }
+
+// =========================
+// EcoSlides • Back to top
+// =========================
+function initBackToTop(){
+    const btn = document.getElementById("scrollTopBtn");
+    if (!btn) return;
+
+    // Evita duplicar listeners si se llama más de una vez
+    if (btn.dataset.bound === "1") return;
+    btn.dataset.bound = "1";
+
+    const toggle = () => {
+        if (window.scrollY > 320) btn.classList.add("is-visible");
+        else btn.classList.remove("is-visible");
+    };
+
+    window.addEventListener("scroll", toggle, { passive: true });
+    toggle();
+
+    btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}
+
 
 // ==============================
 // CARRUSEL HERO
