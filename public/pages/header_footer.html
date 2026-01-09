@@ -128,11 +128,22 @@
                     Get updates on new designs, limited drops, and sustainability milestones.
                 </p>
 
-                <form class="footer__form" action="#" method="post">
-                    <input class="footer__input" type="email" name="email" placeholder="Enter your email" required>
-                    <button class="footer__btn" type="submit">Subscribe</button>
+                <form id="communityForm" action="https://formspree.io/f/mrebnrkz" method="POST" class="footer__form">
+                    <input
+                        type="email"
+                        name="email"
+                        id="communityEmail"
+                        class="footer__input"
+                        placeholder="Enter your email"
+                        required
+                    />
+                    <label hidden>
+                        Your message:
+                        <textarea name="message"></textarea>
+                    </label>
+                    <button type="submit" class="footer__btn btn">Subscribe</button>
+                    <small id="communityMsg" class="form-msg" aria-live="polite"></small>
                 </form>
-
                 <p class="footer__small">
                     By subscribing, you agree to receive emails from EcoSlides. You can unsubscribe anytime.
                 </p>

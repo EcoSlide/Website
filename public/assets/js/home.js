@@ -45,6 +45,44 @@ async function loadHeaderFooter() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("communityForm");
+    const msg = document.getElementById("communityMsg");
+
+    if (!form) return;
+
+    const setMsg = (text, ok = true) => {
+        if (!msg) return;
+        msg.textContent = text;
+        msg.style.opacity = "1";
+        msg.style.color = ok ? "rgba(255,255,255,.8)" : "#ffb3b3";
+    };
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        setMsg("Sending...", true);
+
+        try {
+        const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+            setMsg("✅ Welcome to EcoSlides! You’re in 🌿", true);
+            form.reset();
+        } else {
+            setMsg("❌ Couldn’t subscribe. Try again.", false);
+        }
+        } catch (err) {
+        console.error(err);
+        setMsg("❌ Network error. Try again.", false);
+        }
+    });
+});
+
+
 // ==============================
 // NAVBAR + MOBILE + SEARCH
 // ==============================
