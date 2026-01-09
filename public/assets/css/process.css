@@ -96,7 +96,6 @@
 .process-layout{
     margin-top: 18px;
     display: grid;
-    grid-template-columns: 220px 1fr;
     gap: 22px;
     align-items: start;
     overflow: visible !important;
@@ -104,11 +103,12 @@
 
 /* Rail */
 .process-rail{ 
-    position: relative; 
+    position: sticky;
+    top: 0;
+    margin-top: 5%; 
 }
 
 .rail{
-    position: sticky;
     top: 90px;
     padding-left: 10px;
 }
@@ -285,11 +285,10 @@
 .pgrid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
     margin-bottom: 16px;
 }
 
-.pmini{ overflow: hidden; }
+.pmini{ overflow: hidden; margin: 5%;}
 
 .pmini__media{
     aspect-ratio: 3 / 4;
@@ -366,13 +365,6 @@
     .process__steps{
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .process-layout{ 
-        grid-template-columns: 1fr; 
-    }
-
-    .process-rail{ 
-        display: none; 
-    }
 
     .pstep, .pstep--reverse{ 
         grid-template-columns: 1fr; 
@@ -389,12 +381,8 @@
 
 @media (min-width: 921px){
     .process-layout{
-        grid-template-columns: 220px 1fr;
+        grid-template-columns: 400px 1fr;
         gap: 22px;
-    }
-
-    .process-rail{
-        display: block;
     }
 
     .rail{
@@ -419,10 +407,6 @@
     .process-layout{
         grid-template-columns: 1fr;
         gap: 16px;
-    }
-
-    .process-rail{
-        display: none;
     }
 
     .process-hero__image img{
