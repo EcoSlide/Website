@@ -109,6 +109,7 @@
 }
 
 .rail{
+    position: relative;
     top: 90px;
     padding-left: 10px;
 }
@@ -377,9 +378,7 @@
     .process-hero__image img{ 
         aspect-ratio: 4 / 3; 
     }
-}
 
-@media (min-width: 921px){
     .process-layout{
         grid-template-columns: 400px 1fr;
         gap: 22px;
@@ -433,6 +432,9 @@
     #step-10 .pstep__media{
         min-height: 300px;
     }
+    .process-rail{
+        display: none;
+    }
 }
 
 /* ---- Small screen ---- */
@@ -478,9 +480,7 @@
         padding: 7px 10px;
         font-weight: 800;
     }
-}
 
-@media (max-width: 399px){
     #process video{
         object-fit: cover;
         object-position: center 20%;

@@ -718,6 +718,10 @@
 }
 @media (max-width: 700px){
   .proto-grid-panama{ grid-template-columns: 1fr; }
+  .proto-subgroup{
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 }
 
 
@@ -806,6 +810,7 @@
 }
 
 /* Mobile: imágenes en columna */
+
 @media (max-width: 480px){
   .proto-media.duo{
     grid-template-columns: 1fr;

@@ -132,3 +132,46 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach(el => mediaObserver.observe(el));
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const railLinks = Array.from(document.querySelectorAll(".process-rail .rail__item"));
+  if (!railLinks.length) return;
+
+  // Secciones destino de los links del rail
+  const sections = railLinks
+    .map(a => document.querySelector(a.getAttribute("href")))
+    .filter(Boolean);
+
+  const setActive = (activeLink) => {
+    railLinks.forEach(a => {
+      a.classList.toggle("is-active", a === activeLink);
+      a.setAttribute("aria-current", a === activeLink ? "true" : "false");
+    });
+  };
+
+  // Click: marca activo inmediatamente (sin esperar scroll)
+  railLinks.forEach(a => {
+    a.addEventListener("click", () => setActive(a));
+  });
+
+  // Scroll: marca activo según la sección visible
+  const obs = new IntersectionObserver((entries) => {
+    // elegir la que esté más "dominante" en pantalla
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (!visible) return;
+
+    const id = "#" + visible.target.id;
+    const link = railLinks.find(a => a.getAttribute("href") === id);
+    if (link) setActive(link);
+  }, {
+    root: null,
+    threshold: [0.2, 0.35, 0.5, 0.65],
+    // empuja el “punto activo” un poco hacia arriba (por tu sticky/hero)
+    rootMargin: "-20% 0px -60% 0px"
+  });
+
+  sections.forEach(sec => obs.observe(sec));
+});
