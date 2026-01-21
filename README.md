@@ -1,6 +1,7 @@
 # 🩴 EcoSlides - Environmental Sustainability Platform
 
 > 🌍 Main Website: https://ecoslide.github.io/Website/public/
+
 > A modern website dedicated to promoting sustainable practices and environmental awareness.
 
 ## 📋 About
