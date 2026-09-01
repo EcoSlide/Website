@@ -309,6 +309,7 @@ a{
     width: 54px;
     height: 54px;
     object-fit: contain;
+    border-radius: 100%
 }
 
 .footer__name{
