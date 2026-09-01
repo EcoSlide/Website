@@ -5,7 +5,7 @@
   const waLink = document.getElementById("waLink");
 
   // Tu número (sin +, sin espacios)
-  const WHATSAPP_NUMBER = "50763491342";
+  const WHATSAPP_NUMBER = "50769265047";
 
   function getFormValues() {
     const fd = new FormData(form);
