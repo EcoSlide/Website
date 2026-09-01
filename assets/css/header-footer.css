@@ -306,9 +306,9 @@ a{
 }
 
 .footer__logo{
-    width: 54px;
-    height: 54px;
-    object-fit: contain;
+    width: 60px;
+    height: auto;
+    object-fit: cover;
     border-radius: 100%
 }
 
