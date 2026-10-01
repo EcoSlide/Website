@@ -187,7 +187,7 @@ function setYear() {
 }
 
 // =========================
-// EcoSlides • Back to top
+// EcoSlidespty • Back to top
 // =========================
 function initBackToTop(){
     const btn = document.getElementById("scrollTopBtn");

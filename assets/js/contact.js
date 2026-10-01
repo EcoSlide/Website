@@ -19,7 +19,7 @@
 
   function buildWhatsAppText(v) {
     return [
-      "EcoSlides — New message",
+      "EcoSlidespty — New message",
       "",
       `Name: ${v.name}`,
       `Email: ${v.email}`,

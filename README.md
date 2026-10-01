@@ -1,4 +1,4 @@
-# 🩴 EcoSlides - Environmental Sustainability Platform
+# 🩴 EcoSlidespty - Environmental Sustainability Platform
 
 > 🌍 Main Website: https://ecoslidespty.com
 
@@ -6,7 +6,7 @@
 
 ## 📋 About
 
-EcoSlides is a web platform designed to educate, inform, and inspire people about environmental sustainability. The site provides comprehensive information about environmental impact, eco-friendly solutions, frequently asked questions, and more.
+EcoSlidespty is a web platform designed to educate, inform, and inspire people about environmental sustainability. The site provides comprehensive information about environmental impact, eco-friendly solutions, frequently asked questions, and more.
 
 ## ✨ Features
 
