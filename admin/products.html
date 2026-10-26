@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos | EcoSlidespty</title>
+</head>
+<body>
+  <p id="status" role="status" aria-live="polite">
+    Verificando acceso…
+  </p>
+
+  <main id="panel" hidden>
+    <header>
+      <h1>Productos · EcoSlidespty</h1>
+      <button id="logout" type="button">Cerrar sesión</button>
+    </header>
+
+    <h2 id="form-title">Agregar producto</h2>
+    <a href="./orders.html">Ver pedidos</a>
+
+    <form id="product-form">
+      <p>
+        <label>Código del modelo
+          <input name="model_code" required maxlength="60"
+                 placeholder="Ejemplo: HOMBRE-03">
+        </label>
+      </p>
+
+      <p>
+        <label>Identificador para el enlace
+          <input name="slug" required maxlength="100"
+                 pattern="[a-z0-9]+(-[a-z0-9]+)*"
+                 placeholder="Ejemplo: hombre-03">
+        </label>
+      </p>
+
+      <p>
+        <label>Nombre en español
+          <input name="name_es" required maxlength="150">
+        </label>
+      </p>
+
+      <p>
+        <label>Nombre en inglés
+          <input name="name_en" required maxlength="150">
+        </label>
+      </p>
+
+      <p>
+        <label>Descripción en español
+          <textarea name="description_es" maxlength="5000"></textarea>
+        </label>
+      </p>
+
+      <p>
+        <label>Descripción en inglés
+          <textarea name="description_en" maxlength="5000"></textarea>
+        </label>
+      </p>
+
+      <p>
+        <label>Categoría
+          <select name="category" required>
+            <option value="men">Hombre</option>
+            <option value="women">Mujer</option>
+            <option value="kids">Niño</option>
+            <option value="unisex">Unisex</option>
+          </select>
+        </label>
+      </p>
+
+      <p>
+        <label>Precio en USD
+          <input name="price" type="number"
+                 min="0" max="99999999.99" step="0.01" required>
+        </label>
+      </p>
+
+      <p>
+        <label>Días de elaboración
+          <input name="production_days" type="number"
+                 min="1" max="365" step="1">
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input name="is_available" type="checkbox" checked>
+          Disponible para pedidos
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input name="is_published" type="checkbox">
+          Publicado en la tienda
+        </label>
+      </p>
+
+      <button id="save" type="submit">Guardar producto</button>
+      <button id="cancel" type="button">Limpiar formulario</button>
+    </form>
+
+    <h2>Productos guardados</h2>
+    <button id="refresh" type="button">Actualizar lista</button>
+    <div id="products"></div>
+  </main>
+
+  <script type="module" src="../assets/js/admin/products.js"></script>
+</body>
+</html>

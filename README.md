@@ -84,6 +84,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For more information or inquiries, use the contact form on the website or open an issue in this repository.
 
+## Supabase
+
+- functions/: código de las Edge Functions.
+- config.toml: configuración de verificación JWT.
+- backups/: copias de funciones SQL, permisos y estructura.
+- migrations/: cambios futuros de la base de datos.
+
+Los archivos de backups son referencias y no deben ejecutarse
+en bloque. Todavía no constituyen un respaldo completo para restaurar
+la base de datos.
+
+Las claves secretas se administran en Supabase → Secrets.
+
 ---
 
 **Made with ♻️ for a more sustainable planet**

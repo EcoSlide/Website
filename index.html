@@ -25,7 +25,7 @@
     <meta property="og:site_name" content="EcoSlides" />
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/img/logo_ico.ico" type="image/png" />
+    <link rel="icon" href="assets/img/logo_ico.ico" type="image/x-icon" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -38,6 +38,13 @@
 
     <!-- JavaScript for home page -->
     <script defer src="assets/js/home.js"></script>
+
+    <script type="module" src="assets/js/home-cart.js"></script>
+
+    <script type="module" src="assets/js/home-language.js"></script>
+
+    <script type="module" src="assets/js/home-products.js"></script>
+
 </head>
 
 <body>
@@ -52,11 +59,25 @@
                 <div class="hero-slide active">
                     <div class="hero__bg" style="background-image: url('assets/img/Fotos/Home_1.png');" role="img" aria-label="Recycled tire footwear"></div>
                     <div class="container hero__content">
-                        <h1 class="hero__title">Sustainable footwear made<br>from recycled tires.</h1>
-                        <p class="hero__subtitle">
-                            Transforming environmental challenges into durable, affordable, and eco-friendly slides.
+                        <h1
+                            class="hero__title"
+                            data-es="Calzado hecho en Panamá con llantas recicladas."
+                            data-en="Footwear made in Panama from recycled tires.">
+                            Calzado hecho en Panamá <br> con llantas recicladas.
+                        </h1>
+                        <p
+                            class="hero__subtitle"
+                            data-es="Transformamos llantas descartadas en sandalias artesanales para acompañarte cada día."
+                            data-en="We turn discarded tires into handcrafted sandals for everyday wear.">
+                            Transformamos llantas descartadas en sandalias artesanales
+                            para acompañarte cada día.
                         </p>
-                        <a class="hero__cta" href="pages/solution.html#model">Explore the collection</a>
+                        <a class="hero__cta"
+                            href="pages/shop.html"
+                            data-es="Ver catálogo"
+                            data-en="Shop the collection">
+                            Ver catálogo
+                        </a>
                     </div>
                 </div>
                 
@@ -65,14 +86,32 @@
                     <div class="hero__bg" style="background-image: url('assets/img/Fotos/IAGO & LORENZO.png'); background-size: cover; background-position: 95% 25%;" role="img" aria-label="Eco-friendly sandals"></div>
                     <div class="container hero__content">
                         <h1 class="hero__title">
-                            <span class="hero__title-content">We are <img src="assets/img/logo_nav.png" alt="EcoSlides" class="hero__title-logo"></span>
-                        </h1>
-                        <p class="hero__subtitle">
-                            Born from friendship, movement, and the need to do better.
-                            <br>We create comfortable footwear that gives discarded materials a second 
-                            <br>life designed to move with purpose and represent where we come from.
-                        </p>
-                        <a class="hero__cta" href="pages/aboutus.html">About Us</a>
+                            <span class="hero__title-content">
+                                <span data-es="Somos" data-en="We are">Somos</span>
+
+                                <img
+                                src="assets/img/logo_nav.png"
+                                alt="EcoSlidespty"
+                                class="hero__title-logo">
+                            </span>
+                            </h1>
+
+                            <p
+                                class="hero__subtitle"
+                                data-es="Una idea nacida de la amistad y del deseo de aprovechar lo que otros descartan. Creamos calzado artesanal con identidad panameña."
+                                data-en="An idea born from friendship and the desire to reuse what others discard. We create handcrafted footwear with a Panamanian identity.">
+                                Una idea nacida de la amistad y del deseo de aprovechar
+                                lo que otros descartan. Creamos calzado artesanal
+                                con identidad panameña.
+                            </p>
+
+                            <a
+                                class="hero__cta"
+                                href="pages/aboutus.html"
+                                data-es="Conócenos"
+                                data-en="Meet the team">
+                                Conócenos
+                            </a>
                     </div>
                 </div>
             </div>
@@ -96,90 +135,162 @@
             </div>
         </section>
 
+        <section class="current-models" aria-labelledby="current-models-title">
+            <div class="container">
+                <p class="current-models__eyebrow"
+                data-es="HECHOS PARA ACOMPAÑARTE"
+                data-en="MADE TO GO WITH YOU">
+                HECHOS PARA ACOMPAÑARTE
+                </p>
+
+                <h2 id="current-models-title"
+                    data-es="Encuentra tu próximo par"
+                    data-en="Find your next pair">
+                Encuentra tu próximo par
+                </h2>
+
+                <p data-es="Explora nuestros modelos actuales y elige tu talla en la tienda."
+                data-en="Explore our current models and choose your size in the shop.">
+                Explora nuestros modelos actuales y elige tu talla en la tienda.
+                </p>
+
+                <p id="home-products-status" role="status" aria-live="polite"></p>
+
+                <div id="home-products" class="current-models__grid"></div>
+
+                <a class="current-models__catalog"
+                href="pages/shop.html"
+                data-es="Ver catálogo completo →"
+                data-en="Shop the full collection →">
+                Ver catálogo completo →
+                </a>
+            </div>
+        </section>
+
         <!-- ====== HOME INFO ===== -->
         
         <!-- STATS -->
         <section class="section" id="impact-stats">
             <div class="container">
                 <div class="section__head">
-                    <h2>The Problem</h2>
-                    <p class="p section__sub">
-                        The world generates over 1 billion scrap tires annually, with less than 10% being recycled.
-                    </p>
+                <h2 data-es="Un material que merece otra oportunidad"
+                    data-en="A material worth giving another chance">
+                    Un material que merece otra oportunidad
+                </h2>
+
+                <p class="p section__sub"
+                    data-es="El aprovechamiento comienza al ver una posibilidad en lo que otros descartan."
+                    data-en="Reuse begins by seeing potential in what others discard.">
+                    El aprovechamiento comienza al ver una posibilidad
+                    en lo que otros descartan.
+                </p>
                 </div>
-                
+
                 <div class="stats__grid">
-                    <!-- 1. Total tires -->
-                    <div class="stat-card">
-                        <div class="stat-card__inner">
-                            <div class="stat-card__front">
-                                <div class="stat__value">1B+</div>
-                                <div class="stat__label">Tires discarded<br>every year</div>
-                                <div class="stat__line"></div>
-                            </div>
-                            <div class="stat-card__back">
-                                <div class="stat__info">
-                                    Billions of tires are discarded globally each year, creating a massive environmental burden.
-                                </div>
-                            </div>
+                <div class="stat-card">
+                    <div class="stat-card__inner">
+                    <div class="stat-card__front">
+                        <div class="stat__value" aria-hidden="true">
+                        <i class="fa-solid fa-truck"></i>
                         </div>
+                        <div class="stat__label"
+                            data-es="Llantas descartadas"
+                            data-en="Discarded tires">
+                        Llantas descartadas
+                        </div>
+                        <div class="stat__line"></div>
                     </div>
 
-                    <!-- 2. Recycled -->
-                    <div class="stat-card">
-                        <div class="stat-card__inner">
-                            <div class="stat-card__front">
-                                <div class="stat__value">100M</div>
-                                <div class="stat__label">Tires recycled<br>each year</div>
-                                <div class="stat__line"></div>
-                            </div>
-                            <div class="stat-card__back">
-                                <div class="stat__info">
-                                    Only a small fraction of discarded tires are recycled into new products.
-                                </div>
-                            </div>
+                    <div class="stat-card__back">
+                        <div class="stat__info"
+                            data-es="El final de su uso en un vehículo puede ser el comienzo de una nueva función."
+                            data-en="The end of their use on a vehicle can mark the beginning of a new purpose.">
+                        El final de su uso en un vehículo puede ser
+                        el comienzo de una nueva función.
                         </div>
                     </div>
-
-                    <!-- 3. Microplastics -->
-                    <div class="stat-card">
-                        <div class="stat-card__inner">
-                            <div class="stat-card__front">
-                                <div class="stat__value">78%</div>
-                                <div class="stat__label">Ocean microplastics<br>from tires</div>
-                                <div class="stat__line"></div>
-                            </div>
-                            <div class="stat-card__back">
-                                <div class="stat__info">
-                                    Tire wear is the largest source of primary microplastics entering the oceans.
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- 4. Landfills & illegal dumps -->
-                    <div class="stat-card">
-                        <div class="stat-card__inner">
-                            <div class="stat-card__front">
-                                <div class="stat__value">882M</div>
-                                <div class="stat__label">Landfills &<br>illegal dumps</div>
-                                <div class="stat__line"></div>
-                            </div>
-                            <div class="stat-card__back">
-                                <div class="stat__info">
-                                    Most tires end up in landfills or illegal dumps, releasing toxic substances over time.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
+                <div class="stat-card">
+                    <div class="stat-card__inner">
+                    <div class="stat-card__front">
+                        <div class="stat__value" aria-hidden="true">
+                        <i class="fa-solid fa-recycle"></i>
+                        </div>
+                        <div class="stat__label"
+                            data-es="Caucho reutilizado"
+                            data-en="Repurposed rubber">
+                        Caucho reutilizado
+                        </div>
+                        <div class="stat__line"></div>
+                    </div>
+
+                    <div class="stat-card__back">
+                        <div class="stat__info"
+                            data-es="Seleccionamos el caucho que podemos aprovechar para elaborar nuestras suelas."
+                            data-en="We select rubber suitable for reuse to make our soles.">
+                        Seleccionamos el caucho que podemos aprovechar
+                        para elaborar nuestras suelas.
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card__inner">
+                    <div class="stat-card__front">
+                        <div class="stat__value" aria-hidden="true">
+                        <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <div class="stat__label"
+                            data-es="Manos artesanas"
+                            data-en="Artisan hands">
+                        Manos artesanas
+                        </div>
+                        <div class="stat__line"></div>
+                    </div>
+
+                    <div class="stat-card__back">
+                        <div class="stat__info"
+                            data-es="Artesanos locales cortan, ensamblan y dan los acabados a cada par."
+                            data-en="Local artisans cut, assemble, and finish each pair.">
+                        Artesanos locales cortan, ensamblan y dan
+                        los acabados a cada par.
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card__inner">
+                    <div class="stat-card__front">
+                        <div class="stat__value" aria-hidden="true">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+                        <div class="stat__label"
+                            data-es="Un nuevo par"
+                            data-en="A new pair">
+                        Un nuevo par
+                        </div>
+                        <div class="stat__line"></div>
+                    </div>
+
+                    <div class="stat-card__back">
+                        <div class="stat__info"
+                            data-es="El material recuperado se convierte en parte de un calzado hecho en Panamá."
+                            data-en="Recovered material becomes part of footwear made in Panama.">
+                        El material recuperado se convierte en parte
+                        de un calzado hecho en Panamá.
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROBLEM -->
+        <!-- PROBLEM -->    
 
         <section class="problem">
             <div class="problem__container">
@@ -206,19 +317,45 @@
                 </div>
 
                 <div class="problem__content">
-                    <p class="problem__eyebrow">WHY IT MATTERS</p>
-                    <h2>The Problem Behind the Product</h2>
-                    <p>
-                        Discarded tires often end up in landfills, oceans, or are burned—releasing toxic
-                        pollutants that contaminate air, soil, and water. Tire wear is also a major
-                        contributor to ocean microplastics, harming marine ecosystems and affecting
-                        human health.
-                    </p>
-                    <ul class="problem__list">
-                        <li>Toxic pollution from tire burning</li>
-                        <li>Microplastics that damage ocean life</li>
-                        <li>Waste that lasts for decades</li>
-                    </ul>
+                    <div class="problem__content">
+                        <p class="problem__eyebrow"
+                            data-es="POR QUÉ IMPORTA"
+                            data-en="WHY IT MATTERS">
+                            POR QUÉ IMPORTA
+                        </p>
+
+                        <h2 data-es="El problema detrás del producto"
+                            data-en="The Problem Behind the Product">
+                            El problema detrás del producto
+                        </h2>
+
+                        <p
+                            data-es="Las llantas descartadas necesitan un manejo adecuado. Cuando se abandonan o se queman a cielo abierto, generan contaminación y desaprovechan un material que puede tener nuevos usos. En EcoSlidespty aprovechamos su caucho para elaborar las suelas de nuestro calzado."
+                            data-en="Discarded tires need proper management. When dumped or burned in the open, they cause pollution and waste a material that can have new uses. At EcoSlidespty, we repurpose their rubber to make the soles of our footwear.">
+                            Las llantas descartadas necesitan un manejo adecuado.
+                            Cuando se abandonan o se queman a cielo abierto, generan
+                            contaminación y desaprovechan un material que puede tener
+                            nuevos usos. En EcoSlidespty aprovechamos su caucho para
+                            elaborar las suelas de nuestro calzado.
+                        </p>
+
+                        <ul class="problem__list">
+                            <li data-es="Contaminación por la quema a cielo abierto"
+                                data-en="Pollution from open burning">
+                            Contaminación por la quema a cielo abierto
+                            </li>
+
+                            <li data-es="Acumulación de llantas en espacios naturales"
+                                data-en="Tires accumulating in natural areas">
+                            Acumulación de llantas en espacios naturales
+                            </li>
+
+                            <li data-es="Material que puede aprovecharse de nuevo"
+                                data-en="Material that can be put to use again">
+                            Material que puede aprovecharse de nuevo
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -227,45 +364,109 @@
         
         <section class="solution-preview" id="solution-preview">
             <div class="solution-preview__container">
-                <div class="solution-preview__content">
-                    <p class="solution-preview__eyebrow">OUR SOLUTION</p>
-                    <h2>From Waste to Everyday Value</h2>
-                    <p>
-                        EcoSlidespty transforms discarded tires into durable, comfortable slides—turning a
-                        pollution problem into footwear built to last. By reusing tire rubber, we reduce
-                        waste while supporting local craftsmanship.
-                    </p>
 
-                    <a class="solution-preview__link" href="pages/solution.html">
-                        See more →
-                    </a>
+                <div class="solution-preview__content">
+                <p
+                    class="solution-preview__eyebrow"
+                    data-es="NUESTRA SOLUCIÓN"
+                    data-en="OUR SOLUTION">
+                    NUESTRA SOLUCIÓN
+                </p>
+
+                <h2
+                    data-es="De llantas descartadas a nuevos pasos"
+                    data-en="From discarded tires to new steps">
+                    De llantas descartadas a nuevos pasos
+                </h2>
+
+                <p
+                    data-es="En EcoSlidespty transformamos llantas descartadas en sandalias artesanales. Aprovechamos el caucho para elaborar suelas y trabajamos con artesanos locales para dar forma a cada par."
+                    data-en="At EcoSlidespty, we transform discarded tires into handcrafted sandals. We repurpose the rubber into soles and work with local artisans to bring each pair to life.">
+                    En EcoSlidespty transformamos llantas descartadas en
+                    sandalias artesanales. Aprovechamos el caucho para elaborar
+                    suelas y trabajamos con artesanos locales para dar forma
+                    a cada par.
+                </p>
+
+                <a
+                    class="solution-preview__link"
+                    href="pages/solution.html"
+                    data-es="Conoce cómo lo hacemos →"
+                    data-en="See how we do it →">
+                    Conoce cómo lo hacemos →
+                </a>
                 </div>
 
                 <div class="solution-preview__grid">
-                    <article class="solution-card">
-                        <div class="solution-card__icon" aria-hidden="true"><i class="fa-solid fa-recycle"></i></div>
-                        <h3>Repurposes Tires</h3>
-                        <p>Gives discarded rubber a second life through circular design.</p>
-                    </article>
+                <article class="solution-card">
+                    <div class="solution-card__icon" aria-hidden="true">
+                    <i class="fa-solid fa-recycle"></i>
+                    </div>
 
-                    <article class="solution-card">
-                        <div class="solution-card__icon" aria-hidden="true"><i class="fa-solid fa-shoe-prints"></i></div>
-                        <h3>Built for Durability</h3>
-                        <p>Long-lasting soles designed for daily wear and recovery.</p>
-                    </article>
+                    <h3 data-es="Reutilizamos llantas"
+                        data-en="Repurposing tires">
+                    Reutilizamos llantas
+                    </h3>
 
-                    <article class="solution-card">
-                        <div class="solution-card__icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
-                        <h3>Made with Purpose</h3>
-                        <p>Supports local craftsmanship and community-driven production.</p>
-                    </article>
+                    <p
+                    data-es="Damos un nuevo uso al caucho de llantas descartadas."
+                    data-en="We give rubber from discarded tires a new use.">
+                    Damos un nuevo uso al caucho de llantas descartadas.
+                    </p>
+                </article>
 
-                    <article class="solution-card">
-                        <div class="solution-card__icon" aria-hidden="true"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                        <h3>Low-Cost Materials</h3>
-                        <p>Key inputs are collection, transport, and cleaning—raw material is discarded tires.</p>
-                    </article>
+                <article class="solution-card">
+                    <div class="solution-card__icon" aria-hidden="true">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+
+                    <h3 data-es="Para el día a día"
+                        data-en="For everyday wear">
+                    Para el día a día
+                    </h3>
+
+                    <p
+                    data-es="Creamos sandalias pensadas para acompañarte en tu rutina."
+                    data-en="We create sandals designed to be part of your daily routine.">
+                    Creamos sandalias pensadas para acompañarte en tu rutina.
+                    </p>
+                </article>
+
+                <article class="solution-card">
+                    <div class="solution-card__icon" aria-hidden="true">
+                    <i class="fa-solid fa-handshake"></i>
+                    </div>
+
+                    <h3 data-es="Trabajo artesanal"
+                        data-en="Local craftsmanship">
+                    Trabajo artesanal
+                    </h3>
+
+                    <p
+                    data-es="Trabajamos con artesanos locales en la elaboración de cada par."
+                    data-en="We work with local artisans to make each pair.">
+                    Trabajamos con artesanos locales en la elaboración de cada par.
+                    </p>
+                </article>
+
+                <article class="solution-card">
+                    <div class="solution-card__icon" aria-hidden="true">
+                    <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <h3 data-es="Más vida al material"
+                        data-en="Extending material life">
+                    Más vida al material
+                    </h3>
+
+                    <p
+                    data-es="Convertimos un material descartado en parte de un nuevo producto."
+                    data-en="We turn discarded material into part of a new product.">
+                    Convertimos un material descartado en parte de un nuevo producto.
+                    </p>
+                </article>
                 </div>
+
             </div>
         </section>
 
@@ -273,54 +474,122 @@
         <section class="process-preview" id="process-preview">
             <div class="process-preview__container">
                 <div class="process-preview__content">
-                    <p class="process-preview__eyebrow">MATERIALS & PROCESS</p>
-                    <h2>Built from Discarded Tires</h2>
-                    <p>
-                        EcoSlidespty uses discarded tire rubber as its primary raw material. By collecting,
-                        cleaning, and transforming waste tires, we create durable soles through a simple
-                        and efficient process that turns waste into wearable footwear.
+                    <p
+                    class="process-preview__eyebrow"
+                    data-es="MATERIALES Y PROCESO"
+                    data-en="MATERIALS & PROCESS">
+                    MATERIALES Y PROCESO
                     </p>
+
+                    <h2
+                    data-es="Una nueva vida para el caucho"
+                    data-en="A new life for tire rubber">
+                    Una nueva vida para el caucho
+                    </h2>
+
+                    <p
+                    data-es="Seleccionamos, limpiamos y cortamos el caucho de llantas descartadas para elaborar las suelas. Después, cada par se ensambla y termina de forma artesanal."
+                    data-en="We select, clean, and cut rubber from discarded tires to make the soles. Each pair is then assembled and finished by hand.">
+                    Seleccionamos, limpiamos y cortamos el caucho de llantas
+                    descartadas para elaborar las suelas. Después, cada par
+                    se ensambla y termina de forma artesanal.
+                    </p>
+
                     <div class="chips">
-                        <span class="chip">Recycled tire rubber</span>
-                        <span class="chip">Hand-finished straps</span>
-                        <span class="chip">Durable construction</span>
-                    </div>
-                    <div class="steps">
+                        <span class="chip"
+                                data-es="Caucho de llantas reutilizado"
+                                data-en="Repurposed tire rubber">
+                            Caucho de llantas reutilizado
+                        </span>
+
+                        <span class="chip"
+                                data-es="Acabados artesanales"
+                                data-en="Handcrafted finishes">
+                            Acabados artesanales
+                        </span>
+
+                        <span class="chip"
+                                data-es="Hecho en Panamá"
+                                data-en="Made in Panama">
+                            Hecho en Panamá
+                        </span>
+                        </div>
+
+                        <div class="steps">
                         <div class="step">
                             <div class="step__num">1</div>
                             <div class="step__body">
-                            <h3 class="h3">Collect & Select</h3>
-                            <p class="p">We source discarded tires and select suitable rubber for reuse.</p>
+                            <h3 class="h3"
+                                data-es="Recolectar y seleccionar"
+                                data-en="Collect & select">
+                                Recolectar y seleccionar
+                            </h3>
+
+                            <p class="p"
+                                data-es="Seleccionamos llantas descartadas cuyo caucho puede aprovecharse."
+                                data-en="We select discarded tires with rubber suitable for reuse.">
+                                Seleccionamos llantas descartadas cuyo caucho puede aprovecharse.
+                            </p>
                             </div>
                         </div>
 
                         <div class="step">
                             <div class="step__num">2</div>
                             <div class="step__body">
-                            <h3 class="h3">Clean & Inspect</h3>
-                            <p class="p">Tires are cleaned and checked to ensure quality and safety.</p>
+                            <h3 class="h3"
+                                data-es="Limpiar y revisar"
+                                data-en="Clean & inspect">
+                                Limpiar y revisar
+                            </h3>
+
+                            <p class="p"
+                                data-es="Limpiamos el material y revisamos su estado antes de trabajarlo."
+                                data-en="We clean the material and inspect its condition before working with it.">
+                                Limpiamos el material y revisamos su estado antes de trabajarlo.
+                            </p>
                             </div>
                         </div>
 
                         <div class="step">
                             <div class="step__num">3</div>
                             <div class="step__body">
-                            <h3 class="h3">Cut & Shape</h3>
-                            <p class="p">Rubber is processed into components and shaped into soles.</p>
+                            <h3 class="h3"
+                                data-es="Cortar y dar forma"
+                                data-en="Cut & shape">
+                                Cortar y dar forma
+                            </h3>
+
+                            <p class="p"
+                                data-es="Cortamos el caucho y damos forma a las suelas de cada modelo."
+                                data-en="We cut the rubber and shape the soles for each model.">
+                                Cortamos el caucho y damos forma a las suelas de cada modelo.
+                            </p>
                             </div>
                         </div>
 
                         <div class="step">
                             <div class="step__num">4</div>
                             <div class="step__body">
-                            <h3 class="h3">Assemble & Finish</h3>
-                            <p class="p">Each pair is assembled and finished for comfort and durability.</p>
+                            <h3 class="h3"
+                                data-es="Ensamblar y terminar"
+                                data-en="Assemble & finish">
+                                Ensamblar y terminar
+                            </h3>
+
+                            <p class="p"
+                                data-es="Unimos las piezas y realizamos los acabados de cada par a mano."
+                                data-en="We assemble the components and finish each pair by hand.">
+                                Unimos las piezas y realizamos los acabados de cada par a mano.
+                            </p>
                             </div>
                         </div>
                     </div>
-
-                    <a href="pages/solution.html#process" class="process-preview__link">
-                        See the full process →
+                    <a
+                        href="pages/solution.html#process"
+                        class="process-preview__link"
+                        data-es="Conoce el proceso completo →"
+                        data-en="See the full process →">
+                        Conoce el proceso completo →
                     </a>
                 </div>
 
@@ -330,15 +599,126 @@
             </div>
         </section>
 
+        <!-- RECOGNITION -->
+        <section class="awards-preview" id="awards" aria-labelledby="awards-title">
+            <div class="container">
+                <p class="awards-preview__eyebrow"
+                data-es="NUESTRO RECORRIDO"
+                data-en="OUR JOURNEY">
+                NUESTRO RECORRIDO
+                </p>
+
+                <h2 id="awards-title"
+                    data-es="Premios y reconocimientos"
+                    data-en="Awards & recognition">
+                Premios y reconocimientos
+                </h2>
+
+                <p class="awards-preview__intro"
+                data-es="Una idea nacida en Panamá, presentada en escenarios internacionales."
+                data-en="An idea born in Panama, shared on international stages.">
+                Una idea nacida en Panamá, presentada en escenarios internacionales.
+                </p>
+
+                <div class="awards-preview__grid">
+                <article class="award-card">
+                    <div class="award-card__top">
+                    <i class="fa-solid fa-medal" aria-hidden="true"></i>
+                    <span>2026</span>
+                    </div>
+
+                    <h3>GENIUS Olympiad</h3>
+
+                    <p class="award-card__recognition"
+                    data-es="Medalla de plata"
+                    data-en="Silver medal">
+                    Medalla de plata
+                    </p>
+
+                    <p data-es="Reconocimiento en la categoría de emprendimiento por nuestro proyecto de calzado elaborado con llantas recicladas."
+                    data-en="Recognition in the entrepreneurship category for our footwear project made from recycled tires.">
+                    Reconocimiento en la categoría de emprendimiento por nuestro
+                    proyecto de calzado elaborado con llantas recicladas.
+                    </p>
+
+                    <p class="award-card__place">Rochester, New York</p>
+                </article>
+
+                <article class="award-card">
+                    <div class="award-card__top">
+                    <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                    <span>2026</span>
+                    </div>
+
+                    <h3>Conrad Challenge</h3>
+
+                    <p class="award-card__recognition">
+                    Conrad Innovator Distinction
+                    </p>
+
+                    <p data-es="Distinción por nuestra propuesta de innovación ambiental, que transforma llantas descartadas en calzado."
+                    data-en="A distinction for our environmental innovation proposal, transforming discarded tires into footwear.">
+                    Distinción por nuestra propuesta de innovación ambiental,
+                    que transforma llantas descartadas en calzado.
+                    </p>
+
+                    <p class="award-card__place">Houston, Texas</p>
+                </article>
+
+                <article class="award-card">
+                    <div class="award-card__top">
+                    <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                    <span>2025</span>
+                    </div>
+
+                    <h3>Diamond Challenge</h3>
+
+                    <p class="award-card__recognition"
+                    data-es="Semifinalistas"
+                    data-en="Semifinalists">
+                    Semifinalistas
+                    </p>
+
+                    <p data-es="Presentamos EcoSlidespty en esta competencia internacional de emprendimiento y avanzamos a las semifinales."
+                    data-en="We presented EcoSlidespty in this international entrepreneurship competition and advanced to the semifinals.">
+                    Presentamos EcoSlidespty en esta competencia internacional
+                    de emprendimiento y avanzamos a las semifinales.
+                    </p>
+
+                    <p class="award-card__place"
+                    data-es="University of Delaware · Estados Unidos"
+                    data-en="University of Delaware · United States">
+                    University of Delaware · Estados Unidos
+                    </p>
+                </article>
+                </div>
+            </div>
+        </section>
+
         <!-- PROTOTYPES -->
         <section class="prototypes-preview" id="prototypes-preview">
             <div class="prototypes-preview__container">
                 <div class="prototypes-preview__content">
-                    <p class="prototypes-preview__eyebrow">PROTOTYPES</p>
-                    <h2>Designed. Tested. Refined.</h2>
-                    <p>
-                        EcoSlidespty prototypes evolve through hands-on testing and continuous improvement 
-                        focused on comfort, durability, and low-impact production.
+                    <p
+                        class="prototypes-preview__eyebrow"
+                        data-es="NUESTROS PRIMEROS PASOS"
+                        data-en="OUR FIRST STEPS">
+                        NUESTROS PRIMEROS PASOS
+                    </p>
+
+                    <h2
+                        data-es="Así comenzó EcoSlidespty"
+                        data-en="How EcoSlidespty began">
+                        Así comenzó EcoSlidespty
+                    </h2>
+
+                    <p
+                        data-es="Estos primeros prototipos forman parte de nuestro proceso de diseño y aprendizaje. Los conservamos como parte de nuestra historia; consulta la tienda para conocer los modelos disponibles."
+                        data-en="These early prototypes are part of our design and learning process. We keep them as part of our story; visit the shop to explore the available models.">
+                        Estos primeros prototipos forman parte de nuestro proceso
+                        de diseño y aprendizaje. Los conservamos como parte de
+                        nuestra historia; consulta la tienda para conocer los
+                        modelos disponibles.
                     </p>
                 </div>
                 <div class="prototypes-preview__grid">
@@ -346,40 +726,42 @@
                     <article class="prototype-card">
                         <img src="assets/img/Fotos/Models/EcoslideModel.jpg" alt="EcoSlidespty Prototype C">
                         <div class="prototype-card__body">
-                        <h3>Model A</h3>
-                        <p>First Model</p>
+                            <h3 data-es="Prototipo A" data-en="Prototype A">Prototipo A</h3>
+                            <p data-es="Primer modelo" data-en="First model">Primer modelo</p>
                         </div>
                     </article>
 
                     <article class="prototype-card">
                         <img src="assets/img/Fotos/Models/Slipper One strap.jpg" alt="EcoSlidespty Prototype B">
                         <div class="prototype-card__body">
-                        <h3>Model B</h3>
-                        <p>Two Straps</p>
+                            <h3 data-es="Prototipo B" data-en="Prototype B">Prototipo B</h3>
+                            <p data-es="Dos tiras" data-en="Two straps">Dos tiras</p>
                         </div>
                     </article>
 
                     <article class="prototype-card">
                         <img src="assets/img/Fotos/Models/Slipper One.jpg" alt="EcoSlidespty Prototype C">
                         <div class="prototype-card__body">
-                        <h3>Model C</h3>
-                        <p>One Strap</p>
+                            <h3 data-es="Prototipo C" data-en="Prototype C">Prototipo C</h3>
+                            <p data-es="Una tira" data-en="One strap">Una tira</p>
                         </div>
                     </article>
 
                     <article class="prototype-card">
                         <img src="assets/img/Fotos/Models/cross strap.jpg" alt="EcoSlidespty Prototype C">
                         <div class="prototype-card__body">
-                        <h3>Model D</h3>
-                        <p>Cross Strap</p>
+                            <h3 data-es="Prototipo D" data-en="Prototype D">Prototipo D</h3>
+                            <p data-es="Tiras cruzadas" data-en="Crossed straps">Tiras cruzadas</p>
                         </div>
                     </article>
 
                     <article class="prototype-card prototype-card--panama">
                         <a href="pages/solution.html#heritage">
                             <div class="prototype-card__media">
-                                <span class="panama-badge">
-                                🇵🇦 Panama Edition
+                                <span class="panama-badge"
+                                    data-es="🇵🇦 Edición Panamá"
+                                    data-en="🇵🇦 Panama Edition">
+                                    🇵🇦 Edición Panamá
                                 </span>
 
                                 <img src="assets/img/Fotos/Models/cutarraspanamenian.png" 
@@ -388,61 +770,106 @@
 
                             <div class="prototype-card__body">
                                 
-                                    <h3>Model E – Panama Edition</h3>
-                                    <p class="panama-origin">
-                                    🇵🇦 Inspired by the traditional Panamanian cutarra
+                                    <h3 data-es="Prototipo E – Edición Panamá"
+                                        data-en="Prototype E – Panama Edition">
+                                        Prototipo E – Edición Panamá
+                                    </h3>
+                                    <p class="panama-origin"
+                                        data-es="🇵🇦 Inspirado en la cutarra tradicional panameña"
+                                        data-en="🇵🇦 Inspired by the traditional Panamanian cutarra">
+                                        🇵🇦 Inspirado en la cutarra tradicional panameña
                                     </p>
                             </div>
                         </a>
                     </article>
 
                     <article class="prototype-card">
-                        <a class="prototypes-preview__link" href="pages/solution.html#prototypes">
-                            View all prototypes <br>
-                            <i class="fa-solid fa-arrow-right"></i>
+                        <a class="prototypes-preview__link"
+                            href="pages/solution.html#prototypes">
+                            <span data-es="Ver todos los prototipos"
+                                    data-en="View all prototypes">
+                                Ver todos los prototipos
+                            </span>
+                            <br>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </article>
                 </div>
-                
             </div>
         </section>
 
         <!-- IMPACT -->
         <section class="impact-preview" id="impact">
             <div class="impact-preview__container">
-                <p class="impact-preview__eyebrow">IMPACT</p>
-                <h2>Designed for Impact</h2>
-                <p class="impact-preview__subtitle">
-                Reducing waste, supporting people, and extending material life.
+                <p class="impact-preview__eyebrow"
+                data-es="NUESTRO PROPÓSITO"
+                data-en="OUR PURPOSE">
+                NUESTRO PROPÓSITO
+                </p>
+
+                <h2
+                data-es="Lo que hay detrás de cada par"
+                data-en="Behind every pair">
+                Lo que hay detrás de cada par
+                </h2>
+
+                <p class="impact-preview__subtitle"
+                data-es="Reutilizar materiales y trabajar con manos locales guía lo que hacemos."
+                data-en="Reusing materials and working with local artisans guides what we do.">
+                Reutilizar materiales y trabajar con manos locales guía lo que hacemos.
                 </p>
 
                 <div class="impact-preview__grid">
-                    <article class="impact-card">
-                        <div class="impact-card__icon"><i class="fa-solid fa-recycle"></i></div>
-                        <h3>Environmental</h3>
-                        <p>
-                        Reduces tire waste and helps prevent pollution caused by dumping and burning
-                        discarded tires.
-                        </p>
-                    </article>
+                <article class="impact-card">
+                    <div class="impact-card__icon" aria-hidden="true">
+                    <i class="fa-solid fa-recycle"></i>
+                    </div>
 
-                    <article class="impact-card">
-                        <div class="impact-card__icon"><i class="fa-solid fa-handshake"></i></div>
-                        <h3>Social</h3>
-                        <p>
-                        Supports affordable footwear and creates opportunities through local and
-                        artisan production.
-                        </p>
-                    </article>
+                    <h3 data-es="Reutilización" data-en="Reuse">
+                    Reutilización
+                    </h3>
 
-                    <article class="impact-card">
-                        <div class="impact-card__icon"><i class="fa-solid fa-circle-dollar-to-slot"></i></div>
-                        <h3>Circular Economy</h3>
-                        <p>
-                        Transforms waste into durable products—extending material life through reuse
-                        and design.
-                        </p>
-                    </article>
+                    <p
+                    data-es="Aprovechamos el caucho de llantas descartadas para elaborar las suelas de nuestros modelos."
+                    data-en="We repurpose rubber from discarded tires to make the soles of our footwear.">
+                    Aprovechamos el caucho de llantas descartadas
+                    para elaborar las suelas de nuestros modelos.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <div class="impact-card__icon" aria-hidden="true">
+                    <i class="fa-solid fa-handshake"></i>
+                    </div>
+
+                    <h3 data-es="Manos locales" data-en="Local artisans">
+                    Manos locales
+                    </h3>
+
+                    <p
+                    data-es="Colaboramos con artesanos panameños que aportan su experiencia a la elaboración de cada par."
+                    data-en="We collaborate with Panamanian artisans who bring their expertise to making each pair.">
+                    Colaboramos con artesanos panameños que aportan
+                    su experiencia a la elaboración de cada par.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <div class="impact-card__icon" aria-hidden="true">
+                    <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <h3 data-es="Economía circular" data-en="Circular economy">
+                    Economía circular
+                    </h3>
+
+                    <p
+                    data-es="Mantenemos un material en uso al transformarlo en parte de un nuevo producto."
+                    data-en="We keep a material in use by transforming it into part of a new product.">
+                    Mantenemos un material en uso al transformarlo
+                    en parte de un nuevo producto.
+                    </p>
+                </article>
                 </div>
             </div>
         </section>
@@ -450,18 +877,33 @@
         <!-- CTA -->
         <section class="final-cta">
             <div class="final-cta__container">
-                <h2>One Pair at a Time</h2>
-                <p>
-                EcoSlidespty is dedicated to transforming waste into everyday value reducing
-                environmental impact while creating durable, purpose-driven footwear.
+                <h2
+                    data-es="Tu próximo par, hecho en Panamá"
+                    data-en="Your next pair, made in Panama">
+                    Tu próximo par, hecho en Panamá
+                </h2>
+
+                <p
+                    data-es="Conoce nuestros modelos, elige tu talla y envíanos tu pedido. Cada par reúne caucho reutilizado y trabajo artesanal local."
+                    data-en="Explore our models, choose your size, and submit your order. Each pair brings together repurposed rubber and local craftsmanship.">
+                    Conoce nuestros modelos, elige tu talla y envíanos tu pedido.
+                    Cada par reúne caucho reutilizado y trabajo artesanal local.
                 </p>
 
                 <div class="final-cta__actions">
-                    <a href="pages/solution.html" class="btn btn-primary">
-                        Explore the Innovation
+                    <a
+                        href="pages/shop.html"
+                        class="btn btn-primary"
+                        data-es="Encuentra tu par"
+                        data-en="Find your pair">
+                        Encuentra tu par
                     </a>
-                    <a href="pages/contact.html" class="btn btn-secondary">
-                        Contact the Team
+                    <a
+                        href="pages/contact.html"
+                        class="btn btn-secondary"
+                        data-es="Contáctanos"
+                        data-en="Contact us">
+                        Contáctanos
                     </a>
                 </div>
             </div>

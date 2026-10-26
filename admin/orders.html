@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedidos | EcoSlidespty</title>
+</head>
+<body>
+  <p id="status" role="status" aria-live="polite">
+    Verificando acceso…
+  </p>
+
+  <main id="panel" hidden>
+    <h1>Pedidos · EcoSlidespty</h1>
+    <a href="./products.html">Administrar productos</a>
+    <button id="refresh" type="button">Actualizar pedidos</button>
+    <button id="logout" type="button">Cerrar sesión</button>
+
+    <p>Se muestran los 50 pedidos más recientes.</p>
+    <div id="orders"></div>
+  </main>
+
+  <script type="module" src="../assets/js/admin/orders.js"></script>
+</body>
+</html>

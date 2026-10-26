@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acceso administrativo | EcoSlidespty</title>
+</head>
+<body>
+  <main>
+    <h1>EcoSlidespty</h1>
+    <h2>Acceso administrativo</h2>
+
+    <form id="login-form">
+      <p>
+        <label for="email">Correo electrónico</label>
+        <input
+          id="email"
+          type="email"
+          autocomplete="username"
+          required
+        >
+      </p>
+
+      <p>
+        <label for="password">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          autocomplete="current-password"
+          required
+        >
+      </p>
+
+      <button id="login-button" type="submit">
+        Iniciar sesión
+      </button>
+    </form>
+
+    <p id="message" role="status" aria-live="polite"></p>
+    <button id="logout-button" type="button" hidden>
+      Cerrar sesión
+    </button>
+  </main>
+
+  <script type="module" src="../assets/js/admin/login.js"></script>
+</body>
+</html>

@@ -122,6 +122,10 @@ function initNavbar() {
             a.className = "mobile-menu__link";
             a.href = link.getAttribute("href");
             a.textContent = link.textContent;
+            if (link.dataset.es && link.dataset.en) {
+                a.dataset.es = link.dataset.es;
+                a.dataset.en = link.dataset.en;
+            }
             mobileLinksSlot.appendChild(a);
         });
     }

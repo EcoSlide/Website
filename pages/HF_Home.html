@@ -19,130 +19,260 @@
 
             <!-- Desktop nav (definitivo) -->
             <nav class="nav" aria-label="Main navigation">
-                <a class="nav__link is-active" href="#">Home</a>
-                <a class="nav__link" href="pages/aboutus.html">About Us</a>
-                <a class="nav__link" href="pages/solution.html">Solution</a>
-                <a class="nav__link" href="pages/impact.html">Impact</a>
-                <a class="nav__link" href="pages/contact.html">Contact Us</a>
+                <a class="nav__link" href="index.html"
+                    data-es="Inicio" data-en="Home">
+                    Inicio
+                </a>
+
+                <a class="nav__link" href="pages/shop.html"
+                    data-es="Tienda" data-en="Shop">
+                    Tienda
+                </a>
+
+                <a class="nav__link" href="pages/aboutus.html"
+                    data-es="Nosotros" data-en="About Us">
+                    Nosotros
+                </a>
+
+                <a class="nav__link" href="pages/solution.html"
+                    data-es="Nuestra solución" data-en="Our Solution">
+                    Nuestra solución
+                </a>
+
+                <a class="nav__link" href="pages/impact.html"
+                    data-es="Impacto" data-en="Impact">
+                    Impacto
+                </a>
+
+                <a class="nav__link" href="pages/contact.html"
+                    data-es="Contacto" data-en="Contact">
+                    Contacto
+                </a>
             </nav>
 
-            <div class="search-container">
-                <form class="search-form" action="pages/search.html" method="GET" role="search"> 
-                    <input type="search" class="search-input" name="q" placeholder="Search..." aria-label="Search"> 
-                    <button type="submit" class="search-button" aria-label="Search"> 
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> 
-                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> 
-                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> 
-                        </svg> 
-                    </button> 
-                </form> 
-            </div>
+            <a class="home-cart-link" data-store-cart href="pages/shop.html#cart">
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                <span data-cart-label>Carrito (0)</span>
+            </a>
 
             <!-- Burger -->
-            <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-            <span></span><span></span><span></span>
+            <button
+                id="home-language"
+                class="language-toggle"
+                type="button"
+                aria-label="Switch to English">
+                EN
             </button>
         </div>
 
         <!-- Menú móvil -->
 
         <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-            <div class="mobile-menu__search" id="mobileSearchSlot"></div>
             <div class="mobile-menu__links" id="mobileLinksSlot"></div>
         </div>
     </header>
 </div>
 
 <div class="footerHome">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <footer class="footer">
-        <div class="container footer__grid">
+  <footer class="footer">
+    <div class="container footer__grid">
 
-            <!-- Brand / About -->
-            <div class="footer__col">
-            <div class="footer__brand">
-                <a href="index.html"><img class="footer__logo" src="assets/img/logo.png" alt="EcoSlidespty logo"></a>
-                <div>
-                    <div class="footer__name">EcoSlidespty</div>
-                    <div class="footer__tagline">Recycling, Reducing & Reusing</div>
-                </div>
+      <!-- Marca -->
+      <div class="footer__col">
+        <div class="footer__brand">
+          <a href="index.html">
+            <img class="footer__logo"
+                 src="assets/img/logo.png"
+                 alt="EcoSlidespty">
+          </a>
+
+          <div>
+            <div class="footer__name">EcoSlidespty</div>
+
+            <div class="footer__tagline"
+                 data-es="Reciclar, reducir y reutilizar"
+                 data-en="Recycling, Reducing & Reusing">
+              Reciclar, reducir y reutilizar
             </div>
-
-            <p class="footer__text">
-                Handcrafted sandals made from recycled tires. Built for durability, comfort, and a lighter footprint.
-            </p>
-
-            <div class="footer__badges">
-                <span class="badge"><i class="fa-solid fa-recycle"></i> Recycled Tires</span>
-                <span class="badge"><i class="fa-solid fa-hands"></i> Handmade</span>
-                <span class="badge"><i class="fa-solid fa-leaf"></i> Eco-Friendly</span>
-            </div>
-            </div>
-
-            <!-- Links -->
-            <div class="footer__col">
-            <h3 class="footer__title">Explore</h3>
-            <ul class="footer__links">
-                <li><a href="pages/solution.html#prototypes">Collection</a></li>
-                <li><a href="pages/solution.html#process">Materials & Process</a></li>
-                <li><a href="pages/impact.html">Sustainability Impact</a></li>
-                <!-- <li><a href="#faq">FAQs</a></li> -->
-            </ul>
-            </div>
-
-            <!-- Contact -->
-            <div class="footer__col">
-                <h3 class="footer__title">Contact</h3>
-                <ul class="footer__links">
-                    <li><a href="tel:+507 6926-5047"><i class="fa-solid fa-phone"></i> +507 6926-5047</a></li>
-                    <li><a href="mailto:info.ecoslides@gmail.com"><i class="fa-solid fa-envelope"></i> info.ecoslides@gmail.com</a></li>
-                    <li><a href="#contact"><i class="fa-solid fa-location-dot"></i> Panama</a></li>
-                    <li><a href="https://www.instagram.com/ecoslides.pty" target="_blank"><i class="fa-brands fa-instagram"></i> EcoSlides.pty</a></li>
-                </ul>
-
-                <div class="footer__social">
-                    
-                </div>
-            </div>
-
-            <!-- Newsletter -->
-            <div class="footer__col">
-                <h3 class="footer__title">Join our community</h3>
-                <p class="footer__text">
-                    Get updates on new designs, limited drops, and sustainability milestones.
-                </p>
-
-                <form id="communityForm" action="hhttps://formspree.io/f/xzdvgpqy" method="POST" class="footer__form">
-                    <input
-                        type="email"
-                        name="email"
-                        id="communityEmail"
-                        class="footer__input"
-                        placeholder="Enter your email"
-                        required
-                    />
-                    <label hidden>
-                        Your message:
-                        <textarea name="message">New Suscriptor</textarea>
-                    </label>
-                    <button type="submit" class="footer__btn btn">Subscribe</button>
-                    <small id="communityMsg" class="form-msg" aria-live="polite"></small>
-                </form>
-
-                <p class="footer__small">
-                    By subscribing, you agree to receive emails from EcoSlides. You can unsubscribe anytime.
-                </p>
-            </div>
+          </div>
         </div>
 
-        <div class="footer__bottom">
-            <div class="container footer__bottominner">
-            <span>© <span id="year"></span> EcoSlidespty. All rights reserved.</span>
-            <span class="footer__bottomright">Made with <i class="fa-solid fa-recycle"></i> in Panama.</span>
-            </div>
+        <p class="footer__text"
+           data-es="Sandalias elaboradas a mano en Panamá, con suelas de caucho de llantas recicladas."
+           data-en="Sandals handcrafted in Panama, with soles made from recycled tire rubber.">
+          Sandalias elaboradas a mano en Panamá,
+          con suelas de caucho de llantas recicladas.
+        </p>
+
+        <div class="footer__badges">
+          <span class="badge">
+            <i class="fa-solid fa-recycle" aria-hidden="true"></i>
+            <span data-es="Llantas recicladas"
+                  data-en="Recycled tires">
+              Llantas recicladas
+            </span>
+          </span>
+
+          <span class="badge">
+            <i class="fa-solid fa-hands" aria-hidden="true"></i>
+            <span data-es="Hecho a mano" data-en="Handmade">
+              Hecho a mano
+            </span>
+          </span>
+
+          <span class="badge">
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+            <span data-es="Hecho en Panamá" data-en="Made in Panama">
+              Hecho en Panamá
+            </span>
+          </span>
         </div>
-    </footer>
-    <button id="scrollTopBtn" class="toTop" type="button" aria-label="Back to top">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+      </div>
+
+      <!-- Enlaces -->
+      <div class="footer__col">
+        <h3 class="footer__title"
+            data-es="Explora" data-en="Explore">
+          Explora
+        </h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="pages/shop.html"
+               data-es="Tienda" data-en="Shop">
+              Tienda
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/solution.html#process"
+               data-es="Materiales y proceso"
+               data-en="Materials & Process">
+              Materiales y proceso
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/impact.html"
+               data-es="Nuestro impacto"
+               data-en="Our Impact">
+              Nuestro impacto
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/solution.html#prototypes"
+               data-es="Nuestros primeros prototipos"
+               data-en="Our Early Prototypes">
+              Nuestros primeros prototipos
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer__col">
+        <h3 class="footer__title"
+            data-es="Contacto" data-en="Contact">
+          Contacto
+        </h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="tel:+50769265047">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              +507 6926-5047
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:info.ecoslides@gmail.com">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              info.ecoslides@gmail.com
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/contact.html">
+              <i class="fa-solid fa-location-dot"
+                 aria-hidden="true"></i>
+              <span data-es="Panamá" data-en="Panama">Panamá</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/ecoslides.pty"
+               target="_blank"
+               rel="noopener noreferrer">
+              <i class="fa-brands fa-instagram"
+                 aria-hidden="true"></i>
+              @ecoslides.pty
+            </a>
+          </li>
+        </ul>
+
+        <div class="footer__social"></div>
+    </div>
+
+    <!-- Pedidos -->
+    <div class="footer__col">
+        <h3 class="footer__title"
+            data-es="Elige tu próximo par"
+            data-en="Choose your next pair">
+            Elige tu próximo par
+        </h3>
+
+        <p class="footer__text"
+            data-es="Encuentra tu modelo favorito, elige tu talla y haz tu pedido en nuestra tienda."
+            data-en="Find your favorite model, choose your size, and place your order in our shop.">
+            Encuentra tu modelo favorito, elige tu talla
+            y haz tu pedido en nuestra tienda.
+        </p>
+
+        <div class="footer__order-actions">
+            <a href="https://wa.me/50769265047"
+                class="footer__btn btn"
+                style="height: fit-content;"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Escríbenos por WhatsApp"
+                data-aria-es="Escríbenos por WhatsApp"
+                data-aria-en="Message us on WhatsApp">
+                Ver modelos en WhatsApp <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottominner">
+        <span>
+          © <span id="year"></span> EcoSlidespty.
+          <span data-es="Todos los derechos reservados."
+                data-en="All rights reserved.">
+            Todos los derechos reservados.
+          </span>
+        </span>
+
+        <span class="footer__bottomright">
+          <span data-es="Hecho con" data-en="Made with">
+            Hecho con
+          </span>
+          <i class="fa-solid fa-recycle" aria-hidden="true"></i>
+          <span data-es="en Panamá." data-en="in Panama.">
+            en Panamá.
+          </span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn"
+          class="toTop"
+          type="button"
+          aria-label="Volver arriba"
+          data-aria-es="Volver arriba"
+          data-aria-en="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
 </div>
