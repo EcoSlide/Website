@@ -262,6 +262,55 @@ const checkoutForm = document.querySelector("#checkout-form");
 const checkoutMessage = document.querySelector("#checkout-message");
 const submitOrderButton = checkoutForm.querySelector('[type="submit"]');
 
+const countryField = document.querySelector("#delivery-country");
+const panamaRegion = document.querySelector("#panama-region");
+const usRegion = document.querySelector("#us-region");
+const panamaRegionField = document.querySelector("#panama-region-field");
+const usRegionField = document.querySelector("#us-region-field");
+const shippingEstimate = document.querySelector("#shipping-estimate");
+
+function updateDeliveryFields() {
+  const isPanama = countryField.value === "PA";
+
+  panamaRegionField.hidden = !isPanama;
+  usRegionField.hidden = isPanama;
+
+  panamaRegion.disabled = !isPanama;
+  usRegion.disabled = isPanama;
+
+  if (!isPanama) {
+    shippingEstimate.textContent = t(
+      "Envío a Estados Unidos: por cotizar.",
+      "Shipping to the United States: quote required."
+    );
+    return;
+  }
+
+  const province = panamaRegion.value;
+
+  if (!province) {
+    shippingEstimate.textContent = t(
+      "Selecciona una provincia para ver el costo de envío.",
+      "Select a province to see the shipping cost."
+    );
+    return;
+  }
+
+  const amount = province === "Panamá"
+    ? 0
+    : province === "Panamá Oeste" ? 4 : 8;
+
+  shippingEstimate.textContent = amount === 0
+    ? t("Envío: gratis.", "Shipping: free.")
+    : t(`Envío: USD ${amount.toFixed(2)}.`, `Shipping: USD ${amount.toFixed(2)}.`);
+}
+
+countryField.addEventListener("change", updateDeliveryFields);
+panamaRegion.addEventListener("change", updateDeliveryFields);
+languageButton.addEventListener("click", updateDeliveryFields);
+
+updateDeliveryFields();
+
 let pendingOrder = null;
 let sendingOrder = false;
 let orderCompleted = false;
@@ -270,6 +319,10 @@ function lockCustomerFields(locked) {
   checkoutForm.querySelectorAll("input, textarea, select").forEach(field => {
     field.disabled = locked;
   });
+
+  if (!locked) {
+    updateDeliveryFields();
+  }
 }
 
 checkoutForm.addEventListener("submit", async event => {
@@ -291,7 +344,7 @@ checkoutForm.addEventListener("submit", async event => {
     const customer = {};
 
     for (const field of [
-      "name", "email", "phone", "region", "city", "address", "notes"
+      "name", "email", "phone", "country", "region", "city", "address", "notes"
     ]) {
       customer[field] = String(values.get(field) || "").trim();
     }

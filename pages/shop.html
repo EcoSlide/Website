@@ -112,13 +112,50 @@
 
             <p>
                 <label>
-                    <span data-es="Provincia o región" data-en="Province or region">
-                    Provincia o región
+                    <span data-es="País de entrega" data-en="Delivery country">
+                        País de entrega
                     </span>
-                    <input name="region" autocomplete="address-level1"
-                        required maxlength="100">
+                    <select name="country" id="delivery-country" required>
+                        <option value="PA" data-es="Panamá" data-en="Panama">
+                            Panamá
+                        </option>
+                        <option value="US" data-es="Estados Unidos" data-en="United States">
+                            Estados Unidos
+                        </option>
+                    </select>
                 </label>
             </p>
+
+            <p id="panama-region-field">
+                <label>
+                    <span data-es="Provincia" data-en="Province">Provincia</span>
+                    <select id="panama-region" name="region" required
+                            autocomplete="address-level1">
+                        <option value="">Selecciona una provincia</option>
+                        <option value="Bocas del Toro">Bocas del Toro</option>
+                        <option value="Coclé">Coclé</option>
+                        <option value="Colón">Colón</option>
+                        <option value="Chiriquí">Chiriquí</option>
+                        <option value="Darién">Darién</option>
+                        <option value="Herrera">Herrera</option>
+                        <option value="Los Santos">Los Santos</option>
+                        <option value="Panamá">Panamá</option>
+                        <option value="Panamá Oeste">Panamá Oeste</option>
+                        <option value="Veraguas">Veraguas</option>
+                    </select>
+                </label>
+            </p>
+
+            <p id="us-region-field" hidden>
+                <label>
+                    <span data-es="Estado" data-en="State">Estado</span>
+                    <input id="us-region" name="region"
+                        autocomplete="address-level1" maxlength="100"
+                        required disabled>
+                </label>
+            </p>
+
+            <p id="shipping-estimate" class="full-width" aria-live="polite"></p>
 
             <p>
                 <label>
