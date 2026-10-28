@@ -43,7 +43,7 @@
 
     <script type="module" src="assets/js/home-language.js"></script>
 
-    <script type="module" src="assets/js/home-products.js"></script>
+
 
 </head>
 
@@ -135,35 +135,20 @@
             </div>
         </section>
 
-        <section class="current-models" aria-labelledby="current-models-title">
-            <div class="container">
-                <p class="current-models__eyebrow"
-                data-es="HECHOS PARA ACOMPAÑARTE"
-                data-en="MADE TO GO WITH YOU">
-                HECHOS PARA ACOMPAÑARTE
-                </p>
-
-                <h2 id="current-models-title"
-                    data-es="Encuentra tu próximo par"
-                    data-en="Find your next pair">
-                Encuentra tu próximo par
-                </h2>
-
-                <p data-es="Explora nuestros modelos actuales y elige tu talla en la tienda."
-                data-en="Explore our current models and choose your size in the shop.">
-                Explora nuestros modelos actuales y elige tu talla en la tienda.
-                </p>
-
-                <p id="home-products-status" role="status" aria-live="polite"></p>
-
-                <div id="home-products" class="current-models__grid"></div>
-
-                <a class="current-models__catalog"
-                href="pages/shop.html"
-                data-es="Ver catálogo completo →"
-                data-en="Shop the full collection →">
-                Ver catálogo completo →
-                </a>
+        <!-- Invitación informativa al catálogo -->
+        <section class="catalog-invitation" aria-labelledby="catalog-title">
+            <div class="container catalog-invitation__layout">
+                <div class="catalog-invitation__content">
+                    <p class="catalog-invitation__eyebrow" data-es="HECHOS CON PROPÓSITO" data-en="MADE WITH PURPOSE">HECHOS CON PROPÓSITO</p>
+                    <h2 id="catalog-title" data-es="Cada par cuenta una nueva historia" data-en="Every pair tells a new story">Cada par cuenta una nueva historia</h2>
+                    <p data-es="El caucho de una llanta encuentra una nueva forma de acompañarte. Conoce nuestro calzado artesanal, hecho en Panamá, y descubre los modelos en nuestro catálogo." data-en="Tire rubber finds a new way to accompany you. Discover our handcrafted footwear, made in Panama, and explore the designs in our catalog.">El caucho de una llanta encuentra una nueva forma de acompañarte. Conoce nuestro calzado artesanal, hecho en Panamá, y descubre los modelos en nuestro catálogo.</p>
+                    <a class="catalog-invitation__cta" href="pages/shop.html" data-es="Explora nuestro catálogo →" data-en="Explore our catalog →">Explora nuestro catálogo →</a>
+                </div>
+                <div class="catalog-invitation__detail">
+                    <i class="fa-solid fa-shoe-prints" aria-hidden="true"></i>
+                    <p data-es="De llantas a nuevos pasos" data-en="From tires to new steps">De llantas a nuevos pasos</p>
+                    <span data-es="Caucho reutilizado · Manos artesanas · Identidad panameña" data-en="Repurposed rubber · Artisan hands · Panamanian identity">Caucho reutilizado · Manos artesanas · Identidad panameña</span>
+                </div>
             </div>
         </section>
 
@@ -603,9 +588,9 @@
         <section class="awards-preview" id="awards" aria-labelledby="awards-title">
             <div class="container">
                 <p class="awards-preview__eyebrow"
-                data-es="NUESTRO RECORRIDO"
-                data-en="OUR JOURNEY">
-                NUESTRO RECORRIDO
+                data-es="TALENTO PANAMEÑO EN ESCENARIOS INTERNACIONALES"
+                data-en="PANAMANIAN TALENT ON INTERNATIONAL STAGES">
+                TALENTO PANAMEÑO EN ESCENARIOS INTERNACIONALES
                 </p>
 
                 <h2 id="awards-title"
@@ -691,6 +676,56 @@
                     University of Delaware · Estados Unidos
                     </p>
                 </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vista previa de entrevistas -->
+        <section class="interviews-preview" id="interviews" aria-labelledby="interviews-title">
+            <div class="container">
+                <p class="interviews-preview__eyebrow" data-es="NUESTRA HISTORIA, EN VOZ PROPIA" data-en="OUR STORY, IN OUR OWN WORDS">NUESTRA HISTORIA, EN VOZ PROPIA</p>
+                <h2 id="interviews-title" data-es="EcoSlidespty en los medios" data-en="EcoSlidespty in the media">EcoSlidespty en los medios</h2>
+                <p class="interviews-preview__intro" data-es="Conoce las ideas, las personas y el propósito detrás de cada paso. Te invitamos a ver nuestras entrevistas." data-en="Meet the ideas, people, and purpose behind every step. Discover our story through these interviews.">Conoce las ideas, las personas y el propósito detrás de cada paso. Te invitamos a ver nuestras entrevistas.</p>
+                <div class="interviews-preview__grid">
+                    <article class="interview-card">
+                        <a class="interview-card__link" href="https://www.youtube.com/watch?v=liALC_lb6_o" target="_blank" rel="noopener noreferrer">
+                            <div class="interview-card__thumbnail">
+                                <img src="https://i.ytimg.com/vi/liALC_lb6_o/hqdefault.jpg" alt="Miniatura de la entrevista 1 de EcoSlidespty" loading="lazy" width="480" height="360">
+                                <span class="interview-card__play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </div>
+                            <div class="interview-card__body">
+                                <p class="interview-card__label">YOUTUBE · 01</p>
+                                <h3 data-es="EcoSlidespty: entrevista 1" data-en="EcoSlidespty: interview 1">EcoSlidespty: entrevista 1</h3>
+                                <span class="interview-card__watch" data-es="Ver en YouTube ↗" data-en="Watch on YouTube ↗">Ver en YouTube ↗</span>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="interview-card">
+                        <a class="interview-card__link" href="https://www.youtube.com/watch?v=SPDDF77mUTY" target="_blank" rel="noopener noreferrer">
+                            <div class="interview-card__thumbnail">
+                                <img src="https://i.ytimg.com/vi/SPDDF77mUTY/hqdefault.jpg" alt="Miniatura de la entrevista 2 de EcoSlidespty" loading="lazy" width="480" height="360">
+                                <span class="interview-card__play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </div>
+                            <div class="interview-card__body">
+                                <p class="interview-card__label">YOUTUBE · 02</p>
+                                <h3 data-es="EcoSlidespty: entrevista 2" data-en="EcoSlidespty: interview 2">EcoSlidespty: entrevista 2</h3>
+                                <span class="interview-card__watch" data-es="Ver en YouTube ↗" data-en="Watch on YouTube ↗">Ver en YouTube ↗</span>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="interview-card">
+                        <a class="interview-card__link" href="https://www.youtube.com/watch?v=TdBk54QvUs4" target="_blank" rel="noopener noreferrer">
+                            <div class="interview-card__thumbnail">
+                                <img src="https://i.ytimg.com/vi/TdBk54QvUs4/hqdefault.jpg" alt="Miniatura de la entrevista 3 de EcoSlidespty" loading="lazy" width="480" height="360">
+                                <span class="interview-card__play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </div>
+                            <div class="interview-card__body">
+                                <p class="interview-card__label">YOUTUBE · 03</p>
+                                <h3 data-es="EcoSlidespty: entrevista 3" data-en="EcoSlidespty: interview 3">EcoSlidespty: entrevista 3</h3>
+                                <span class="interview-card__watch" data-es="Ver en YouTube ↗" data-en="Watch on YouTube ↗">Ver en YouTube ↗</span>
+                            </div>
+                        </a>
+                    </article>
                 </div>
             </div>
         </section>

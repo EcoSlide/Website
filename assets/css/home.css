@@ -1174,164 +1174,11 @@ p{ margin: 0; }
     }
 }
 
-.current-models {
-  padding: clamp(48px, 7vw, 88px) 0;
-  background: #fff;
-  color: #20372a;
-}
-
-.current-models__eyebrow {
-  margin-bottom: 12px;
-  color: #2f6b4a;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.current-models h2 {
-  margin: 0 0 16px;
-  font-size: clamp(28px, 4vw, 42px);
-  line-height: 1.15;
-}
-
-.current-models__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 28px;
-}
-
-.current-model-card {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border: 1px solid #dce3da;
-  border-radius: 16px;
-  background: #fff;
-}
-
-.current-model-card__photo,
-.current-model-card__placeholder {
-  width: 100%;
-  aspect-ratio: 1;
-  background: #f5f5ef;
-}
-
-.current-model-card__photo {
-  display: block;
-  object-fit: contain;
-}
-
-.current-model-card__placeholder {
-  display: grid;
-  place-items: center;
-  color: #526457;
-}
-
-.current-model-card__body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 22px;
-}
-
-.current-model-card h3 {
-  margin: 0;
-  font-size: 20px;
-  line-height: 1.4;
-}
-
-.current-model-card__price {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.current-model-card__link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  margin-top: auto;
-  padding: 10px 18px;
-  border-radius: 8px;
-  background: #2f6b4a;
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.current-model-card__link:hover {
-  background: #275a3e;
-}
-
-.current-models__catalog {
-  display: inline-block;
-  margin-top: 28px;
-  color: #2f6b4a;
-  font-weight: 700;
-}
-
-.current-models a:focus-visible {
-  outline: 3px solid #c69332;
-  outline-offset: 4px;
-}
-
-#home-products-status {
-  margin-top: 20px;
-}
-
-#home-products-status:empty {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .current-models__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 550px) {
-  .current-models__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Large desktop */
 @media (min-width: 1100px){
     :root{
         --section-pad: 4rem;
     }
-}
-
-/* Premios: mismo estilo que las demás secciones */
-.awards-preview {
-  padding: var(--section-pad) 0;
-  background: #f5f5f5;
-  color: var(--text);
-}
-
-.awards-preview__eyebrow {
-  margin: 0 0 10px;
-  color: inherit;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  opacity: .7;
-}
-
-.awards-preview h2 {
-  margin: 0 0 12px;
-  font-size: 1.5rem;
-  line-height: 1.15;
-}
-
-.awards-preview__intro {
-  margin-bottom: 32px;
-  color: inherit;
-  line-height: 1.6;
 }
 
 /* Continuar la alternancia */
@@ -1343,3 +1190,52 @@ p{ margin: 0; }
 .impact-preview {
   background: #f5f5f5;
 }
+/* Invitación al catálogo: portada informativa */
+.catalog-invitation { padding: clamp(48px, 7vw, 88px) 0; background: #f3f6f0; }
+.catalog-invitation__layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.catalog-invitation__eyebrow { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .15em; margin-bottom: 16px; }
+.catalog-invitation h2 { margin: 0 0 20px; font-size: clamp(30px, 4vw, 46px); line-height: 1.12; color: #20372a; }
+.catalog-invitation__content > p:not(.catalog-invitation__eyebrow) { max-width: 58ch; line-height: 1.8; color: #526457; }
+.catalog-invitation__cta { display: inline-flex; align-items: center; min-height: 48px; padding: 15px 24px; margin-top: 28px; background: var(--green); color: white; border-radius: 8px; text-decoration: none; font-weight: 700; line-height: 1.5; }
+.catalog-invitation__cta:hover { background: var(--green-2); }
+.catalog-invitation__cta:focus-visible { outline: 3px solid #b08027; outline-offset: 5px; }
+.catalog-invitation__detail { padding: clamp(28px, 5vw, 56px); border: 1px solid #d2dfd3; border-radius: 20px; background: #e6eee3; text-align: center; color: #20372a; }
+.catalog-invitation__detail i { font-size: 64px; color: var(--green); margin-bottom: 24px; }
+.catalog-invitation__detail p { font-size: clamp(22px, 3vw, 30px); font-weight: 700; line-height: 1.3; margin-bottom: 16px; }
+.catalog-invitation__detail span { display: block; line-height: 1.8; font-size: 14px; }
+
+/* Reconocimientos: mayor jerarquía visual sin alterar sus datos */
+.awards-preview { padding: clamp(56px, 8vw, 100px) 0; background: radial-gradient(ellipse at top right, #2f6047, transparent 65%), #142f24; color: #fff; }
+.awards-preview__eyebrow { color: #e8cb86; font-weight: 700; letter-spacing: .14em; line-height: 1.7; margin-bottom: 16px; }
+.awards-preview h2 { font-size: clamp(34px, 5vw, 56px); max-width: 20ch; line-height: 1.08; margin-bottom: 20px; }
+.awards-preview__intro { color: #d9e6dc; font-size: 17px; margin-bottom: 40px; }
+.award-card { min-width: 0; padding: clamp(24px, 3vw, 36px); border: 1px solid #cfb36f; border-top: 4px solid #cfb36f; background: #fffdf7; color: #20372a; box-shadow: 0 16px 40px #0003; }
+.award-card__top i { color: #87651f; font-size: 40px; }
+.award-card__top span { background: #f0e7d0; color: #60491c; }
+.award-card h3 { font-size: clamp(22px, 2.4vw, 28px); }
+.award-card .award-card__recognition { font-size: clamp(20px, 2vw, 25px); line-height: 1.3; color: #77591c; margin: 6px 0 20px; }
+.award-card .award-card__place { margin-top: auto; padding-top: 24px; color: #526457; }
+@media (max-width: 800px) {
+  .catalog-invitation__layout { grid-template-columns: 1fr; }
+  .awards-preview__grid { grid-template-columns: 1fr; }
+}
+
+/* Miniaturas de entrevistas */
+.interviews-preview { background: #f3f6f0; color: #20372a; padding: clamp(48px, 7vw, 88px) 0; }
+.interviews-preview__eyebrow { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .14em; line-height: 1.7; margin-bottom: 14px; }
+.interviews-preview h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.12; margin: 0 0 18px; }
+.interviews-preview__intro { max-width: 65ch; color: #526457; line-height: 1.8; margin-bottom: 32px; }
+.interviews-preview__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.interview-card { min-width: 0; background: #fff; border: 1px solid #d2dfd3; border-radius: 16px; overflow: hidden; }
+.interview-card__link { display: block; height: 100%; color: inherit; text-decoration: none; }
+.interview-card__thumbnail { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #142f24; }
+.interview-card__thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+.interview-card__play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #142f24e6; color: #fff; box-shadow: 0 3px 20px #0004; }
+.interview-card__body { padding: 24px; }
+.interview-card__label { font-size: 11px; letter-spacing: .12em; color: #526457; font-weight: 700; }
+.interview-card h3 { margin: 12px 0 20px; font-size: 21px; line-height: 1.4; }
+.interview-card__watch { color: var(--green); font-size: 14px; font-weight: 700; }
+.interview-card__link:hover .interview-card__play { background: var(--green); }
+.interview-card__link:hover .interview-card__watch { text-decoration: underline; }
+.interview-card__link:focus-visible { outline: 3px solid #87651f; outline-offset: -4px; }
+@media (max-width: 800px) { .interviews-preview__grid { grid-template-columns: 1fr; } }
