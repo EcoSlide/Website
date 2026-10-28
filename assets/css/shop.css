@@ -6,7 +6,7 @@
       font-family: system-ui, sans-serif;
       line-height: 1.6;
     }
-    header {
+    .site-header {
       background: #000;
       color: white;
       padding: 20px 6%;
@@ -15,7 +15,7 @@
       align-items: center;
       gap: 20px;
     }
-    header a { color: white; text-decoration: none; }
+    .site-header a { color: white; text-decoration: none; }
     main { max-width: 1200px; margin: auto; padding: 35px 6%; }
     #products {
       display: grid;
@@ -68,13 +68,13 @@
     box-shadow: 0 2px 12px rgb(0 0 0 / 12%);
     }
 
-    .brand {
+    .site-header .brand {
     font-size: 22px;
     font-weight: 750;
     letter-spacing: -0.5px;
     }
 
-    .brand__logo{
+    .site-header .brand__logo{
     height: 50%;
     max-height: 30px;
     width: auto;

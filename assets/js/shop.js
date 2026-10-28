@@ -4,7 +4,7 @@ import { getLanguage, saveLanguage } from "./language.js";
 
 const grid = document.querySelector("#products");
 const status = document.querySelector("#status");
-const languageButton = document.querySelector("#language");
+const languageButton = document.querySelector("#home-language");
 const retryButton = document.querySelector("#retry");
 
 let language = getLanguage();

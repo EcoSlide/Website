@@ -1,213 +1,196 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tienda | EcoSlidespty</title>
-  <link rel="stylesheet" href="../assets/css/shop.css">
-  <link rel="icon" href="../assets/img/logo_ico.ico" type="image/x-icon">
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/img/logo_ico.ico" type="image/x-icon">
+    <title>Shop | EcoSlidespty</title>
+
+    <!-- los links de estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/header-footer.css">
+    <link rel="stylesheet" href="../assets/css/shop.css">
+
+    <!-- los scripts -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script defer src="../assets/js/header_footer.js"></script>
 
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="EcoSlidespty Home">
-        <img class="brand__logo" src="../assets/img/logo_nav.png" alt="EcoSlidespty logo" />
-    </a>
+    <div id="siteHeader"></div>
 
-    <nav class="header-actions" aria-label="Principal">
-        <a
-            href="#cart"
-            id="cart-link"
-            aria-haspopup="dialog"
-            aria-controls="cart-dialog">
-            Carrito (0)
-            </a>
+    <main>
+        <h1 id="title">Nuestros modelos</h1>
+        <p id="intro">Calzado artesanal hecho en Panamá.</p>
+        <p id="status" role="status" aria-live="polite">
+        Cargando productos…
+        </p>
+        <button id="retry" type="button" hidden>Reintentar</button>
+        <section id="products" aria-label="Productos"></section>
+        <dialog id="cart-dialog" aria-labelledby="cart-title">
+            <section id="cart" aria-labelledby="cart-title">
+                <div class="cart-heading">
+                <h2 id="cart-title">Tu carrito</h2>
 
-        <button
-        id="language"
-        type="button"
-        aria-label="Switch to English">
-        EN
-        </button>
-    </nav>
-    </header>
+                <button
+                    id="close-cart"
+                    type="button"
+                    aria-label="Cerrar carrito"
+                    data-es="Cerrar"
+                    data-en="Close">
+                    Cerrar
+                </button>
+                </div>
 
-  <main>
-    <h1 id="title">Nuestros modelos</h1>
-    <p id="intro">Calzado artesanal hecho en Panamá.</p>
-    <p id="status" role="status" aria-live="polite">
-      Cargando productos…
-    </p>
-    <button id="retry" type="button" hidden>Reintentar</button>
-    <section id="products" aria-label="Productos"></section>
-    <dialog id="cart-dialog" aria-labelledby="cart-title">
-        <section id="cart" aria-labelledby="cart-title">
-            <div class="cart-heading">
-            <h2 id="cart-title">Tu carrito</h2>
+                <div id="cart-items"></div>
 
-            <button
-                id="close-cart"
+                <p id="cart-total"></p>
+                <p id="cart-note"></p>
+                <p id="cart-message" role="status" aria-live="polite"></p>
+
+                <button
+                id="cart-checkout"
                 type="button"
-                aria-label="Cerrar carrito"
-                data-es="Cerrar"
-                data-en="Close">
-                Cerrar
-            </button>
-            </div>
+                data-es="Continuar con el pedido"
+                data-en="Continue with your order">
+                Continuar con el pedido
+                </button>
+            </section>
+        </dialog>
 
-            <div id="cart-items"></div>
+        <section id="checkout" aria-labelledby="checkout-title">
+            <h2 id="checkout-title"
+                data-es="Datos de entrega"
+                data-en="Delivery details">
+                Datos de entrega
+            </h2>
 
-            <p id="cart-total"></p>
-            <p id="cart-note"></p>
-            <p id="cart-message" role="status" aria-live="polite"></p>
+            <form id="checkout-form">
+                <p>
+                    <label>
+                        <span data-es="Nombre completo" data-en="Full name">
+                        Nombre completo
+                        </span>
+                        <input name="name" autocomplete="name"
+                            required maxlength="120">
+                    </label>
+                </p>
 
-            <button
-            id="cart-checkout"
-            type="button"
-            data-es="Continuar con el pedido"
-            data-en="Continue with your order">
-            Continuar con el pedido
-            </button>
+                <p>
+                    <label>
+                        <span data-es="Correo electrónico" data-en="Email">
+                        Correo electrónico
+                        </span>
+                        <input name="email" type="email" autocomplete="email"
+                            required maxlength="254">
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <span data-es="Teléfono o WhatsApp" data-en="Phone or WhatsApp">
+                        Teléfono o WhatsApp
+                        </span>
+                        <input name="phone" type="tel" autocomplete="tel"
+                            required maxlength="30">
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <span data-es="País de entrega" data-en="Delivery country">
+                            País de entrega
+                        </span>
+                        <select name="country" id="delivery-country" required>
+                            <option value="PA" data-es="Panamá" data-en="Panama">
+                                Panamá
+                            </option>
+                            <option value="US" data-es="Estados Unidos" data-en="United States">
+                                Estados Unidos
+                            </option>
+                        </select>
+                    </label>
+                </p>
+
+                <p id="panama-region-field">
+                    <label>
+                        <span data-es="Provincia" data-en="Province">Provincia</span>
+                        <select id="panama-region" name="region" required
+                                autocomplete="address-level1">
+                            <option value="">Selecciona una provincia</option>
+                            <option value="Bocas del Toro">Bocas del Toro</option>
+                            <option value="Coclé">Coclé</option>
+                            <option value="Colón">Colón</option>
+                            <option value="Chiriquí">Chiriquí</option>
+                            <option value="Darién">Darién</option>
+                            <option value="Herrera">Herrera</option>
+                            <option value="Los Santos">Los Santos</option>
+                            <option value="Panamá">Panamá</option>
+                            <option value="Panamá Oeste">Panamá Oeste</option>
+                            <option value="Veraguas">Veraguas</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p id="us-region-field" hidden>
+                    <label>
+                        <span data-es="Estado" data-en="State">Estado</span>
+                        <input id="us-region" name="region"
+                            autocomplete="address-level1" maxlength="100"
+                            required disabled>
+                    </label>
+                </p>
+
+                <p id="shipping-estimate" class="full-width" aria-live="polite"></p>
+
+                <p>
+                    <label>
+                        <span data-es="Distrito o ciudad" data-en="District or city">
+                        Distrito o ciudad
+                        </span>
+                        <input name="city" autocomplete="address-level2"
+                            required maxlength="100">
+                    </label>
+                </p>
+
+                <p class="full-width">
+                <label>
+                    <span data-es="Dirección de entrega" data-en="Delivery address">
+                    Dirección de entrega
+                    </span>
+                    <textarea name="address" autocomplete="street-address"
+                            required maxlength="500"></textarea>
+                </label>
+                </p>
+
+                <p class="full-width">
+                <label>
+                    <span data-es="Referencia o indicaciones (opcional)"
+                        data-en="Landmark or instructions (optional)">
+                    Referencia o indicaciones (opcional)
+                    </span>
+                    <textarea name="notes" maxlength="500"></textarea>
+                </label>
+                </p>    
+
+                <div
+                    class="cf-turnstile"
+                    data-sitekey="0x4AAAAAAFk_bko40C_9mo-Y"
+                    data-action="checkout"
+                    data-theme="light">
+                </div>
+
+                <button type="submit"
+                    data-es="Realizar mi pedido"
+                    data-en="Place my order">
+                    Realizar mi pedido
+                </button>
+
+                <p id="checkout-message" role="status" aria-live="polite"></p>
+            </form>
         </section>
-    </dialog>
 
-    <section id="checkout" aria-labelledby="checkout-title">
-        <h2 id="checkout-title"
-            data-es="Datos de entrega"
-            data-en="Delivery details">
-            Datos de entrega
-        </h2>
-
-        <form id="checkout-form">
-            <p>
-                <label>
-                    <span data-es="Nombre completo" data-en="Full name">
-                    Nombre completo
-                    </span>
-                    <input name="name" autocomplete="name"
-                        required maxlength="120">
-                </label>
-            </p>
-
-            <p>
-                <label>
-                    <span data-es="Correo electrónico" data-en="Email">
-                    Correo electrónico
-                    </span>
-                    <input name="email" type="email" autocomplete="email"
-                        required maxlength="254">
-                </label>
-            </p>
-
-            <p>
-                <label>
-                    <span data-es="Teléfono o WhatsApp" data-en="Phone or WhatsApp">
-                    Teléfono o WhatsApp
-                    </span>
-                    <input name="phone" type="tel" autocomplete="tel"
-                        required maxlength="30">
-                </label>
-            </p>
-
-            <p>
-                <label>
-                    <span data-es="País de entrega" data-en="Delivery country">
-                        País de entrega
-                    </span>
-                    <select name="country" id="delivery-country" required>
-                        <option value="PA" data-es="Panamá" data-en="Panama">
-                            Panamá
-                        </option>
-                        <option value="US" data-es="Estados Unidos" data-en="United States">
-                            Estados Unidos
-                        </option>
-                    </select>
-                </label>
-            </p>
-
-            <p id="panama-region-field">
-                <label>
-                    <span data-es="Provincia" data-en="Province">Provincia</span>
-                    <select id="panama-region" name="region" required
-                            autocomplete="address-level1">
-                        <option value="">Selecciona una provincia</option>
-                        <option value="Bocas del Toro">Bocas del Toro</option>
-                        <option value="Coclé">Coclé</option>
-                        <option value="Colón">Colón</option>
-                        <option value="Chiriquí">Chiriquí</option>
-                        <option value="Darién">Darién</option>
-                        <option value="Herrera">Herrera</option>
-                        <option value="Los Santos">Los Santos</option>
-                        <option value="Panamá">Panamá</option>
-                        <option value="Panamá Oeste">Panamá Oeste</option>
-                        <option value="Veraguas">Veraguas</option>
-                    </select>
-                </label>
-            </p>
-
-            <p id="us-region-field" hidden>
-                <label>
-                    <span data-es="Estado" data-en="State">Estado</span>
-                    <input id="us-region" name="region"
-                        autocomplete="address-level1" maxlength="100"
-                        required disabled>
-                </label>
-            </p>
-
-            <p id="shipping-estimate" class="full-width" aria-live="polite"></p>
-
-            <p>
-                <label>
-                    <span data-es="Distrito o ciudad" data-en="District or city">
-                    Distrito o ciudad
-                    </span>
-                    <input name="city" autocomplete="address-level2"
-                        required maxlength="100">
-                </label>
-            </p>
-
-            <p class="full-width">
-            <label>
-                <span data-es="Dirección de entrega" data-en="Delivery address">
-                Dirección de entrega
-                </span>
-                <textarea name="address" autocomplete="street-address"
-                        required maxlength="500"></textarea>
-            </label>
-            </p>
-
-            <p class="full-width">
-            <label>
-                <span data-es="Referencia o indicaciones (opcional)"
-                    data-en="Landmark or instructions (optional)">
-                Referencia o indicaciones (opcional)
-                </span>
-                <textarea name="notes" maxlength="500"></textarea>
-            </label>
-            </p>    
-
-            <div
-                class="cf-turnstile"
-                data-sitekey="0x4AAAAAAFk_bko40C_9mo-Y"
-                data-action="checkout"
-                data-theme="light">
-            </div>
-
-            <button type="submit"
-                data-es="Enviar pedido de prueba"
-                data-en="Submit test order">
-                Enviar pedido de prueba
-            </button>
-
-            <p id="checkout-message" role="status" aria-live="polite"></p>
-        </form>
-    </section>
-
-  </main>
-
-  
-
-  <script type="module" src="../assets/js/shop.js"></script>
+    </main>
+  <div id="siteFooter"></div>  
 </body>
 </html>

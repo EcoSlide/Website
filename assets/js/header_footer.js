@@ -36,9 +36,26 @@ async function loadHeaderFooter() {
         }
 
         // Inicializaciones que dependen del header/footer
+        const isShop = window.location.pathname.endsWith("/shop.html");
+        const cartLink = headerMount?.querySelector("[data-store-cart]");
+
+        if (cartLink && isShop) {
+            cartLink.id = "cart-link";
+            cartLink.href = "#cart";
+            cartLink.setAttribute("aria-haspopup", "dialog");
+            cartLink.setAttribute("aria-controls", "cart-dialog");
+        }
+
         initNavbar();
         initBackToTop();
         setYear();
+
+        if (isShop) {
+            const script = document.createElement("script");
+            script.type = "module";
+            script.src = "../assets/js/shop.js";
+            document.body.appendChild(script);
+        }
 
     } catch (err) {
         console.error("Error loading HF_Home.html:", err);
@@ -128,12 +145,10 @@ function initNavbar() {
 
         const desktopLinks = desktopNav.querySelectorAll(".nav__link");
         desktopLinks.forEach(link => {
-            const a = document.createElement("a");
-            a.className = "mobile-menu__link";
-            a.href = link.getAttribute("href");
-            a.textContent = link.textContent;
-            mobileLinksSlot.appendChild(a);
-        });
+        const a = link.cloneNode(true);
+        a.className = "mobile-menu__link";
+        mobileLinksSlot.appendChild(a);
+    });
     }
 
     // --- Active link (robusto) ---
