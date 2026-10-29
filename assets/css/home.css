@@ -1239,3 +1239,35 @@ p{ margin: 0; }
 .interview-card__link:hover .interview-card__watch { text-decoration: underline; }
 .interview-card__link:focus-visible { outline: 3px solid #87651f; outline-offset: -4px; }
 @media (max-width: 800px) { .interviews-preview__grid { grid-template-columns: 1fr; } }
+
+/* Fotos reales de GENIUS Olympiad */
+.genius-highlight { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin-bottom: 32px; align-items: stretch; }
+.genius-highlight figure { margin: 0; min-width: 0; border-radius: 16px; overflow: hidden; border: 1px solid #cfb36f; background: #0e251c; display: flex; flex-direction: column; }
+.genius-highlight img { display: block; width: 100%; height: 390px; object-fit: cover; }
+.genius-highlight__main img { object-position: center 40%; }
+.genius-highlight__secondary img { object-position: center 55%; }
+.genius-highlight figcaption { padding: 18px 22px; color: #f8ebcb; font-size: 14px; line-height: 1.6; }
+.genius-highlight__main figcaption { font-weight: 700; }
+.award-card__category { font-size: 13px; color: #526457; margin-top: auto; padding-top: 18px; }
+.award-card__source { display: inline-block; margin-top: 16px; color: #275a3e; font-weight: 700; font-size: 14px; line-height: 1.6; text-underline-offset: 4px; }
+.award-card__source:focus-visible { outline: 3px solid #87651f; outline-offset: 4px; }
+@media (max-width: 800px) {
+  .genius-highlight { grid-template-columns: 1fr; }
+  .genius-highlight img { height: auto; max-height: none; }
+}
+
+/* Vista previa de reconocimientos en el inicio */
+.awards-teaser { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(28px, 5vw, 64px); }
+.awards-teaser__photo { display: block; text-decoration: none; border-radius: 16px; overflow: hidden; background: #0e251c; border: 1px solid #cfb36f; }
+.awards-teaser__photo img { width: 100%; height: auto; }
+.awards-teaser__photo span { display: block; padding: 18px 22px; color: #f8ebcb; font-weight: 700; line-height: 1.6; font-size: 14px; }
+.awards-teaser__content h2 { font-size: clamp(30px, 3.7vw, 44px); }
+.awards-teaser__content .awards-preview__intro { margin-bottom: 24px; }
+.awards-teaser__list { list-style: none; padding: 0; margin: 0 0 28px; }
+.awards-teaser__list li { padding: 13px 0; border-bottom: 1px solid #ffffff30; }
+.awards-teaser__list strong, .awards-teaser__list span { display: block; line-height: 1.6; }
+.awards-teaser__list span { color: #e8cb86; font-size: 14px; }
+.awards-teaser__cta { display: inline-flex; align-items: center; min-height: 48px; background: #e8cb86; color: #142f24; padding: 14px 22px; font-weight: 700; text-decoration: none; border-radius: 8px; line-height: 1.5; }
+.awards-teaser__cta:hover { background: #f7e2b0; }
+.awards-teaser a:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+@media (max-width: 800px) { .awards-teaser { grid-template-columns: 1fr; } }
