@@ -102,15 +102,14 @@
 }
 
 /* Rail */
-.process-rail{ 
+.process-rail {
     position: sticky;
-    top: 0;
-    margin-top: 5%; 
+    top: 160px;
+    margin-top: 5%;
 }
 
-.rail{
+.rail {
     position: relative;
-    top: 90px;
     padding-left: 10px;
 }
 
@@ -168,6 +167,11 @@
     font-weight: 700;
     opacity: .85;
     font-size: .95rem;
+}
+
+/* Dejar espacio para el header al ir a un paso */
+#process [id^="stepp"] {
+    scroll-margin-top: 160px;
 }
 
 /* Content banner */
@@ -382,10 +386,6 @@
     .process-layout{
         grid-template-columns: 400px 1fr;
         gap: 22px;
-    }
-
-    .rail{
-        top: 90px;
     }
 
     .pgrid{

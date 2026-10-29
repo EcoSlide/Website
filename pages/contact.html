@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EcoSlides</title>
+    <title>Contáctanos | EcoSlidespty</title>
+    <meta name="description" content="Contacta al equipo de EcoSlidespty para consultas, alianzas y colaboraciones.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- CSS for header and footer -->
@@ -30,20 +31,18 @@
   <section class="con-hero" aria-label="Contact hero">
     <div class="container con-hero__container">
       <div class="con-hero__content">
-        <p class="eyebrow">CONTACT</p>
-        <h1>Let's connect</h1>
-        <p class="lead">
-          Interested in partnerships, feedback, or collaboration? Send us a message and we’ll get back to you.
-        </p>
+        <p class="eyebrow" data-es="CONTÁCTANOS" data-en="CONTACT">CONTÁCTANOS</p>
+        <h1 data-es="Conversemos" data-en="Let&#x27;s connect">Conversemos</h1>
+        <p class="lead" data-es="¿Tienes una consulta, una propuesta o una idea para colaborar? Nos encantará conocerla." data-en="Interested in partnerships, feedback, or collaboration? Send us a message and we’ll get back to you.">¿Tienes una consulta, una propuesta o una idea para colaborar? Nos encantará conocerla.</p>
 
         <div class="con-hero__actions">
-          <a class="btn btn-primary" href="#contact-form">Send a message</a>
-          <a class="btn btn-secondary" style="color:var(--green);" href="../index.html">Back to Home</a>
+          <a class="btn btn-primary" href="#contact-form" data-es="Escríbenos" data-en="Send a message">Escríbenos</a>
+          <a class="btn btn-secondary" style="color:var(--green);" href="../index.html" data-es="Volver al inicio" data-en="Back to Home">Volver al inicio</a>
         </div>
 
         <div class="con-hero__badges" aria-label="Quick contact options">
-          <span class="badge"><i class="fa-solid fa-envelope"></i> info.ecoslides@gmail.com</span>
-          <span class="badge"><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
+          <a class="badge" href="mailto:info.ecoslides@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info.ecoslides@gmail.com</a>
+          <a class="badge" href="https://wa.me/50769265047"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
         </div>
       </div>
 
@@ -60,58 +59,58 @@
 
       <!-- FORM -->
       <div class="con-form card" id="contact-form">
-        <h2>Send us a message</h2>
-        <p class="sub">We usually reply within 24-48 hours.</p>
+        <h2 data-es="Cuéntanos tu idea" data-en="Send us a message">Cuéntanos tu idea</h2>
+        <p class="sub" data-es="Completa el formulario y nuestro equipo te responderá por correo." data-en="We usually reply within 24-48 hours.">Completa el formulario y nuestro equipo te responderá por correo.</p>
 
-        <form class="form" id="contactForm" action="https://formspree.io/f/xzdvgpqy" method="post">
+        <form class="form" id="contactForm" method="post" aria-describedby="contact-status contact-note">
+          <div class="contact-trap" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
           <div class="form__row">
             <label class="form__field">
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" required>
+              <span data-es="Nombre" data-en="Name">Nombre</span>
+              <input type="text" name="name" autocomplete="name" maxlength="100" required>
             </label>
 
             <label class="form__field">
-              <span>Email</span>
-              <input type="email" name="email" placeholder="you@email.com" required>
+              <span data-es="Correo electrónico" data-en="Email">Correo electrónico</span>
+              <input type="email" name="email" autocomplete="email" maxlength="254" required>
             </label>
           </div>
 
           <label class="form__field">
-            <span>Subject</span>
-            <input type="text" name="subject" placeholder="Partnership / Feedback / Collaboration" required>
+            <span data-es="Asunto" data-en="Subject">Asunto</span>
+            <input type="text" name="subject" maxlength="160" required>
           </label>
 
           <label class="form__field">
-            <span>Message</span>
-            <textarea name="message" rows="6" placeholder="Tell us what you're looking for..." required></textarea>
+            <span data-es="Mensaje" data-en="Message">Mensaje</span>
+            <textarea name="message" rows="7" minlength="10" maxlength="5000" required></textarea>
           </label>
 
           <div class="form__actions">
-            <button class="btn btn-primary" type="submit">
-              <i class="fa-solid fa-paper-plane"></i> Send
+            <button class="btn btn-primary" type="submit" id="contact-submit" disabled>
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> <span id="contact-submit-label" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</span>
             </button>
-
             <button class="btn btn-secondary" style="color: var(--green);" type="button" id="sendWhatsApp">
               <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </button>
           </div>
+          <p id="contact-status" role="status" aria-live="polite" tabindex="-1"></p>
 
-          <p class="form__note">
-            By sending, you agree to share this information only for contacting EcoSlides.
-          </p>
+          <p class="form__note" data-es="Usaremos tus datos para atender y responder esta consulta." data-en="By sending, you agree to share this information only for contacting EcoSlides.">Usaremos tus datos para atender y responder esta consulta.</p>
         </form>
+        <noscript>Activa JavaScript para usar el formulario, o escríbenos a <a href="mailto:info.ecoslides@gmail.com">info.ecoslides@gmail.com</a>.</noscript>
       </div>
 
       <!-- INFO / LINKS -->
       <aside class="con-info">
         <div class="card con-info__card">
-          <h2>Contact details</h2>
+          <h2 data-es="También nos encuentras aquí" data-en="Contact details">También nos encuentras aquí</h2>
 
           <ul class="con-list">
             <li>
               <span class="con-list__icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
               <div>
-                <p class="con-list__label">Email</p>
+                <p class="con-list__label" data-es="Correo electrónico" data-en="Email">Correo electrónico</p>
                 <a class="con-list__value" href="mailto:info.ecoslides@gmail.com">info.ecoslides@gmail.com</a>
               </div>
             </li>
@@ -120,15 +119,15 @@
               <span class="con-list__icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
               <div>
                 <p class="con-list__label">WhatsApp</p>
-                <a class="con-list__value" href="http://wa.me/+50769265047" id="waLink">Open WhatsApp</a>
+                <a class="con-list__value" href="https://wa.me/50769265047" id="waLink" data-es="Abrir WhatsApp" data-en="Open WhatsApp">Abrir WhatsApp</a>
               </div>
             </li>
 
             <li>
               <span class="con-list__icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
               <div>
-                <p class="con-list__label">Location</p>
-                <p class="con-list__value">Panama</p>
+                <p class="con-list__label" data-es="Ubicación" data-en="Location">Ubicación</p>
+                <p class="con-list__value" data-es="Panamá" data-en="Panama">Panamá</p>
               </div>
             </li>
 
@@ -136,7 +135,7 @@
               <span class="con-list__icon" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
               <div>
                 <p class="con-list__label">Instagram</p>
-                <a class="con-list__value" href="https://www.instagram.com/ecoslides.pty" target="_blank">Ecoslides.py</a>
+                <a class="con-list__value" href="https://www.instagram.com/ecoslides.pty" target="_blank" rel="noopener noreferrer">@ecoslides.pty</a>
               </div>
             </li>
 
@@ -145,21 +144,21 @@
 
         <!-- Optional: small FAQ -->
         <div class="card con-faq">
-          <h3>Quick questions</h3>
+          <h3 data-es="Preguntas frecuentes" data-en="Quick questions">Preguntas frecuentes</h3>
 
           <details>
-            <summary>Do you accept partnerships?</summary>
-            <p>Yes — especially for recycling/sourcing, production support, and community initiatives.</p>
+            <summary data-es="¿Aceptan propuestas de colaboración?" data-en="Do you accept partnerships?">¿Aceptan propuestas de colaboración?</summary>
+            <p data-es="Sí. Puedes escribirnos sobre materiales, producción, iniciativas comunitarias u otras ideas de colaboración." data-en="Yes — especially for recycling/sourcing, production support, and community initiatives.">Sí. Puedes escribirnos sobre materiales, producción, iniciativas comunitarias u otras ideas de colaboración.</p>
           </details>
 
           <details>
-            <summary>How can I support EcoSlides?</summary>
-            <p>Share feedback, connect us with local partners, or collaborate on pilot batches.</p>
+            <summary data-es="¿Cómo puedo apoyar a EcoSlidespty?" data-en="How can I support EcoSlides?">¿Cómo puedo apoyar a EcoSlidespty?</summary>
+            <p data-es="Comparte nuestro proyecto, envíanos tus ideas o ayúdanos a conectar con aliados locales." data-en="Share feedback, connect us with local partners, or collaborate on pilot batches.">Comparte nuestro proyecto, envíanos tus ideas o ayúdanos a conectar con aliados locales.</p>
           </details>
 
           <details>
-            <summary>Where are you based?</summary>
-            <p>Panama. We're building locally with a focus on low-impact production.</p>
+            <summary data-es="¿Dónde están ubicados?" data-en="Where are you based?">¿Dónde están ubicados?</summary>
+            <p data-es="Estamos en Panamá y trabajamos con artesanos locales para elaborar nuestro calzado." data-en="Panama. We&#x27;re building locally with a focus on low-impact production.">Estamos en Panamá y trabajamos con artesanos locales para elaborar nuestro calzado.</p>
           </details>
         </div>
       </aside>
@@ -172,6 +171,6 @@
     <!-- Footer section -->
     <div id="siteFooter"></div>
 
-    <script src="../assets/js/contact.js"></script>
+    <script type="module" src="../assets/js/contact.js"></script>
 </body>
 </html>
